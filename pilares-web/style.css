@@ -1,0 +1,78 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+body {
+    background-color: #f4e1c3;
+    color: #292433;
+    font-family: cambria,courier;
+}
+h1 {
+    color: #6e3457;
+}
+h3 {
+    color: #0d1d3f;
+}
+footer {
+    width: 100%;
+    position : absolute;
+    bottom : 0;
+    height : 40px;
+    margin-top : 40px;
+    background-color:  	#8083a5;
+    color: #f4e1c3;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+figcaption {
+    font-size: smaller;
+}
+.half {
+    width: 50%;
+}
+.thirty {
+    width: 30%;
+}
+.forty {
+    width: 40%;
+}
+.right {
+    float:right;
+}
+.left {
+    float:left;
+}
+.top {
+    height: 300px;
+}
+.space {
+    height: 50px;
+}
+.bottom {
+    height: 300px;
+    padding: 0px 20px; 
+    margin: 50px 0px;
+}
+.ninimg {
+    width: 400px;
+    margin: 10px 30px 0px 30px;
+    border-style: solid;
+    border-color: #8083a5;;
+}
+.intro {
+    font-size: larger;
+    padding: 0px 30px;
+}
+.center {
+    text-align: center;
+}
+.bluish {
+    background-color: #e0f8ff;
+}
+.greenish {
+    background-color: #b6d6c7;
+}
+.pinkish {
+    background-color: #dd8e85;
+}
+
