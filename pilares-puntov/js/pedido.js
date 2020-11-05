@@ -33,8 +33,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         form.insertAdjacentHTML('beforeend', newProduct);
 
         updateTotales();
-        console.log(productos);
-        console.log(precios)
     });
 
 });
