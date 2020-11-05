@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Fondo Blanco</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/pedido.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Fondo Blanco</h1>
+            <p>Llenando los espacios vac&iacute;os</p>
+        </header>
+        <div class="menu">
+            <a href="index.html">Inicio</a>
+        </div>
+        <div class="divform">
+            <form class="formulario" id="create" >
+                <h3>Realiza tu pedido</h3>
+                <div id="prod0">
+                    <label for="fnombre0">Nombre del producto:</label>
+                    <input type="text" id="fnombre0" name="fnombre0" required maxlength="25"><br>
+                    <label for="fprecio0">Precio del producto:</label>
+                    $<input type="text" id="fprecio0" name="fprecio0" required pattern="[0-9]+(\.[0-9][0-9]?)?" ><br>
+                    <hr>
+                    <input type="submit" id="addprod" value="Agregar nuevo" >
+                </div>
+            </form>
+        </div>
+        <div class="divprod">
+            <h3>Total de productos: <span id="totalprod">0</span></h3>
+            <h3>Total: $<span id="totalprecio">0.00</span></h3>
+        </div>
+        <footer>
+            Contacto Tel. 5555555 | Términos y condiciones | Política de privacidad
+        </footer>
+    </body>
+</html>

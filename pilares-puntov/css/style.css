@@ -1,0 +1,103 @@
+@font-face {
+    font-family: Dosis;
+    src: url(Dosis-VariableFont_wght.ttf);
+}
+
+@font-face{
+    font-family: 'Lucida Bright';
+    src: url(lucidabrightdemibold.ttf);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0px;
+    padding: 0;
+}
+body {
+    font-family: Dosis,Helvetica,Arial,sans-serif;
+    font-size: 18px;
+}
+
+header {
+    background-color:#fff1e0;
+    border-bottom:5px solid #d27373;
+    padding: 10px 30px;
+}
+
+header h1{
+    font-family: 'Lucida Bright',  Georgia, 'Times New Roman', Times, serif;
+    font-size: 45px;
+    color: #272727;
+}
+
+footer {
+    width: 100%;
+    position : absolute;
+    bottom : 0;
+    height : 40px;
+    margin-top : 40px;
+    background-color:  	#8083a5;
+    color: #f4e1c3;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+div.menu {
+    background-color: #a82a3d;
+    overflow: auto;
+    white-space: nowrap;
+    font-size: 20px;
+}
+
+div.menu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+div.menu a:hover {
+    background-color: #9b6c6a;
+}
+
+.bienvenida {
+    text-align: right;
+    padding: 5px 30px 5px 0px;
+    font-size: 22px;
+}
+
+.formulario{
+    width: 80%;
+    border: 3px solid #4a7863;
+    text-align: left;
+    padding: 20px 30px 30px 30px;
+    line-height: 30px;
+}
+
+.formulario input[type="text"] {
+    width: 200px;
+}
+
+.formulario input[type="submit"] {
+    width: 100px;
+}
+
+.divform { 
+    padding: 40px 40px 0px 40px;
+    width: 60%;
+    float: left;
+}
+.divprod {
+    width: 40%;
+    float: left;
+    padding: 80px 30px;
+    min-height: 300px;
+}
+.catalogo {
+    width: 100%;
+    float: left;
+    padding: 20px 50px;
+}

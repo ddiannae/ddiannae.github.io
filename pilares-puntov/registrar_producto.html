@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Fondo Blanco</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/create.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Fondo Blanco</h1>
+            <p>Llenando los espacios vac&iacute;os</p>
+        </header>
+        <div class="menu">
+            <a href="index.html">Inicio</a>
+        </div>
+        <div class="divform">
+            <form class="formulario" id="create" >
+                <h3>Ingresa los datos del producto</h3>
+                <label for="fnombre">Nombre del producto:</label>
+                <input type="text" id="fnombre" name="fnombre" required maxlength="25"><br>
+                <label for="fdepto">Departamento:</label>
+                <input type="text" id="fdepto" name="fdepto" required maxlength="30"><br>
+                <label for="fprecio">Precio del producto:</label>
+                $<input type="text" id="fprecio" name="fprecio" required pattern="[0-9]+(\.[0-9][0-9]?)?" ><br>
+                <label for="fexistencia">Existencia del producto:</label>
+                <input type="number" id="fexistencia" name="fexistencia" min="1"><br>
+                <input type="submit" value="Guardar">
+            </form>
+        </div>
+        <div class="divprod" id="datosProducto" style="visibility:hidden;">
+            <h3>Datos del producto</h3>
+            <p>Nombre del producto: <span id="nombre"></span></p>
+            <p>Departamento: <span id="departamento"></span></p>
+            <p>Precio: <span id="precio"></span></p>
+            <p>Existencia: <span id="existencia"></span></p>
+        </div>
+        <br/>
+        <div class ="catalogo">
+            <h3>Cat&aacute;logo</h3>
+            <ul id="liscat">
+
+            </ul>
+        </div>
+       
+    </body>
+</html>
