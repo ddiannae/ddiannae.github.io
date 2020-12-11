@@ -1,0 +1,103 @@
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+	-webkit-box-sizing :border-box;
+	-ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #efefef;
+    color: #999999;
+    font-family: open_sans, Arial, Helvetica, sans-serif;
+}
+
+table {
+    text-align: center;
+}
+
+h1, h3 {
+    margin: 0px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+table {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #999999 ;
+}
+
+h1.nombre {
+    color: #b65923;
+    font-size: 28px;
+    text-transform: none;
+    margin-bottom: 10px;
+}
+
+.principal {
+    margin: 80px 0;
+}
+
+.contenedor {
+    margin: 0px auto;
+    width: 80%;
+}
+
+.col-izq {
+    width: 40%;
+    float: left;
+}
+
+.col-der {
+    width: 60%;
+    float: right;
+}
+
+.cont-bio {
+    background-color: #ffffff;
+    padding: 40px;
+}
+
+.telem {
+    background-color: #ffffff;
+    color: #312f2f;
+}
+
+.tval {
+    background-color: #b8b3b3;;
+}
+
+
+ /*
+header {
+    height: 120px;
+    margin: 100px 100px;
+    padding: 50px 40px;
+    
+    text-align: center;
+
+   border-color: #ffc56d;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 5px; 
+}
+*/
+
+/*
+
+
+*/
+
+
+.tablagen {
+    display: table;
+  }
+  .fila{
+    display: table-row;
+  }
+  .col{
+    display: table-cell;
+    padding: 12px;
+    background: #ddd;
+  }

@@ -9,34 +9,41 @@
 body {
     background-color: #efefef;
     color: #999999;
-    font-family: open_sans, Arial, Helvetica, sans-serif;
+    font-family: "open_sans", Arial, Helvetica, sans-serif;
+}
+
+h1, h3 {
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    font-size: 24px;
+
 }
 
 table {
     text-align: center;
 }
 
-h1, h3 {
-    margin: 0px;
-    font-weight: normal;
-    text-transform: uppercase;
+table, th, td {
+    border: 1px solid #999999;
+    border-collapse: collapse;
 }
 
-table {
-    border-style: solid;
-    border-width: 1px;
-    border-color: #999999 ;
+td {
+    padding: 5px;
 }
 
 h1.nombre {
-    color: #b65923;
+    color: #7f3d69;
     font-size: 28px;
-    text-transform: none;
-    margin-bottom: 10px;
 }
 
-.principal {
-    margin: 80px 0;
+#nombre{
+    text-transform: uppercase;
+}
+
+.caja-principal {
+    margin: 100px 0px;
 }
 
 .contenedor {
@@ -44,60 +51,21 @@ h1.nombre {
     width: 80%;
 }
 
+.bio {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
 .col-izq {
-    width: 40%;
+    width: 30%;
+    float: left;
+}
+.col-der {
+    width: 70%;
     float: left;
 }
 
-.col-der {
-    width: 60%;
-    float: right;
-}
-
-.cont-bio {
+.ttit {
     background-color: #ffffff;
-    padding: 40px;
+    font-weight: bold;
 }
-
-.telem {
-    background-color: #ffffff;
-    color: #312f2f;
-}
-
-.tval {
-    background-color: #b8b3b3;;
-}
-
-
- /*
-header {
-    height: 120px;
-    margin: 100px 100px;
-    padding: 50px 40px;
-    
-    text-align: center;
-
-   border-color: #ffc56d;
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 5px; 
-}
-*/
-
-/*
-
-
-*/
-
-
-.tablagen {
-    display: table;
-  }
-  .fila{
-    display: table-row;
-  }
-  .col{
-    display: table-cell;
-    padding: 12px;
-    background: #ddd;
-  }
