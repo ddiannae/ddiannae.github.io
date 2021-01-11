@@ -1,0 +1,707 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Escuela de Código - San Andrés Tetepilco</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="css/sesion1.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="img/logoPilares.png" />
+					<p>San Andrés Tetepilco</p>
+					<h2 class="edcodigo">Escuela de código</h2>
+					
+				</section>
+				<section>
+                    <p><b>CSS</b></p>
+                    <p>Significa Cascading Style Sheets. Describe c&oacute;mo los elementos de HTML van a ser desplegados en
+                        la pantalla.</p>
+                    <p> HTML describe el contenido. CSS fue creado por el World Wide Web Consortium (W3C) para evitar 
+                        añadir tags para especificar diseño.
+                    </p>
+                </section>
+                <section>
+                    <p><b>Sintaxis</b></p>
+                    <img  src="img/web/selector.gif"  />
+                    <p>¿Qu&eacute; hace esta regla de CSS?</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        p {
+                          color: red;
+                          text-align: center;
+                        }
+					</code></pre>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Selectores de CSS</b></p>
+                    <p>Sirven para seleccionar a qu&eacute; elementos de HTML va a aplicarse el estilo. Diferentes tipos 
+                        de selectores
+                    </p>
+                    <ul>
+                        <li>Selectores simples: seleccionan elementos basados en nombre, id, clase.</li>
+                        <li>Selectores combinados: seleccionan elementos basados relaciones entre ellos. </li>
+                        <li>Selectores de pseudo-clase: seleccionan elementos basados en cierto estado.</li>
+                        <li>Selectores de pseudo-elementos: seleccionan una parte de alg&uacute;n elemento.</li>
+                        <li>Selectores de atributos: seleccionan elementos basados en un atributo o en el valor de alg&uacute;n
+                            atributo.
+                        </li>
+                    </ul>
+                    
+                </section>
+                <section class="muchotexto">
+                    <p><b>Selectores simples</b></p>
+                    <p class="left">Nombre</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        p {
+                          color: red;
+                          text-align: center;
+                        }
+                    </code></pre>
+                    <p class="left">ID</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        #para1 {
+                            text-align: center;
+                            color: red;
+                        }
+                    </code></pre>
+                    <p class="left">Clase</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        .center {
+                            text-align: center;
+                            color: red;
+                          }
+                          
+					</code></pre>
+                </section>
+                <section class="muchotexto">
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        p.center {
+                            text-align: center;
+                            color: red;
+                        }
+                        
+                        p.large {
+                            font-size: 250%;
+                        }
+                        
+                    </code></pre>
+                    <h1 class="center">H1. No pasa nada</h1>
+                    <p class="center">P&aacute;rrafo. Rojo y centrado</p>
+                    <p class="center large">P&aacute;rrafo. Rojo, centrado y enorme.</p> 
+                </section>
+                <section>
+                    <p class="left">Selector universal</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        * {
+                            text-align: center;
+                            color: blue;
+                          }
+                    </code></pre>
+                    <p class="left">Selectores agrupados</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        h1, h2, p {
+                            text-align: center;
+                            color: red;
+                          }
+                    </code></pre>
+                   
+                </section>
+                <section>
+                    <p><b>¿C&oacute;mo añadimos css?</b></p>
+                    <p> CSS Externo, CSS Interno, CSS en l&iacute;nea</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        
+                        &lt;!DOCTYPE html&gt;
+                        &lt;html&gt;
+                        &lt;head&gt;
+                        &lt;link rel="stylesheet" href="mystyle.css"&gt;
+                        &lt;style&gt;
+                            body {
+                              background-color: linen;
+                            }
+                            
+                            h1 {
+                              color: maroon;
+                              margin-left: 40px;
+                            }
+                            &lt;/style&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                        
+                        <h1 style="color:blue;text-align:center;">This is a heading</h1>
+                        <p>This is a paragraph.</p>
+                        
+                        &lt;/body&gt;
+                        &lt;/html&gt;
+                    </code></pre>
+                    <p> Cuidado con la prioridad: en l&iacute;nea, externo, interno, default del navegador.</p>
+                    
+                </section>
+                <section>
+                    <p><b>Colores</b></p>
+                    <p>Se pueden utilizar especificando nombre o valores en RGB, HEX, HSL, RGBA, HSLA.</p>
+                    <p class="left">Nombres - Background</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        <h1 style="background-color:Tomato;">Tomate</h1>
+                        <h1 style="background-color:SlateBlue;">Moradito</h1>
+                    </code></pre>
+                    <h1 style="background-color:Tomato;">Tomate</h1>
+                    <h1 style="background-color:SlateBlue;">Moradito</h1>
+                </section>
+                <section>
+                    <p class="left">Nombres - Texto</p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                            <h1 style="color:Orange;">Naranja</h1>
+                            <h1 style="color:Violet;">Rosita</h1>
+                            <h1 style="color:MediumSeaGreen;">Verde</h1>
+                        </code></pre>
+                    <h1 style="color:Orange;">Naranja</h1>
+                    <h1 style="color:Violet;">Rosita</h1>
+                    <h1 style="color:MediumSeaGreen;">Verde</h1>
+                </section>
+                <section>
+                    <p class="left">Nombres - Bordes</p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                            <h1 style="border:5px solid LightGray;">Gris clarito</h1>
+                            <h1 style="border:5px solid Gray;">Gris</h1>
+                            <h1 style="border:5px solid DodgerBlue;">Azul</h1>
+                    </code></pre>
+                    <h1 style="border:5px solid LightGray;">Gris clarito</h1>
+                    <h1 style="border:5px solid Gray;">Gris</h1>
+                    <h1 style="border:5px solid DodgerBlue;">Azul</h1>
+                </section>
+                <section>
+                    <p>Tomate de otra forma</p>
+                    
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        <h1 style="background-color:rgb(255, 99, 71);">rgb(255, 99, 71)</h1>
+                        <h1 style="background-color:#ff6347;">#ff6347</h1>
+                        <h1 style="background-color:hsl(9, 100%, 64%);">hsl(9, 100%, 64%)</h1>
+    
+    
+                        <h1 style="background-color:rgba(255, 99, 71, 0.5);">rgba(255, 99, 71, 0.5)</h1>
+                        <h1 style="background-color:hsla(9, 100%, 64%, 0.5);">hsla(9, 100%, 64%, 0.5)</h1>
+                    </code></pre>
+
+                    <h1 style="background-color:rgb(255, 99, 71);">rgb(255, 99, 71)</h1>
+                    <h1 style="background-color:#ff6347;">#ff6347</h1>
+                    <h1 style="background-color:hsl(9, 100%, 64%);">hsl(9, 100%, 64%)</h1>
+
+                    <h1 style="background-color:rgba(255, 99, 71, 0.5);">rgba(255, 99, 71, 0.5)</h1>
+                    <h1 style="background-color:hsla(9, 100%, 64%, 0.5);">hsla(9, 100%, 64%, 0.5)</h1>
+                </section>
+                <section>
+                    <p><b>Background</b></p>
+                    <p>
+                        Se puede especificar:
+                    </p>
+                    <ul>
+                        <li>background-color</li>
+                        <li>background-image</li>
+                        <li>background-repeat</li>
+                        <li>background-attachment</li>
+                        <li>background-position</li>
+                    </ul>
+                </section>
+                <section class="earth">
+                    <p class="left"> Background image</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.earth{
+                            background-image: url("../img/web/earth.jpg");
+                        }
+                    </code></pre>
+                   
+                </section>
+                <section class="repeat">
+                    <p class="left"> Background image repeat</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.repeat{
+                            background-image: url("../img/web/gradient.jpeg");
+                            background-repeat: repeat-x;
+                        }
+                    </code></pre>
+                </section>
+                <section >
+                    <p class="left"> Background image fixed</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        body {
+                            background-image: url("img/web/tree.jpeg");
+                            background-repeat: no-repeat;
+                            background-position: right top;
+                            margin-right: 200px;
+                            background-attachment: fixed;
+                            background-size: 400px 600px;
+                            background-color: #d4578e;
+                        }
+                        div.texto{
+                            padding: 0 100px;
+                            width: 300px;
+                        }
+                    </code></pre>
+                    <a href="background_example.html" target="_blank">Ejemplo</a>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Margen</b></p>
+                    <p>Crea espacio alrededor de los elementos, fuera de sus bordes. </p>
+
+                    <p class="margen">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget maximus lacus, vel malesuada lectus. 
+                        Suspendisse rhoncus in lorem eget consectetur. 
+                        Sed fermentum, nisi blandit semper tincidunt, quam mauris iaculis massa, id lobortis mi arcu a urna. 
+                    </p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        p.margen{
+                            margin: 80px 50px 10px 20px ;
+                            border: 2px solid yellow;
+                            font-size: 20px;
+                        }
+                    </code></pre>
+                </section>
+                <section>
+                    <p><b>Margin auto</b></p>
+                    <div class="borde">
+                        <p class="centrado">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget maximus lacus, vel malesuada lectus. 
+                            Suspendisse rhoncus in lorem eget consectetur. 
+                        </p>
+                    </div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        p.centrado {
+                            margin: 20px auto;
+                            width: 200px;
+                            border: 2px solid yellow;
+                            font-size: 20px;
+                        }
+                        
+                        div.borde {
+                            width:500px;
+                            border: 2px solid yellow;
+                        }
+                    </code></pre>
+
+                </section>
+                <section>
+                    <p><b>Margin inherit</b></p>
+                    <div class="borde">
+                        <p class="inherit">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget maximus lacus, vel malesuada lectus. 
+                            Suspendisse rhoncus in lorem eget consectetur. 
+                        </p>
+                    </div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        p.inherit {
+                            margin-left: inherit;
+                            width: 200px;
+                            border: 2px solid yellow;
+                            font-size: 20px;
+                        }
+                        
+                        div.borde {
+                            width:500px;
+                            border: 2px solid yellow;
+                        }
+                    </code></pre>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Margin collapse</b></p>
+                    <p class="p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Nulla eget maximus lacus, vel malesuada lectus. 
+                        Suspendisse rhoncus in lorem eget consectetur. 
+                    </p>
+
+                    <p class="p2">Sed ut nulla ac metus mattis ultrices auctor vitae mauris. 
+                        Phasellus aliquet condimentum nulla quis rhoncus. Nulla gravida faucibus elit.
+                    </p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        p.p1 {
+                            margin: 0px 0px 30px 0px;
+                        }
+                        
+                        p.p2 {
+                            margin: 50px 0px 0px 0px;
+                        }
+                    </code></pre>
+
+                </section>
+                <section>
+                    <p><b>Padding</b></p>
+                    <p>El padding agrega espacio alrededor del contenido de un elemento, dentro de sus bordes definidos. </p>
+                    <div class="padding">hola</div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.padding {
+                            padding: 50px 30px 50px 80px;
+                            border: 2px solid yellow;
+                            color: white;
+                        }                        
+                    </code></pre>
+                </section>
+                <section>
+                    <p>box sizing - height = padding + height</p>
+                    <div class="pad-no-box"></div>
+                    <div class="pad-no-box pad-box"></div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.pad-no-box {
+                            padding: 40px 30px 50px 60px;
+                            border: 2px solid yellow;
+                            color: white;
+                            height: 100px;
+                            margin-bottom: 10px;
+                        }
+                        div.pad-box {
+                            box-sizing: border-box;
+                        }                   
+                    </code></pre>
+                </section>
+                <section>
+                    <p><b>Height y Width</b></p>
+                    <div class="hw">
+                        <ul>
+                            <li> auto - default. El navegador lo calcula</li>
+                            <li>tamaño - en px, cm, etc.</li>
+                            <li>% - porcentaje del bloque que lo contiene</li>
+                            <li>initial - lo coloca en su valor default</li>
+                            <li>inherit - hereda width/height de su elemento padre</li>
+                        </ul>
+                    </div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.hw{
+                            height: 200px;
+                            width: 50%;
+                            background-color: powderblue;
+                        }                
+                    </code></pre>
+                    <p>Recordemos que height y width no incluyen margin, padding y border por default.</p>
+                </section>
+                <section>
+                    <p>max-width y max-height</p>
+                    <div class="maxw">
+                        Este div tiene un max-width de 500px.
+                    </div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.maxw {
+                            max-width: 500px;
+                            height: 100px;
+                            background-color: powderblue;
+                        }                
+                    </code></pre>
+                    <p>Tambi&eacute;n podemos modificar el min-height y min-width.</p>
+                </section>
+                <section>
+                    <p><b>Modelo de cajas</b></p>
+                    <img src="img/web/boxmodel.png" />
+                </section>
+                <section class="muchotexto">
+                    <div class="boxmodel">
+                    </div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.boxmodel {
+                            width: 320px;
+                            padding: 10px;
+                            border: 5px solid gray;
+                            margin: 0;
+                        }                
+                    </code></pre>
+                    <p class="">width = width + left padding + right padding + left border + right border + left margin + right margin</p>
+                </section>
+                <section>
+                    <p><b>Texto</b></p>
+                    <p class="decor1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque egestas.</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        p.decor1 {
+                            height: 200px;
+                            background-color: salmon;
+                            color: maroon;
+                            text-decoration: line-through;
+                            vertical-align: middle;
+                            text-align: justify;
+                            display: table-cell;
+                        }
+                                   
+                    </code></pre>
+                </section>
+                <section>
+                    <p class="decor2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque egestas.</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        p.decor2 {
+                            letter-spacing: 5px;
+                            line-height: 80px;
+                            text-shadow: 3px 3px salmon;
+                            background-color: darkcyan;
+                            text-transform: uppercase;
+                        }          
+                    </code></pre>
+                </section>
+                <section>
+                    <p><b>Listas</b></p>
+                    <ul class="sqlist">
+                        <li>item1</li>
+                        <li>item2</li>
+                    </ul>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        ul.sqlist {
+                            list-style-type: square;
+                        }
+                    </code></pre>
+                    <ol class="alphalist">
+                        <li>item1</li>
+                        <li>item2</li>
+                    </ol>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        ol.alphalist {
+                            list-style-type: lower-alpha;
+                        }
+                    </code></pre>
+                </section>
+                <section>
+                    <ol class="romlist" start="50">
+                        <li>item1</li>
+                        <li>item2</li>
+                    </ol>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        ol.romlist {
+                            list-style-type: upper-roman;
+                        }
+                    </code></pre>
+                    <ul class="cleanlist">
+                        <li>item1</li>
+                        <li>item2</li>
+                    </ul>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        ul.cleanlist {
+                            list-style-type: none;
+                            margin: 0;
+                            padding: 0;
+                        }
+                    </code></pre>
+                </section>
+                <section>
+                    <table class="paises">
+                        <tr>
+                          <th>Countries</th>
+                          <th>Capitals</th>
+                          <th>Population</th>
+                          <th>Language</th>
+                        </tr>
+                        <tr>
+                          <td>USA</td>
+                          <td>Washington, D.C.</td>
+                          <td>309 million</td>
+                          <td>English</td>
+                        </tr>
+                        <tr>
+                          <td>Sweden</td>
+                          <td>Stockholm</td>
+                          <td>9 million</td>
+                          <td>Swedish</td>
+                        </tr>
+                      </table>
+                      
+                </section>
+                <section class="muchotexto">
+                    <p><b>Display</b></p>
+                    <p> Elementos que se despliegan como bloque: toman todo el ancho que pueden. 
+                        <code>display:block</code>
+                    </p>
+                    <ul class="left">
+                        <li>&lt;div&gt;</li>
+                        <li>&lt;h1&gt; - &lt;h6&gt;</li>
+                        <li>&lt;p&gt;</li>
+                        <li>&lt;form&gt;</li>
+                        <li>&lt;header&gt;</li>
+                        <li>&lt;footer&gt;</li>
+                        <li>&lt;section&gt;</li>
+                    </ul>
+                    <h1 class="salmonback">Hola</h1>
+                </section>
+                <section class="muchotexto">
+                    <p> Elementos que se despliegan en l&iacute;nea: solamente ocupan el ancho que requieren. 
+                        <code>display:inline</code>
+                    </p>
+                    <ul>
+                        <li>&lt;span&gt;</li>
+                        <li>&lt;a&gt;</li>
+                        <li>&lt;img&gt;</li>
+                    </ul>
+                    <p>Podemos poner un span: <span class="salmonback">Hola</span>, dentro de un p&aacute;rrafo.</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        &lt;p&gt;Podemos poner un span: &lt;span class="salmonback"&gt;Hola&lt;/span&gt;, 
+                        dentro de un p&aacute;rrafo.&lt;/p&gt; 
+                    </code></pre>
+                </section>
+                <section>
+                    <p><b>Position</b></p>
+                    <p>Hay 5 diferentes valores:</p>
+                    <ul>
+                        <li><code class="w3-codespan">static</code></li>
+                        <li><code class="w3-codespan">relative</code></li>
+                        <li><code class="w3-codespan">fixed</code></li>
+                        <li><code class="w3-codespan">absolute</code></li>
+                        <li><code class="w3-codespan">sticky</code></li>
+                    </ul>
+                    <p>Y despu&eacute;s modificamos las propiedades de top, bottom, left y right.</p>
+                </section>
+                <section class="muchotexto">
+                    <p class="left">Static. Valor por default. Flujo normal de la p&aacute;gina.</p>
+                    <div class="st"><p>div con <code>position:static</code></p></div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.st {
+                            position: static;
+                            border: 2px solid salmon;
+                        }
+                    </code></pre>
+                    <p class="left">Relative. Relativo a su posici&oacute;n original.</p>
+                    <div class="rl"><p>div con <code>position:relative</code></p></div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.rl {
+                            position: relative;
+                            left: 250px;
+                            border: 2px solid salmon;
+                        }
+                    </code></pre>
+                </section>
+                <section class="muchotexto">
+                    <p class="left">Fixed. Relativo al viewport. </p>
+                    <div class="fx"><p>div con <code>position:fixed</code></p></div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.fx {
+                            position: fixed;
+                            left: 400px;
+                            top: -30px;
+                        }
+                    </code></pre>
+                    <p class="left">Absolute. Relativo al ancestro m&aacute;s cercano con posici&oacute;n diferente a static. </p>
+                   
+                    <div class="rl">
+                        <p>Yo tengo posici&oacute;n relativa</p>
+                        <div class="abs"><p>div con <code>position:absolute</code></p></div></div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.abs {
+                            position: absolute;
+                            right: 100px;
+                            bottom: -30px;
+                        }
+                    </code></pre>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Overflow</b></p>
+                    <p>¿Qu&eacute; pasa cuando el contenido es m&aacute;s grande del &aacute;rea que lo contiene?</p>
+                    <p class="left"><code>overflow:visible</code>. Default. El contenido se sale del &aacute;rea.</p>
+                    <div class="ov"> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                         Fusce odio sapien, molestie et urna sit amet, laoreet convallis massa. </p></div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.ov {
+                            width: 250px;
+                            height: 100px;
+                            overflow: visible;
+                        }
+                    </code></pre>
+                </section>
+                <section class="muchotexto">
+                    <p class="left"><code>overflow:hidden</code>. Se esconde.</p>
+                    <div class="oh"> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                         Fusce odio sapien, molestie et urna sit amet, laoreet convallis massa. </p></div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.ov {
+                            width: 250px;
+                            height: 100px;
+                            overflow: hidden;
+                        }
+                    </code></pre>
+                    <p class="left"><code>overflow:scroll</code>. Barras de scroll.</p>
+                    <div class="os"> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                         Fusce odio sapien, molestie et urna sit amet, laoreet convallis massa. </p></div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.ov {
+                            width: 250px;
+                            height: 100px;
+                            overflow: scroll;
+                        }
+                    </code></pre>
+                </section>
+                <section>
+                    <p><b>Float</b></p>
+                    <p>Para posicionar y dar formato al contenido</p>
+                    
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.izq {
+                            width:20%;
+                            float:left;
+                            background-color: darkcyan;
+                        }
+                        
+                        div.der {
+                            width: 40%;
+                            float: right;;
+                            background-color: coral;
+                        }
+                    </code></pre>
+                    <div class="izq"><p>Izquierdo</p></div>
+                    <div class="der"><p>Derecho</p></div>
+                </section>
+                <section>
+                    <p><b>Clear</b></p>
+                    <p class="left">Sin clear</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.izq2 {
+                            height: 30px;
+                            width:20%;
+                            float:left;
+                            background-color: darkcyan;
+                            margin: 20px 20px;
+                        }
+                        
+                        div.der2 {
+                            height: 30px;
+                            width:40%;
+                            float: right;
+                            background-color: coral;
+                            margin: 20px 20px;
+                        }                        
+                    </code></pre>
+                    <div class="izq2"></div>
+                    <div class="der2"></div>
+                    <div class="mid"><p>Hola</p></div>
+                </section>
+                <section>
+                    <p class="left">Con clear. Quita los elementos que flotan a un lado.</p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.clear {
+                            border: 2px solid gold;
+                            clear:left;
+                        }                      
+                    </code></pre>
+
+                    <div class="der2"></div>
+                    <div class="izq2"></div>
+                    <div class="clear"><p>Hola</p></div>
+                    <p>Tambi&eacute;n se puede: <code>right</code> y <code>both</code></p>
+                </section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>

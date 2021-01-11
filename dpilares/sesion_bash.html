@@ -1,0 +1,264 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Escuela de Código - San Andrés Tetepilco</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="css/sesion1.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="img/logoPilares.png" />
+					<p>San Andrés Tetepilco</p>
+					<h2 class="edcodigo">Escuela de código</h2>
+					
+					<p>Sesión Bash</p>
+				</section>
+				<section>
+					<p><b>Bash:</b> Es un lenguaje de comandos y una UNIX shell. Acr&oacute;nimo de: Bourne-Again SHell..</p>
+					<p><b>Shell:</b> Int&eacute;rprete de comandos, permite la ejecuci&oacute;n interactiva y no interactiva de 
+					comandos.</p>
+					<p><b>Scripting:</b> Ejecuci&oacute;n de comandos autom&aacute;tica.</p>
+				</section>
+				<section data-auto-animate>
+					<p><b>Nuestro int&eacute;rprete de comandos</b></p>
+					<p>Para saber qu&eacute; shell estamos ocupando</p>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+					echo $SHELL
+					</code></pre>
+					<p>Para saber d&oacute;nde est&aacute; nuestro ejecutable de la shell</p>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						which bash
+					</code></pre>
+					<p>Para saber qu&eacute; otras shells tenemos disponibles</p>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						cat /etc/shells
+					</code></pre>
+				</section>
+                <section>
+					<p>Hagamos un Hello World</p>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						#!/bin/bash
+						echo "Hello World"
+					</code></pre>
+					<p>Ahora un script para saludarnos</p>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						echo '#!/bin/bash' > hola.sh
+						echo 'echo "Hola $1"' >> hola.sh 
+					</code></pre>
+                </section>
+                <section>
+					<p>Hagamos algo &uacute;til.</p>
+					<p>Un backup</p>
+                </section>
+                <section>
+					<p><b>Variables</b>: un dato almacenado. </p>
+					<ul>
+						<li>Script</li>
+						<li>Variables de BASH: <a href="https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html" target="_blank" >
+							Bash Variables</a></li>
+					</ul>
+				</section>
+				<section>
+					<p>Tambi&eacute;n podemos definir variables directamente en la terminal.</p>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						a=3
+						b=8
+						echo $a
+						echo $b
+						echo $[$a + $b]
+					</code></pre>
+				</section>
+          
+                <section>
+					<p><b>stdout:</b>standard output. La salida de los comandos. Se redirige con <code>></code></p>
+					<p><b>stderr:</b>standard error. La salida de los errores. Se redirige con <code>2></code></p>
+					<p> Ambas se redirigen con <code>&> </code> </p>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						ls barfoo > stdout.txt
+						ls barfoo &> stdoutandstderr.txt
+					</code></pre>
+				</section>
+				<section>
+					<p><b>Funciones:</b> Son secuencias de c&oacute;digo agrupadas que nos permiten organizar y reusar 
+					c&oacute;digo, para incrementar la eficiencia, el tiempo de ejecuci&oacute;n y la legibilidad de nuestro 
+				c&oacute;digo. </p>
+				</section>
+				<section>
+					<p><b>Comparaci&oacute;n de n&uacute;meros y cadenas de caracteres</b></p>
+					<table></caption>
+						<thead>
+						<tr>
+						<th>Descripci&oacute;n</th>
+						<th>Nu&uacute;meros</th>
+						<th>Strings</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+						<td class="uk-text-primary uk-text-bold">menor que</td>
+						<td>-lt</td>
+						<td>&lt;</td>
+						</tr>
+						<tr>
+						<td class="uk-text-primary uk-text-bold">mayor que</td>
+						<td>-gt</td>
+						<td>&gt;</td>
+						</tr>
+						<tr>
+						<td class="uk-text-primary uk-text-bold">igual</td>
+						<td>-eq</td>
+						<td>=</td>
+						</tr>
+						<tr>
+						<td class="uk-text-primary uk-text-bold">no igual</td>
+						<td>-ne</td>
+						<td>!=</td>
+						</tr>
+						<tr><td class="uk-text-primary uk-text-bold">igual o menor</td>
+						<td>-le</td>
+						<td>N/A</td>
+						</tr>
+						
+						<tr><td class="uk-text-primary uk-text-bold">igual o mayor</td>
+						<td>-ge</td>
+						<td>N/A</td>
+						</tr>
+						</tbody>
+						</table>
+				</section>
+				<section>
+					<p><b>Ejemplos</b></p>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						a=3
+						b=8
+						[ $a -lt $b ]
+						echo $?
+						[ $a -ge $b ]
+						echo $?
+						[ $a -eq $b ]
+						echo $?
+					</code></pre>
+					<p><cod>0</cod> es <cod>verdadero</cod>, <code>1</code> es falso</p>
+				</section>
+				<section>
+					<p><b>Ejemplos</b></p>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						[ "naranjas" = "manzanas" ]
+						echo $?
+						str1="uvas"
+						str2="uvas"
+						[ $str1 = $str2 ]
+						echo $?
+					</code></pre>
+					<p><cod>0</cod> es <cod>verdadero</cod>, <code>1</code> es falso</p>
+				</section>
+				<section>
+					<p><b>Sentencias condicionales</b></p>
+					<p>Se usan cuando queremos ejecutar sentencias de c&oacute;digo si es que alguna condici&oacute;n se cumple</p>
+					<p>Se utilizan las palabras clave <code>if</code>, <code>then</code>, <code>else</code></p>
+				</section>
+				<section>
+					<p><b>Ciclos</b></p>
+					<p>Son sentencias que nos permiten iterar o ejecutar varias veces alguna tarea hasta que todos los elementos
+						en una lista se cumplen o hasta que se cumplen ciertas condiciones predefinidas.
+					</p>
+				</section>
+				<section>
+					<p><b><code>for</code>:</b> Se utiliza para iterar en un n&uacute;mero de elementos en una lista</p>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						 for i in 1 2 3 4 5; do echo $i; done
+					</code></pre>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						for i in $( cat items.txt ); do echo -n $i | wc -c; done
+				   </code></pre>
+				</section>
+				<section>
+					<p><b>Ejercicio</b></p>
+					<p>Reescribe el ciclo <code>for</code> para que imprima los nombres de los archivos y derectorios dentro de tu 
+					carpeta actual junto con el numero de caracteres en el nombre</p>
+				</section>
+				<section>
+					<p><b><code>while</code>:</b> act&uacute;a sobre una condici&oacute;n dada. Va a ejecutar lo que est&aacute;
+					dentro de <code>do</code> y <code>done</code>, hasta que la condici&oacute;n de paro sea verdadera.</p>
+				</section>
+				<section>
+					<p><b><code>until</code>:</b> opuesto al <code>while</code>. El c&oacute;digo dentro de <code>do</code> y <code>done</code>
+					se ejecuta mientras que la condici&oacute;n sea falsa.</p>
+				</section>
+				<section>
+					<p><b>Operaciones matem&aacute; en la terminal</b>: siempre con doble par&eacute;ntesis </p>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						x=15;y=8
+						z=$(( $x * $y ))
+						echo $z
+					</code></pre>
+					<p>o con el comando <code>expr</code></p>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						expr 100 - 80
+						expr 6 \* 8
+					</code></pre>
+					
+				</section>
+				<section>
+					<p>o con el comando <code>let</code>, que guarda el resultado en una variable</p>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						let a=2+2
+						echo $a
+						let b=3*($a-1)
+						echo $b
+						let c=($b**2)/2
+						echo $c
+						let c++
+						let c--
+					</code></pre>
+					
+				</section>
+				<section>
+					<p>Finalmente, tenemos el comando <code>bc</code>, que es toda una calculadora</p>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						echo "12+5" | bc
+						echo "var=10;var^=2;var" | bc
+						x=`echo "var=500;var%=7;var" | bc`
+						echo $x
+						echo 'scale=30;8.5 / 2.3' | bc
+					</code></pre>
+					<p>Solo hay que tener cuidado con la sintaxis</p>
+				</section>
+				<section>
+					<p><b>Y eso es todo.</b></p>
+					<p>El contenido de este tutorial lo obtuve de: <a href="https://linuxconfig.org/bash-scripting-tutorial-for-beginners" target="_blank">
+						https://linuxconfig.org/bash-scripting-tutorial-for-beginners</a></p>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
+-

@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Escuela de Código - San Andrés Tetepilco</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="css/sesion1.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="img/logoPilares.png" />
+					<p>San Andrés Tetepilco</p>
+					<h2 class="edcodigo">Escuela de código</h2>
+					
+					<p>Sesión 1</p>
+				</section>
+				<section class="muchotexto">
+                    <p><b>Software</b></p>
+                    <p class="fragment">Son los componentes l&oacute;gicos de la computadora. Colecci&oacute;n de 
+                        datos e instrucciones que le dicen a la computadora qu&eacute; hacer.
+                    </p>
+                    <p><b>Hardware</b></p>
+                    <p class="fragment">Los componentes f&iacute;sicos de la computadora. Incluye el CPU, monitor,
+                         mouse, tarjeta de memoria, tarjeta gr&aacute;fica, etc.</p>
+                    <p><b>Sistema Operativo</b></p>
+                    <p class="fragment">Software principal, que gestiona los recursos de hardware,
+                         se ejecuta en modo privilegiado y provee servicios a las aplicaciones. </p>
+                </section>
+				<section class="muchotexto">
+					<p><b>Software Libre</b></p>
+					<p>Respeta la libertad de los usuarios y la comunidad. <br/>
+						Los usuarios tienen la libertad de ejecutar, copiar, distribuir, estudiar, modificar y mejorar el software.</p>
+					<ol start="0" data-fragment-index="2" class="fragment">
+						<li>Libertad de ejecutar el programa como se desee, con cualquier propósito</li>
+						<li>Libertad de acceso al código fuente: posibilidad de estudiar y modificar el programa.</li>
+						<li>Libertad de redistribuir copias para ayudar a otros.</li>
+						<li>Libertad de distribuir copias de sus versiones modificadas a terceros. </li>
+					</ol>
+					<small><i>Free Software Fundation</i></small>
+				</section>
+				<section>
+					<p><b>Proyecto GNU/Linux</b></p>
+					<div style="float:left;width:60%;">
+					
+					<ul>
+						<li>Sistema Operativo completamente de software libre.</li>
+						<li>Las herramientas son GNU, el kernel es Linux.</li>
+						<li>Proyecto que inició desde 1984.</li>
+						<li>Un sistema basado en Unix.</li>
+					</ul>
+					</div>
+					<div style="float:left;width:40%;">
+						<figure>
+							<img src="img/gnulinux.png"/>
+						</figure>
+					</div>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Distribuci&oacute;n GNU/Linux </b></p>
+                    <p>Sistema Operativo con el kernel de Linux, herramientas y librer&iacute;as de GNU,
+                        software adicional, sistema y manejador de ventanas y un entorno de escritorio. 
+                    </p>
+                    <p> Distribución GNU/Linux = Núcleo Linux + Sistema de Inicio + Paquetes de Software
+                        Libre</p>
+                    <p class="fragment"><b>Diferencias:</b> Instalador utilizado, manejador de paquetes, aplicaciones incluidas,
+                    entorno de escritorio.</p>
+                </section>
+                <section class="muchotexto">
+					<p><b>Archivo</b></p>
+					<p class="fragment">Conjunto independiente de datos.  Agrupados en carpetas o directorios. </p>
+                    <p><b>Sistema de archivos</b></p>
+                    <p class="fragment">Conjunto de normas y procedimientos para almacenar la información. Sistema de almacenamiento de 
+                        un dispositivo de memoria, que estructura y organiza la escritura, 
+                        búsqueda, lectura, almacenamiento, edición y eliminación de archivos de una manera concreta.</p>
+                    
+                </section>
+                <section class="muchomuchotexto">
+                    <ul>
+                        <li><b>FAT (File Allocation Table o tabla de asignación de archivos)</b>. 
+                            Desde 1980. FAT12, FAT16 y FAT32 (4GB - 8TB). Ideal para gestionar un volumen de datos pequeño.
+						USB y dispositivos m&oacute;viles. Evoluci&oacute;n: exFAT (2006), compatible nativo desde
+						 Windows 7</li>
+						<li><b>NTFS (New Technology File System)</b>.
+							1993 con Windows NT, estándar para Windows desde Windows Vista. Cifrado, derechos de acceso 
+							y recursos pueden definirse al detalle y de manera integral, acceso local y remoto a través de la red. </li>
+						<li><b>APFS (Apple File System)</b>.
+						Apple en 2017 con High Sierra para unidades de estado sólido modernas. Cifrado de datos y archivos.
+						Siguiente generaci&oacute;n de HFS+. </li>
+						<li><b>ext4</b>.
+							2008 como sucesor de ext3. Estándar para sistemas Linux. Optimiza la gestión de archivos grandes 
+							y evita la fragmentación de manera más eficaz. Las particiones se pueden ampliar y reducir 
+							según sea necesario, e incluso durante el procesamiento. Volumen de 1 exabyte 
+							(aproximadamente 1 millón de terabytes).
+						</li>
+                    </ul>
+					<small>https://www.ionos.mx/digitalguide/servidores/know-how/sistemas-de-archivos/</small>
+				</section>
+				<section data-background-iframe="https://www.proyectoautodidacta.com/comics/que-es-un-sistema-de-archivos/" data-background-interactive></section>
+				<section class="muchotexto">
+					<p><b>Filesystem Hierarchy Standard o FHS </b></p>
+					<small>Nació en 1994, mantenido por la Linux Foundation.</small>
+					<img src="https://computernewagedotcom.files.wordpress.com/2018/08/linux-jerarquia-directorios.png" />
+					<small>https://computernewagedotcom.files.wordpress.com/2018/08/linux-jerarquia-directorios.png</small>
+				</section>
+				<section class="muchotexto">
+					<p><b>Manejador de paquetes</b></p>
+					<p>Colecci&oacute;n de herramientas de software que automatizan el proceso de 
+						instalaci&oacute;n, actualizaci&oacute;n, configuraci&oacute;n y eliminaci&oacute;n
+						de programas para un SO.
+						<table>
+							<tr>
+								<th>
+									Distribuci&oacute;n
+								</th>
+								<th>
+									Manejador de paquetes
+								</th>
+								<th>
+									Herramientas
+								</th>
+							</tr>
+							<tr>
+								<td>
+									Debian, Ubuntu
+								</td>
+								<td>
+									dpkg
+								</td>
+								<td>
+									apt, aptitude
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Ret Hat, open Suse, Fedora	
+								</td>
+								<td>
+									RPM
+								</td>
+								<td>
+									apt4rm, zypp, yum, dnf
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Arch Linux, Frugalware	
+								</td>
+								<td>
+									Pacman
+								</td>
+								<td>
+									Makepkg
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Knoppix, Mint, Gentoo, <br> OpenSUSE, Red Hat and Slackware
+								</td>
+								<td>
+									Zero Install
+								</td>
+								<td>
+									0install
+								</td>
+							</tr>
+						</table>
+
+		
+	
+	
+		
+				</section>
+				<section class="muchotexto">
+					<p><b>Usuarios en Linux</b></p>
+					<p>Todos tienen UserID (UID) y pertenecen, al menos, a un grupo de usuario, con GroupID (GID) &uacute;nico.</p>
+					<ul class="fragment">
+						<li><b>Usuario root, superusuario, administrador</b>: UID=0. Privilegios sobre todo el sistema,
+							acceso a todos los archivos y directorios. Controla adminsitraci&oacute;n de cuentas de usuarios, 
+							instalaci&oacute;n y configuraci&oacute;n.
+						</li>
+						<li><b>Usuarios especiales:</b> Asociados a cuentas o servicios del sistema, 
+						no tienen inicio de sesi&oacute;n, se general al instalar Linux o su aplicaci&oacute;n 
+					asociada. UID entre 1 y 100.</li>
+						<li><b>Usuarios normales:</b> Normalmente tienen directorio de trabajo, privilegios solo en su directorio 
+						de trabajo o HOME, UID superior a 500.</li>
+					</ul>					
+				</section>
+				<section>
+					<p><b>xkcd</b></p>
+					<img src="https://imgs.xkcd.com/comics/sandwich.png" >
+				</section>
+				<section>
+					<p><b>Permisos</b></p>
+					<p>Tres tipos de permisos</p>
+					<ul>
+						<li><b>Lectura (read):</b> Ver contenido de un archivo o directorio.</li>
+						<li><b>Escritura (write):</b> Modificar el archivo. Agregar, sobreescribir
+							 o borrar en archivo o directorio</li>
+						<li><b>Execuci&oacute;n (execute):</b> Ejecutar un archivo. 
+							En directorios, acceder a &eacute;l y permitir que otros programas puedan
+						acceder a &eacute;l</li>
+					</ul>
+					<p>Tres tipos de acceso: user (u), group (g), others(o) </p>
+				</section>
+				<section>
+					<p><b>Gracias!</b></p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
