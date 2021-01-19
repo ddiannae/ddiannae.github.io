@@ -1,0 +1,358 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Escuela de Código - San Andrés Tetepilco</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="css/basic.css">
+		<link rel="stylesheet" href="css/css_sesion2.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="img/logoPilares.png" />
+					<p>San Andrés Tetepilco</p>
+					<h2 class="edcodigo">Escuela de código</h2>
+					<p>CSS sesi&oacute;n 2</p>
+				</section>
+				<section>
+                    <p><b>Display, otra vez</b></p>
+                    <ul>
+                        <li><code>display:block;</code></li>
+                        <li><code>display:inline;</code></li>
+                        <li><code>display:inline-block</code></li>
+                    </ul>
+                </section>
+                <section>
+                    <p><b><code>block</code> vs <code>inline-block</code></b></p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.bck {
+                            display: block;
+                            height: 100px;
+                            background-color: darkcyan;
+                        }
+                
+                        div.inlblk {
+                            display: inline-block;
+                            height: 100px;
+                            background-color: darkorange;
+                        }
+                    </code></pre>
+                    <div class="bck"> <p>Display en block, ya conocemos sus 
+                        caracter&iacute;sticas</p></div>
+                    <div class="inlblk"><p>Display en block-inline</p></div>
+                    <div class="inlblk"><p>Otro Display en block-inline</p></div>
+                </section>
+                <section class="muchotexto">
+                    <p><b><code>inline</code> vs <code>inline-block</code></b></p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        a.inl {
+                            display: inline;
+                            height: 3000px;
+                            width: 5000px;
+                        }
+                        a.inlblk {
+                            color:darkcyan;
+                            height: 150px;
+                            width: 700px;
+                        }
+                    </code></pre>
+                <p><a class="inl" href="http://www.w3schools.com" target="_blank" >
+                    Un link con display inline</a> </p>
+                <p><a class="inlblk" href="http://www.w3schools.com" target="_blank" >
+                    Un link con display inline-block</a></p>
+                </section>
+                <section>
+                    <p><b>Y para qu&eacute; podemos utilizarlo?</b></p>
+                    <ul class="nav">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#np">Nuestros productos</a></li>
+                        <li><a href="#nos">Nosotros</a></li>
+                        <li><a href="#con">Cont&aacute;ctanos</a></li>  
+                    </ul>
+                    <pre class="fragment" data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        .nav {
+                            background-color: darkcyan;
+                            list-style-type: none;
+                            text-align: center;
+                            margin: 0;
+                            padding: 0;
+                          }
+                          
+                        .nav li, 
+                        .nav li a {
+                            display: inline-block;
+                          }
+                        
+                        .nav li a {
+                            color: yellow;
+                            text-decoration: none;
+                            font-weight: bold;
+                            padding: 20px;
+                            font-size: 20px;
+                        }
+
+                        .nav li a:hover {
+                            background-color: salmon;
+                            color: teal;
+                        }
+                        
+                        .nav li a:active {
+                            background-color: palevioletred;
+                        }
+                    </code></pre>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Alineaciones</b></p>
+                    <div class="ali sd"><p>Superior derecha</p></div>
+                    <div class="ali si"> <p>Superior izquierda</p></div>
+                    <div class="ali id"><p>Inferior derecha</p></div>
+                    <div class="ali ii"><p>Inferior izquierda</p></div>
+
+                    <pre class="fragment" data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        .ali {
+                            width: 300px;
+                            height: 80px;
+                            border: 5px solid darkcyan;
+                            position: absolute;
+                        }
+                        
+                        .sd {
+                            top: 0px;
+                            right: 0px;
+                        }
+                        
+                        .si {
+                            top: 0px;
+                            left: 0px;
+                        }
+                        
+                        .id {
+                            bottom: 0px;
+                            right: 0px;
+                        }
+                        
+                        .ii {
+                            bottom: 0px;
+                            left: 0px;
+                        }
+                    </code></pre>
+                </section>
+        
+                <section>
+                    <p><b>Selectores combinados</b></p>
+                    <p class="left"><b>Descendencia (espacio)</b></p>
+                    <div class="morado">
+                        <ul>
+                            <li>Hola</li>
+                            <li>Adi&oacute;s</li>
+                        </ul>
+                    </div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.morado {
+                            background-color: lightpink;
+                        }
+
+                        div.morado li {
+                            color:darkmagenta;
+                            border: 5px solid lightsalmon;
+                        }
+                    </code></pre>
+                </section>
+                <section>
+                    <p class="left"><b>Hijo (>)</b></p>
+                    <div class="morado">
+                        <p>P&aacute;rrafo 1</p>
+                        <div>
+                            <p>P&aacute;rrafo 2</p>
+                        </div>
+                    </div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.morado > p {
+                            color:darkmagenta;
+                            border: 5px solid lightsalmon;
+                        }
+                        
+                    </code></pre>     
+                </section>
+                <section>
+                    <p class="left"><b>Pariente adyacente (+) y Pariente general (~)</b></p>
+                    <div class="par">
+                        <p>P&aacute;rrafo dentro de <code>div</code></p>
+                    </div>
+                    <p>P&aacute;rrafo despu&eacute;s de <code>div</code></p>
+                    <p>P&aacute;rrafo despu&eacute;s de <code>p</code></p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.par {
+                            background-color: darkcyan;
+                        }
+                        
+                        div.par + p {
+                            color:darkmagenta;
+                            background-color: darksalmon;
+                        }
+                        
+                        div.par ~ p {
+                            border: 5px solid black;
+                        }      
+                    </code></pre>     
+                </section>
+                <section>
+                    <p><b>Selectores de pseudo-clase</b></p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        selector:pseudo-class {
+                            property: value;
+                        }     
+                    </code></pre>    
+                    
+                    <div class="hm">
+                        Hover en un div
+                    </div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        div.hm  {
+                            color:darkmagenta;
+                            border: 5px solid lightsalmon;
+                            background-color: darkcyan;
+                        }
+
+                        div.hm:hover {
+                            background-color: lightcyan;
+                        }      
+                    </code></pre>    
+                </section>
+                <section class="muchotexto">
+                    <p class="left"><b>First child.</b> Primer <code>li</code></p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        <li><strong>+</strong> Hola <strong>+</strong></li>
+                    </code></pre>
+                    <ul class="fc">
+                        <li><strong>+</strong> Hola <strong>+</strong></li>
+                        <li><strong>+</strong> Hola <strong>+</strong></li>
+                        <li><strong>+</strong> Hola <strong>+</strong></li>
+                    </ul>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        ul.fc li:first-child {
+                            color: lightsalmon;
+                        }
+                    </code></pre>
+                </section>
+                <section class="muchotexto">
+                    <p class="left"><b>First child. </b> <span class="fragment" data-fragment-index="3">
+                        Primer <code>strong</code> de todos los <code>li</code></span></p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                            <li><strong>+</strong> Hola <strong>+</strong></li>
+                        </code></pre>
+                    <ul class="fsc fragment" data-fragment-index="2">
+                        <li><strong>+</strong> Hola <strong>+</strong></li>
+                        <li><strong>+</strong> Hola <strong>+</strong></li>
+                        <li><strong>+</strong> Hola <strong>+</strong></li>
+                    </ul>
+                    <pre  data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        ul.fsc li strong:first-child {
+                            color: lightsalmon;
+                        }
+                    </code></pre>
+                </section>
+                <section class="muchotexto">
+                    <p class="left"><b>First child. </b> <span>
+                        Todos los <code>strong</code> del primer <code>li</code></span></p>
+                        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                            <li><strong>+</strong> Hola <strong>+</strong></li>
+                        </code></pre>
+                    <ul class="sfc" >
+                        <li><strong>+</strong> Hola <strong>+</strong></li>
+                        <li><strong>+</strong> Hola <strong>+</strong></li>
+                        <li><strong>+</strong> Hola <strong>+</strong></li>
+                    </ul>
+                    <pre class="fragment" data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        ul.sfc li:first-child strong {
+                            color: lightsalmon;
+                        }
+                    </code></pre>
+                </section>
+                <section>
+                    <p><b>Selectores de pseudo-elemento</b></p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        selector::pseudo-element {
+                            property: value;
+                        }     
+                    </code></pre>    
+                   <p class="fl">Lorem ipsum dolor sit amet. </p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>                        
+                        p.fl::first-letter {
+                            font-size:70px;
+                            font-weight: bolder;
+                            color:darksalmon;
+                        }      
+                    </code></pre>    
+                </section>
+                <section class="muchotexto">
+                    <p><b><code>::after</code> y <code>::before</code></b></p>
+                    <ul class="aft">
+                        <li>Preparar clase</li>
+                        <li><span>Preparar presentaci&oacute;n</span></li>
+                        <li><span>Comprar verdura</span></li>
+                        <li>Lavar ropa</li>
+                    </ul>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>                            
+                        &#60;ul class="aft">
+                            &#60;li>Preparar clase</li>
+                            &#60;li><span>Preparar presentaci&oacute;n</span></li>
+                            &#60;li><span>Comprar verdura</span></li>
+                            &#60;li>Lavar ropa</li>
+                        &#60;/ul>
+                    </code></pre>    
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>                            
+                            ul.aft li span::after {
+                                content: " <- Falta";
+                                color: yellow;
+                            }
+                    </code></pre>    
+                </section>
+                <section class="muchotexto">
+                    <p><b><code>::after</code> y <code>::before</code></b></p>
+                    <p><a class="linkw3" href="https://www.w3schools.com/howto/default.asp">
+                         Chequen
+                    esto!</a></p>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>                            
+                        a.linkw3 {
+                            color: darkcyan;
+                            font-weight: bold;
+                        }
+                        
+                        a.linkw3::before {
+                            content: " (" attr(href) ")";
+                            font-weight: normal;
+                        }
+                    </code></pre>       
+                </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
