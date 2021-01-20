@@ -1,85 +1,3 @@
-.reveal-viewport  {
-    background-color: #992d3c;
-}
-
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal p,
-.reveal li,
-.reveal small,
-.reveal tr{
-    color: #fff;
-}
-
-.reveal h2.edcodigo,
-.reveal p b,
-.reveal li b,
-.reveal thead tr {
-    color: 	#f3e733;
-}
-
-.reveal h1,
-.reveal h2,
-.reveal h3{
-    font-size: 50px;
-}
-
-.reveal p b,
-.reveal li b{
-    font-size: 46px;
-}
-
-.muchotexto p,
-.muchotexto li,
-.muchotexto code,
-.muchomuchotexto p b,
-.muchomuchotexto li b {
-    font-size: 36px;
-}
-
-.muchomuchotexto p,
-.muchomuchotexto li,
-.reveal tr {
-    font-size: 30px;
-}
-
-.muchotexto td,
-.muchotexto th {
-    font-size: 22px;
-    color: #fff;
-}
-.muchotexto th {
-    color: 	#f3e733;
-}
-
-.scrollable-slide {
-    height: 800px;
-    overflow-y: auto !important;
-}
-
-.hljs-ln-code, .hljs-ln-numbers {
-    font-size: 22px;
-}
-
-.reveal img {
-    margin-top: 5px;
-}
-
-.reveal p.left,
-.reveal ul.left {
-    text-align: left;
-}
-	
-p.center {
-    text-align: center;
-    color: red;
-}
- 
-p.large {
-    font-size: 250%;
-}
-
 div.earth{
     background-image: url("../img/web/earth.jpg");
 }
@@ -87,7 +5,7 @@ div.earth{
 div.repeat{
     background-image: url("../img/web/gradient.jpeg");
     background-repeat: repeat-x;
-    background-size: 2px 300px;
+    background-size: 2px 800px;
 }
 
 p.margen {

@@ -13,7 +13,8 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-		<link rel="stylesheet" href="css/sesion1.css">
+        <link rel="stylesheet" href="css/css_sesion1.css">
+        <link rel="stylesheet" href="css/basic.css">
 	</head>
 	<body>
 		<div class="reveal">
@@ -229,6 +230,7 @@
                         div.repeat{
                             background-image: url("../img/web/gradient.jpeg");
                             background-repeat: repeat-x;
+                            background-size: 2px 800px;
                         }
                     </code></pre>
                 </section>
@@ -483,6 +485,7 @@
                     </code></pre>
                 </section>
                 <section>
+                    <p><b>Tablas</b></p>
                     <table class="paises">
                         <tr>
                           <th>Countries</th>
@@ -502,8 +505,32 @@
                           <td>9 million</td>
                           <td>Swedish</td>
                         </tr>
-                      </table>
-                      
+                    </table>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                        
+                        table.paises {
+                            border-collapse: collapse;
+                            width: 100%;
+                        }
+
+                        table.paises th {
+                            background-color: darkcyan;
+                        }
+
+                        table.paises td, table.paises th{
+                            border: 2px solid coral;
+                            padding: 8px;
+                        }
+
+                        .reveal table.paises tr:last-child td {
+                            border: 2px solid coral;
+                        }
+
+                        .reveal table.paises tr:nth-child(odd){
+                            background-color: #f2f2f2;
+                            color: salmon;
+                        }
+                    </code></pre>
                 </section>
                 <section class="muchotexto">
                     <p><b>Display</b></p>
