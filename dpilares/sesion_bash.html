@@ -13,7 +13,7 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-		<link rel="stylesheet" href="css/sesion1.css">
+		<link rel="stylesheet" href="css/basic.css">
 	</head>
 	<body>
 		<div class="reveal">
@@ -23,13 +23,15 @@
 					<p>San Andrés Tetepilco</p>
 					<h2 class="edcodigo">Escuela de código</h2>
 					
-					<p>Sesión Bash</p>
+					<p>Introducci&oacute;n a bash</p>
 				</section>
 				<section>
 					<p><b>Bash:</b> Es un lenguaje de comandos y una UNIX shell. Acr&oacute;nimo de: Bourne-Again SHell..</p>
 					<p><b>Shell:</b> Int&eacute;rprete de comandos, permite la ejecuci&oacute;n interactiva y no interactiva de 
 					comandos.</p>
-					<p><b>Scripting:</b> Ejecuci&oacute;n de comandos autom&aacute;tica.</p>
+                    <p><b>Scripting:</b> Ejecuci&oacute;n de comandos autom&aacute;tica.</p>
+                    <p>Script: <code><a href="./bash-scripts/1-tareas.sh" target="_blank">1-tareas.sh</a></code></p>
+                    <p><small>No olvides el permiso de ejecuci&oacute;n</small></p>
 				</section>
 				<section data-auto-animate>
 					<p><b>Nuestro int&eacute;rprete de comandos</b></p>
@@ -51,7 +53,8 @@
 					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 						#!/bin/bash
 						echo "Hello World"
-					</code></pre>
+                    </code></pre>
+                    <p>Script: <code><a href="./bash-scripts/2-hello-world.sh" target="_blank">2-hello-world.sh</a></code></p>
 					<p>Ahora un script para saludarnos</p>
 					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 						echo '#!/bin/bash' > hola.sh
@@ -60,14 +63,18 @@
                 </section>
                 <section>
 					<p>Hagamos algo &uacute;til.</p>
-					<p>Un backup</p>
+                    <p>Un backup</p>
+					<p>Script: <code><a href="./bash-scripts/3-backup-simple.sh" target="_blank">3-backup-simple.sh</a>
+					</code></p>
                 </section>
                 <section>
 					<p><b>Variables</b>: un dato almacenado. </p>
 					<ul>
-						<li>Script</li>
+						<li> Script: <code><a href="./bash-scripts/4-bienvenida.sh" target="_blank">4-bienvenida.sh</a></code></li>
 						<li>Variables de BASH: <a href="https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html" target="_blank" >
-							Bash Variables</a></li>
+                            Bash Variables</a></li>
+						<li> Script: <code><a href="./bash-scripts/5-backup-variables.sh" target="_blank">5-backup-variables.sh</a>
+						</code></li>
 					</ul>
 				</section>
 				<section>
@@ -88,12 +95,15 @@
 					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 						ls barfoo > stdout.txt
 						ls barfoo &> stdoutandstderr.txt
-					</code></pre>
+                    </code></pre>
+                    <p><small>Cambiamos la salida del comando <code>tar</code> en <code>5-backup-variables.sh</code></small></p>
 				</section>
 				<section>
 					<p><b>Funciones:</b> Son secuencias de c&oacute;digo agrupadas que nos permiten organizar y reusar 
 					c&oacute;digo, para incrementar la eficiencia, el tiempo de ejecuci&oacute;n y la legibilidad de nuestro 
-				c&oacute;digo. </p>
+                c&oacute;digo. </p>
+					<p>Script: <code><a href="./bash-scripts/6-datos-usuario.sh" target="_blank">6-datos-usuario.sh</a></code> y 
+						<br/><code><a href="./bash-scripts/7-backup-funciones.sh" target="_blank">7-backup-funciones.sh</a></code></p>
 				</section>
 				<section>
 					<p><b>Comparaci&oacute;n de n&uacute;meros y cadenas de caracteres</b></p>
@@ -101,7 +111,7 @@
 						<thead>
 						<tr>
 						<th>Descripci&oacute;n</th>
-						<th>Nu&uacute;meros</th>
+						<th>N&uacute;meros</th>
 						<th>Strings</th>
 						</tr>
 						</thead>
@@ -139,7 +149,8 @@
 						</table>
 				</section>
 				<section>
-					<p><b>Ejemplos</b></p>
+                    <p><b>Ejemplos</b></p>
+                    <p>Script: <code><a href="./bash-scripts/8-comparaciones.sh" target="_blank">8-comparaciones.sh</a></code></p>
 					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 						a=3
 						b=8
@@ -150,7 +161,8 @@
 						[ $a -eq $b ]
 						echo $?
 					</code></pre>
-					<p><cod>0</cod> es <cod>verdadero</cod>, <code>1</code> es falso</p>
+                    <p><code>0</code> es verdadero, <code>1</code> es falso</p>
+                    <p><code>$?</code> nos da el &uacute;ltimo status de salida.</p>
 				</section>
 				<section>
 					<p><b>Ejemplos</b></p>
@@ -167,8 +179,18 @@
 				<section>
 					<p><b>Sentencias condicionales</b></p>
 					<p>Se usan cuando queremos ejecutar sentencias de c&oacute;digo si es que alguna condici&oacute;n se cumple</p>
-					<p>Se utilizan las palabras clave <code>if</code>, <code>then</code>, <code>else</code></p>
-				</section>
+                    <p>Se utilizan las palabras clave <code>if</code>, <code>then</code>, <code>else</code></p>
+					<p>Script: <code><a href="./bash-scripts/9-if-else.sh" target="_blank">9-if-else.sh</a></code> y
+						 <br/><code><a href="./bash-scripts/10-backup-condicionales.sh" target="_blank">10-backup-condicionales.sh</a></code></p>
+                </section>
+                <section>
+                    <p><b>Par&aacute;metros posicionales</b></p>
+                    <p>Son variables que enviamos desde la sentencia de ejecuci&oacute;n del script y a las cuales podemos
+                        acceder dentro de &eacute;l.
+                    </p>
+					<p>Script: <code><a href="./bash-scripts/11-parametros.sh" target="_blank">11-parametros.sh</a></code> y 
+						<br/> <code><a href="./bash-scripts/12-backup-parametros.sh" target="_blank">12-backup-parametros.sh</a></code></p>
+                </section>
 				<section>
 					<p><b>Ciclos</b></p>
 					<p>Son sentencias que nos permiten iterar o ejecutar varias veces alguna tarea hasta que todos los elementos
@@ -183,6 +205,7 @@
 					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 						for i in $( cat items.txt ); do echo -n $i | wc -c; done
 				   </code></pre>
+				   <p>Archivo: <code><a href="./bash-scripts/items.txt" target="_blank">items.txt</a></code> </p>
 				</section>
 				<section>
 					<p><b>Ejercicio</b></p>
@@ -191,14 +214,18 @@
 				</section>
 				<section>
 					<p><b><code>while</code>:</b> act&uacute;a sobre una condici&oacute;n dada. Va a ejecutar lo que est&aacute;
-					dentro de <code>do</code> y <code>done</code>, hasta que la condici&oacute;n de paro sea verdadera.</p>
+                    dentro de <code>do</code> y <code>done</code>, hasta que la condici&oacute;n de paro sea verdadera.</p>
+                    <p>Script: <code><a href="./bash-scripts/13-while.sh" target="_blank">13-while.sh</a></code> </p>
 				</section>
 				<section>
 					<p><b><code>until</code>:</b> opuesto al <code>while</code>. El c&oacute;digo dentro de <code>do</code> y <code>done</code>
-					se ejecuta mientras que la condici&oacute;n sea falsa.</p>
+                    se ejecuta mientras que la condici&oacute;n sea falsa.</p>
+					<p>Script: <code><a href="./bash-scripts/14-until.sh" target="_blank">14-until.sh</a></code> y <br/>
+						 <code><a href="./bash-scripts/15-backup-loop.sh" target="_blank">15-backup-loop.sh</a></code></p>
 				</section>
 				<section>
-					<p><b>Operaciones matem&aacute; en la terminal</b>: siempre con doble par&eacute;ntesis </p>
+                    <p><b>Operaciones matem&aacute;ticas en la terminal</b></p>
+                    <p> siempre con doble par&eacute;ntesis </p>
 					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
 						x=15;y=8
 						z=$(( $x * $y ))
@@ -223,7 +250,7 @@
 						let c++
 						let c--
 					</code></pre>
-					
+					<p>Script: <code><a href="./bash-scripts/16-backup-let.sh" target="_blank">16-backup-let.sh</a></code></p>
 				</section>
 				<section>
 					<p>Finalmente, tenemos el comando <code>bc</code>, que es toda una calculadora</p>
