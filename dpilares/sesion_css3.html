@@ -310,7 +310,7 @@
                             }
                           }
                     </code></pre>
-                    <p>Ejemplo de W3Schools: <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_styles"
+                    <p>Ejemplo de W3Schools: <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_mediaquery"
                     target="_blank">Cambio de color de fondo</a></p>
                 </section>
                 <section class="muchotexto">
@@ -487,6 +487,158 @@
                         </code></pre>
                         <p>Ejemplo de W3Schools: <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_flexbox_image_gallery"
                             target="_blank">Galer&iacute;a de Im&aacute;genes</a></p>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Grid Layout</b></p>
+
+                    <p>Permite crear p&aacute;ginas web basadas en filas y columnas 
+                        (2 dimensiones), sin tener que hacer uso de floats y posicionamiento.
+                    </p>
+                    <img src="img/web/grid_gaps.png" width="500">
+                </section>
+                <section>
+
+                    <div class="grid-container">
+                        <div>1</div>
+                        <div>2</div>
+                        <div>3</div>  
+                        <div>4</div>
+                        <div>5</div>
+                        <div>6</div>  
+                        <div>7</div>
+                        <div>8</div>
+                        <div>9</div>  
+                    </div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>                                               
+                        .grid-container {
+                            display: grid;
+                            grid-template-columns: 50px auto auto;
+                            background-color: darkcyan;
+                            padding: 10px;
+                            grid-column-gap: 80px;
+                            grid-row-gap: 20px;
+                        }
+                        
+                        .grid-container > div {
+                            background-color: salmon;
+                            border: 1px solid grey;
+                            padding: 20px;
+                            font-size: 30px;
+                            text-align: center;
+                            color: white
+                        }
+                    </code></pre>
+                </section>
+                <section>
+                    <div class="grid-container2">
+                        <div class="item1">1</div>
+                        <div>2</div>
+                        <div>3</div>  
+                        <div>4</div>
+                        <div>5</div>
+                        <div>6</div>  
+                    </div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>                                                    
+                        .grid-container2 {
+                            display: grid;
+                            grid-template-columns: auto auto auto;
+                            background-color: darkcyan;
+                            padding: 10px;
+                            grid-gap: 20px;
+                        }
+                        
+                        .grid-container2 > div {
+                            background-color: salmon;
+                            border: 1px solid grey;
+                            padding: 15px;
+                            font-size: 30px;
+                            text-align: center;
+                            color: white
+                        }
+
+                        .item1 {
+                            grid-column-start: 1;
+                            grid-column-end: 3;
+                        }
+                    </code></pre> 
+                </section>
+                <section>
+
+                    <div class="grid-container3">
+                        <div>1</div>
+                        <div>2</div>
+                        <div>3</div>  
+                        <div>4</div>
+                        <div>5</div>
+                        <div>6</div>  
+                    </div>
+
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>                                                    
+                        .grid-container3 {
+                            display: grid;
+                            grid-template-columns: 80px 80px 80px;
+                            grid-template-rows: 30px 80px;
+                            height: 250px;
+                            grid-gap: 10px;
+                            background-color:darkcyan;
+                            padding: 10px;
+                            justify-content: space-around;
+                            align-content: space-evenly;
+                          }
+                          
+                          .grid-container3 > div {
+                            background-color: salmon;
+                            text-align: center;
+                            color: white;
+                            font-size: 24px;
+                          }                        
+                    </code></pre>
+                </section>
+                <section>
+                    <div class="grid-container4">
+                        <div class="item1">1</div>
+                        <div class="item2">2</div>
+                        <div class="item3">3</div>  
+                        <div class="item4">4</div>
+                        <div class="item5">5</div>
+                        <div class="item6">6</div>
+                        <div class="item7">7</div>
+                        <div class="item8">8</div>  
+                        <div class="item9">9</div>
+                        <div class="item10">10</div>
+                    </div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>                                                    
+                        .item1 {
+                            grid-area: 2 / 1 / span 2 / span 3;
+                        }
+                        
+                        .item10 {
+                            grid-row: 1/4;
+                        }                  
+                    </code></pre>
+                </section>
+                <section>
+                    <p><b>Grid + media queries</b></p>
+
+                    <div class="grid-container5">
+                        <div class="item1">1</div>
+                        <div class="item2">2</div>
+                        <div class="item3">3</div>  
+                        <div class="item4">4</div>
+                        <div class="item5">5</div>
+                        <div class="item6">6</div>
+                    </div>
+                    <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>                                                    
+                        @media only screen and (max-width: 700px) {
+                            .grid-container5 > .item1 { grid-area: 1 / span 3 / 2 / 4; }
+                            .grid-container5 > .item2 { grid-area: 3 / 3 / 4 / 4; }
+                            .grid-container5 > .item3 { grid-area: 2 / 1 / 3 / 2; }
+                            .grid-container5 > .item4 { grid-area: 2 / 2 / span 2 / 3; }
+                            .grid-container5 > .item5 { grid-area: 3 / 1 / 4 / 2; }
+                            .grid-container5 > .item6 { grid-area: 2 / 3 / 3 / 4; }
+                        }
+                    </code></pre>
+  
                 </section>
 			</div>
 		</div>
