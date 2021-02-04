@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Escuela de Código - San Andrés Tetepilco</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="css/basic.css">
+		<link rel="stylesheet" href="css/css_sesion2.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="img/logoPilares.png" />
+					<p>San Andrés Tetepilco</p>
+					<h2 class="edcodigo">Escuela de código</h2>
+					<p>JS sesi&oacute;n 1</p>
+				</section>
+				<section>
+                    <p><b>¿Por qu&eacute; JavaScript?</b></p>
+                    <ul>
+                        <li><b>HTML:</b> define el contenido de las p&aacute;ginas.</li>
+                        <li><b>CSS:</b> especifica el diseño.</li>
+                        <li><b>JavaScript:</b> para programar el comportamiento de las p&aacute;ginas</li>
+                    </ul>
+                    <p>Java y JavaScript son dos cosas completamente diferentes, no las confundan.</p>
+                </section>
+                <section>
+                    <p><b>¿Y qu&eacute; podemos programar sobre el comportamiento de las
+                        p&aacute;ginas?
+                    </b></p>
+                    <ul class="fragment">
+                        <li>Cambiar el contenido de HTML.
+                             <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_inner_html" target="_blank">Ejemplo</a></li>
+                        <li>Cambiar valores de atributos de HTML.
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb" target="_blank">Ejemplo</a>
+                        </li>
+                        <li>Cambiar estilos de CSS. 
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_style" target="_blank">Ejemplo</a>
+                        </li>
+                        <li>Esconder/mostrar elementos. 
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_hide" target="_blank">Ejemplo1</a> y
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_show" target="_blank">Ejemplo2</a>
+                        </li>
+                    </ul>
+                    <p class="fragment"><b>¿Tenemos que instalar algo?</b></p>
+                </section>
+                <section class="muchotexto"> 
+                    <p class="left">Igual que con CSS, hay diferentes maneras de agregar scripts.</p>
+                    <ul>
+                        <li>En l&iacute;nea. En atributos como <code>onclick</code> en los
+                        botones.</li>
+                        <li>C&oacute;digo dentro de las etiquetas 
+                            <code>	&#60;script&#62; &#60;script&#62; </code></li>
+                        <li>Exportando un archivo <code>.js</code> en la etiqueta 
+                            <code>	&#60;script&#62; &#60;script&#62; </code></li>
+`                    </ul>
+                    <p>Puede ponerse en el <code>&#60;head&#62;</code> o en el 
+                        <code>&#60;body&#62;</code></p>
+                </section>
+                <section class="muchotexto">
+                    <p class="left">Podemos mostrar resultados o datos de diferentes formas:</p>
+                    <ul>
+                        <li>Dentro de elementos de HTML con <code>innerHTML</code>.
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_output_dom" target="_blank">Ejemplo</a>
+                        </li>
+                        <li>En el documento de HTML con <code>document.write()</code>
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_output_write" target="_blank">Ejemplo</a>
+                        </li>
+                        <li>En una ventana de alerta con <code>window.alert()</code>
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_output_alert" target="_blank">Ejemplo</a>
+                        </li>
+                        <li>En la consola del navegador con <code>console.log()</code>
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_output_console" target="_blank">Ejemplo</a>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <p>En general, un programa es una lista de <b>instrucciones</b>
+                         ejecutadas por la computadora.</p>
+                        
+                    <p> En un lenguaje de programaci&oacute;, las instrucciones se llaman 
+                        <b>declaraciones.</b>
+                    </p>
+                    <p>Las declaraciones se componen de: valores, operadores, expresiones, palabras reservadas
+                        y comentarios.
+                    </p>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Sintaxis:</b> Las reglas que componen un lenguaje. Describen 
+                    las declaraciones v&aacute;lidas.</p>
+                    <p><b>Valores</b></p>
+                    <p class="left">Hay dos tipos:</p>
+                    <ul class="left">
+                        <li><b>Literales</b>. Valores fijos</li>
+                    </ul>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        /* Números */
+                        10
+                        8.340
+                        /* Strings */
+                        "Hola, con comillas dobles"
+                        'Hola, con comillas simples'
+                    </code></pre>
+                </section>
+                <section>
+                    <ul class="left">
+                        <li><b>Literales</b>. Valores fijos</li>
+                        <li><b>Variables</b>. Guardan datos que pueden cambiar</li>
+                    </ul>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        var x; // Declaración
+                        var a,b;
+                        a = 10; // Asignación
+                        b = 35;
+                        x = a * b;
+                    </code></pre>
+                    <p>¿Qu&eacute; <b>identificadores</b> de variables son v&aacute;lidos?</p>
+                </section>
+                <section>
+                    <p>Antes de 2015, para declarar variables s&oacute;lamente se usaba 
+                        <code>var</code>, ahora se utiliza <code>let</code> y
+                        <code>const</code>
+                    </p>
+                    <p>La diferencia entre <code>var</code> y <code>let</code> es su <b>scope</b>,
+                        d&oacute;nde est&aacute;n disponibles las variables para ser usadas.
+                    </p>
+                    <p>Por ahora: utilizar <code>const</code> si es una variable que no va a 
+                        modificarse, y <code>let</code> en otros casos.</p>
+                    <p>Explicaci&oacute;n: 
+                        <a href="https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/" target="_blank">Ingl&eacute;s</a>
+                        y <a href="https://platzi.com/blog/la-diferencia-entre-let-y-var/" target="_blank">Español</a>
+                    </p>
+                </section>
+                <section>
+                    <p><b>Operadores</b></p>
+                    <div style="width:50%;float:left;">
+                    <table>
+                        <p class="left">Aritm&eacute;ticos</p>
+                        <tr>
+                            <td><code>+</code></td><td><code>Suma</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>-</code></td><td><code>Resta</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>*</code></td>
+                            <td><code>Multiplicaci&oacute;n</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>/</code></td>
+                            <td><code>Divisi&oacute;n</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>**</code></td>
+                            <td><code>Exponencial</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>%</code></td>
+                            <td><code>M&oacute;dulo</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>--</code></td>
+                            <td><code>Decremento</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>++</code></td>
+                            <td><code>Incremento</code></td>
+                        </tr>
+                    </table>
+                    </div>
+                    <div style="width:50%;float:left;">
+                        <p class="left">De asignaci&oacute;n</p>
+                        <table>
+                            <tr>
+                                <td><code>=</code></td>
+                                <td><code>x = y</code></td>
+                                <td><code>x = y</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>+=</code></td>
+                                <td><code>x += y</code></td>
+                                <td><code>x = x + y</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>-=</code></td>
+                                <td><code>x -= y</code></td>
+                                <td><code>x = x - y</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>*=</code></td>
+                                <td><code>x *= y</code></td>
+                                <td><code>x = x * y</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>/=</code></td>
+                                <td><code>x /= y</code></td>
+                                <td><code>x = x / y</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>%=</code></td>
+                                <td><code>x %= y</code></td>
+                                <td><code>x = x % y</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>**=</code></td>
+                                <td><code>x **= y</code></td>
+                                <td><code>x = x ** y</code></td>
+                            </tr>
+                        </table>
+                        </div>
+                </section>
+            </div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
