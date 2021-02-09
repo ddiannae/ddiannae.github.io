@@ -143,7 +143,7 @@
                 </section>
                 <section>
                     <p><b>Operadores</b></p>
-                    <div style="width:50%;float:left;">
+                    <div style="width:30%;float:left;">
                     <table>
                         <p class="left">Aritm&eacute;ticos</p>
                         <tr>
@@ -178,9 +178,14 @@
                         </tr>
                     </table>
                     </div>
-                    <div style="width:50%;float:left;">
+                    <div style="width:70%;float:left;">
                         <p class="left">De asignaci&oacute;n</p>
                         <table>
+                            <tr>
+                                <th>Operador</th>
+                                <th>Ejemplo</th>
+                                <th>Significado</th>
+                            </tr>
                             <tr>
                                 <td><code>=</code></td>
                                 <td><code>x = y</code></td>
@@ -218,6 +223,377 @@
                             </tr>
                         </table>
                         </div>
+                </section>
+                <section>
+                    <p><b>Operadores de comparaci&oacute;n</b></p>
+                    <table>
+                        <tr>
+                            <th>Operador</th>
+                            <th>Descripci&oacute;n</th>
+                        </tr>
+                        <tr>
+                            <td><code>==</code></td>
+                            <td>Igual a</td>
+                        </tr>
+                        <tr>
+                            <td><code>===</code></td>
+                            <td><code>Igual valor e igual tipo</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>!=</code></td>
+                            <td>No igual</td>
+                        </tr>
+                        <tr>
+                            <td><code>!==</code></td>
+                            <td>No igual en valor o tipo</td>
+                        </tr>
+                        <tr>
+                            <td><code>></code></td>
+                            <td>Mayor que</td>
+                        </tr>
+                        <tr>
+                            <td><code><</code></td>
+                            <td>Menor que</td>
+                        </tr>
+                        <tr>
+                            <td><code>>=</code></td>
+                            <td>Mayor o igual que</td>
+                        </tr>
+                        <tr>
+                            <td><code><=</code></td>
+                            <td>Menor o igual que</td>
+                        </tr>
+                    </table>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Tipos de datos</b></p>
+                    <p class="left">Primitivos</p>
+                    <ul>
+                        <li><b>Strings</b>. Texto <code>"hola"</code></li>
+                        <li><b>N&uacute;meros</b>. Enteros, flotantes.</li>
+                        <li><b>Booleanos</b>. Para operaciones l&oacute;gicas.
+                        <code>true</code>, <code>false</code></li>
+                        <li><b>Symbol</b>. Identificadores, nuevos. 
+                            <a href="https://latteandcode.medium.com/javascript-conoces-el-tipo-symbol-197c8338924a">Explicaci&oacute;n</a>.</li>
+                        <li><b>BigInt</b>. Nuevos, n&uacute;meros grandes.</li>
+                        <li><b><code>undefined</code></b>. para variables sin valores.</li>
+                    </ul>
+                </section>
+                <section class="muchotexto">
+                    <p class="left">Primitivo estructural. Especial</p>
+                    <ul>
+                        <li><code>null</code>. Algo que no existe, aunque en s&iacute; su tipo
+                        de datos es un objeto</li>
+                    </ul>
+                    <p class="left">No primitivos. Estructurales(?). Complejos (?)</p>
+                    <ul>
+                        <li><b>Funciones</b>. No datos, sino c&oacute;digo. <code>x => x * 2</code></li>
+                        <li><b>Objetos</b>. Agrupan datos y c&oacute;digo. <code>{}</code></li>
+                    </ul>
+                    <p> Todo lo dem&aacute;s son objetos. Checamos los tipos de datos con <code>tipeof</code>
+                    <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_datatypes_typeof_primitive">
+                    Elemplo 1</a> - 
+                    <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_datatypes_typeof_complex">
+                        Elemplo 2</a></p>
+                </section>
+                <section>
+                    <p>Valores inmutables</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let texto = "casa";
+                        texto[0]; // "c"
+                        texto = "hola";
+                        texto[0] = "b";
+                        texto[0] // ¿Qué imprime? hola? bola?
+                    </code></pre>
+                    <p>Las variables no son valores, apuntan a valores</p>        
+                    <p>El lado derecho de la asignaci&oacute;n de variables es una expresi&oacute;n</p>
+                </section>
+                <section>
+                    <p><b>Funciones</b></p>
+                    <p class="left">Definici&oacute;n</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        function productoDosNumeros(num1, num2) {
+                            return num1*num2;
+                        }
+                    </code></pre>
+                    <ul>
+                        <li>Palabra reservada <code>function</code>.</li>
+                        <li>Un nombre + par&eacute;ntesis.</li>
+                        <li>Par&aacute;metros opcionales separados por comas.</li>
+                        <li>C&oacute;digo a ejecutarse entre <code>{}</code>.</li>
+                        <li>La expresi&oacute; de <code>return</code> concluye la ejecuci&oacute;n.</li>
+                    </ul>
+                </section>
+                <section>
+                    <p class="left">Invocaci&oacute;n</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let x = 8;
+                        let z = productoDosNumeros(x, 3);
+                    </code></pre>
+                    <ul>
+                        <li>El c&oacute;digo se ejecuta hasta que se la funci&oacute;n se 
+                            invoca.
+                        </li>
+                        <li>Al invocar se pasan los <b>valores</b> de las variables.</li>
+                        <li>Las variables dentro de la funci&oacute;n, son 
+                            <b>locales</b>.
+                        </li>
+                    </ul>
+                    <p><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_function_variable" target="_blank">Ejemplo</a></p>
+                </section>
+                <section>
+                    <p><b>Objetos</b></p>
+                    <p>Una abstracci&oacute;n de los objetos en la vida real. Tienen <b>propiedades</b> y 
+                    <b>m&eacute;todos.</b></p>
+                    <p>Ejemplos: avi&oacute;n, horno de microondas. ¿Otros?</p>
+                    <p class="left">Se definan y crean objetos con una object literal </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let car = {type:"Fiat", model:"500", color:"white"};
+                    </code></pre>
+                    <p>Los pares nombre:valor son las propiedades.</p>
+                </section>
+                <section>
+                    <p>Los m&eacute;todos son acciones que se pueden ejecutar en los objetos y 
+                        se guardan en propiedades mediante definiciones de funciones. 
+                    </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let car = {
+                            type:"Fiat", 
+                            model:"500", 
+                            color:"white",
+                            descripcion: function(){
+                                return this.type + ". Modelo: " + this.model + 
+                                ". Color: " + this.color;
+                            }
+                        };  
+                    </code></pre>
+                    <p><code>this</code> hace referencia al objeto que es dueño de la funci&oacute;n</p>
+                </section>
+                <section>
+                    <p> As&iacute; accedemos a las propiedades y m&eacute;todos de los objetos:</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        car.type;
+                        car["model"];
+                        car.descripcion();
+                    </code></pre>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        nombreObjeto.propiedad;
+                        nombreObjeto["propiedad"];
+                        nombreObjeto.metodo();
+                    </code></pre>
+                </section>
+                <section>
+                    <p><b>Eventos</b></p>
+                    <p>Algo que les pasa a los elementos de HTML o algo que los usuarios hacen. 
+                        Por ejemplo: </p>
+                    <ul>
+                        <li>Cuando una p&aacute;gina de HTML termina de cargarse.</li>
+                        <li>Cuando cambia el valor de un input.</li>
+                        <li>Cuando un usuario da click en un bot&oacute;n.</li>
+                    </ul>
+                    <p>Podemos ejecutar c&oacute;digo de JavaScript cuando un evento ocurre. 
+                        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_events1" target="_blank">Ejemplo</a>
+                    </p>
+                </section>
+                <section>
+                    <p class="left">Algunos eventos comunes de HTML.</p>
+                    <table>
+                        <tr>
+                            <td><code>onchange</code></td>
+                            <td>Un elemento cambia.</td>
+                        </tr>
+                        <tr>
+                            <td><code>onclick</code></td>
+                            <td>El usuario da click en un elemnto.</td>
+                        </tr>
+                        <tr>
+                            <td><code>onmouseover</code></td>
+                            <td>El usuario mueve el cursor sobre en un elemnto.</td>
+                        </tr>
+                        <tr>
+                            <td><code>onmouseout</code></td>
+                            <td>El usuario quita el cursor de en un elemnto.</td>
+                        </tr>
+                        <tr>
+                            <td><code>onkeydown</code></td>
+                            <td>El usuario pulsa una tecla.</td>
+                        </tr>
+                        <tr>
+                            <td><code>onload</code></td>
+                            <td>El navegador termina de cargar la p&aacute;gina.</td>
+                        </tr>
+                    </table>
+                    <p>Hay muchos m&aacute;s: 
+                        <a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank">Eventos</a>
+                    </p>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Strings</b></p>
+                    <p class="left">Podemos tener los dos tipos de comillas en un string.</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                       "El narrador dijo: 'La historia comienza'"
+                    </code></pre>
+                    <p class="left">O utilizar caracteres de escape.</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        'It\'s a dog'
+                     </code></pre>
+                    <p class="left">Hay otras secuencias v&aacute;lidas:</p>
+                    <ul>
+                        <li><b><code>\b</code></b>. Diagonal invertida.</li>
+                        <li><b><code>\n</code></b>. Nueva l&iacute;nea.</li>
+                        <li><b><code>\t</code></b>. Tabulador.</li>
+                    </ul>
+                </section> 
+                <section class="muchotexto">
+                    <p class="left">M&eacute;todos y propiedades de los strings. Aunque son tipos 
+                        nativos, JavaScript tambi&eacute;n los trata como objetos cuando se accede a sus 
+                        propiedades y m&eacute;todos.
+                    </p>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_string_length" target="_blank">
+                            <code>lenght</code></a>. </li>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_string_indexof" target="_blank">
+                        <code>indexOf()</a></code> - 
+                        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_string_lastindexof" target="_blank">
+                        <code>lastIndexOf()</code> </a>
+                        - <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_string_search_locate" target="_blank">
+                        <code>search()</code></a>.</li>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_string_slice" target="_blank">
+                        <code>slice(inicio, fin)</code></a> -
+                        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_string_substring" target="_blank">
+                            <code> substring(inicio, fin)</code></a> - 
+                            <code> substr(inicio, tamaño)</code>.</li>
+                        <li><code>replace()</code>.</li>
+                        <li><code>toUpperCase()</code> - <code>toLowerCase()</code>.</li>
+                        <li><code>concat()</code>.</li>
+                        <li><code>trim()</code>.</li>
+                    </ul>
+                    <p class="left">Todos los m&eacute;todos regresan un nuevo string,
+                        sin modificar el original.</p>
+                </section>
+                <section>
+                    <p><b>Numbers</b></p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let x = 3.14;
+                        let y = 123e5;
+                        let z = 123e-5;
+                    </code></pre>
+                    <p class="left">15 d&iacute;gitos para enteros, 17 d&iacute;gitos para 
+                        decimales.
+                    </p>
+                    <p class="left"> Sumar un n&uacute;mero y un string  da un string.</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let x = 10;
+                        let y = "20";
+                        let z = x + y;  //1020
+                    </code></pre> 
+                    <p class="left"> En otras operaciones se intenta convertir a n&uacute;mero.</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let x = "100";
+                        let y = "10";
+                        let z = x * y;       // 1000 
+                    </code></pre> 
+                </section>
+                <section class="muchotexto">
+                    <p class="left">Tambi&eacute;n tienen m&eacute;todos que nos ayudan
+                        a manejarlos.</p>
+                    <ul>
+                        <li><code>toString()</code></li>
+                        <li><code>toExponential()</code></li>
+                        <li><code>toFixed()</code> - <code>toPrecision()</code></li>
+                        <li>Conversiones: <code>Number()</code> - <code>parseInt()</code>
+                            - <code>parseFloat()</code>. Son m&eacute;todos globales.</li>
+                    </ul>
+                    <p>Las propiedades de los n&uacute;meros pertecen al objeto 
+                        <code>Number</code></p>
+                    <p>Infinity</p>
+                </section>
+                <section>
+                    <p><b>Arreglos</b></p>
+                    <p> Los arreglos son variables especiales que nos permiten guardar m&uacute;ltiples
+                        valores.
+                    </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let arreglo = [item1, item2, ...]; 
+                    </code></pre> 
+                    <p>Los elementos pueden ser de diferentes tipos y accedemos a cada uno
+                        utilizando <b>&iacute;ndices</b>. </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let frutas_favoritas = ["mango", "fresa", "guayaba", "mandarina"]; 
+                        frutas_favoritas[0] // "mango"
+                        frutas_favoritas[2] = "maracuya"
+                        frutas_favoritas[frutas_favoritas.legth - 1]
+                    </code></pre> 
+                </section>
+                <section class="muchotexto">
+                    <p><b>Arreglos y Objetos</b></p>
+                    <ul>
+                        <li>Los <b>arreglos</b> usan &iacute;ndices <b>num&eacute;ricos</b></li>
+                        <li>Los <b>objetos</b> usan &iacute;ndices con <b>nombres</b></li>
+                    </ul>
+                    <p>Si quieres acceder a los elementos mediante strings, utiliza objetos.</p>
+                    <p>Si quieres acceder a los elementos mediante n&uacute;meros, utiliza arreglos.</p>
+                    <p><code>typeof</code> de un arreglo regresa <code>object</code>. Podemos utilizar
+                    la funci&oacute;n <code>Array.isArray()</code> en nuevos navegadores.</p>
+                </section>
+                <section>
+                    <p class="left">Algunos de sus m&eacute;todos:</p>
+                    <ul>
+                        <li>Imprimir: <code>toString()</code> - <code>join()</code></li>
+                        <li>Quitar/añadir 1 elemento: <code>pop()</code> - <code>push()</code>
+                        - <code>shift()</code> - <code>unshift(item)</code></li>
+                        <li>Quitar/añadir varios elementos: 
+                            <code>splice(donde, cuantos, [items])</code></li>
+                        <li>Uni&oacute;n: <code>merge(arr1, arr2, ..)</code></li>
+                        <li>Obtener varios elementos: <code>slice(index, [index2])</code></li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li>Ordernar alfab&eacute;ticamente: <code>sort()</code> - <code>
+                            reverse()
+                        </code></li>
+                        <li>Ordernar num&eacute;rico: utilizamos una funci&oacute;n de 
+                            comparaci&oacute;n</li>
+                            <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                                sort(function(a, b){return a - b})
+                            </code></pre> 
+                        <li>No hay un m&eacute;todo para obtener min y max. ¿C&oacute;mo 
+                            podemos hacerlo?
+                        </li>
+                        <li>Para ordenar arreglos de objetos de acuerdo a una propiedad:</li>
+                        <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                            sort(function(a, b){return a.propiedad - b.propiedad})
+                        </code></pre> 
+                    </ul>
+                </section>
+                <section class="muchotexto">
+                    <p class="left">Los m&eacute;todos de iteraci&oacute;n operan sobre cada uno de los
+                        elementos de un arreglo.
+                    </p>
+                    <ul>
+                        <li> <code>forEach()</code>. Llama a una funci&oacute;n por cada elemento
+                    del arreglo. Recibe el valor, el &iacute;ndice y el arreglo.</li>
+                    <li><code>map()</code>. Crea un nuevo arreglo al llamar la funci&oacute;n en 
+                    cada elemento. Recibe: valor, &iacute;ndice y arreglo.</li>
+                    <li><code>filter()</code>. Crea un nuevo arreglo con los elementos que 
+                        pasan una comparaci&oacute;n. Recibe: valor, &iacute;ndice y arreglo.</li>
+                    <li><code>reduce()</code>. Ejecuta una funci&oacute;n para reducir los 
+                        elementos a un solo valor, izq a der. Recibe: total (valor anterior o inicial),
+                        valor, &iacute;ndice y arreglo. <code>reduceRight()</code> der a izq</li>
+                    </ul>
+                </section>
+                <section class="muchotexto">
+                    <ul>
+                        <li> <code>every()</code> Regresa un <code>boolean</code> que indica si todos los elementos
+                    pasan una comparaci&oacute;n.</li>
+                        <li> <code>some()</code> Regresa un <code>boolean</code> que indica si algunos de los elementos
+                    pasan una comparaci&oacute;n</li>
+                        <li> <code>indexOf()</code> - <code>lastindexOf()</code>. La primera y &uacute;ltima 
+                        ocurrencia de un valor en un arreglo. </li>
+                        <li> <code>find()</code> - <code>findIndex()</code>. El primer valor y el primer 
+                            &iacute;ndice que pasan una comparaci&oacute;n. </li>
+                    </ul>
                 </section>
             </div>
 		</div>
