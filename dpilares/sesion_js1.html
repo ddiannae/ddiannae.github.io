@@ -274,7 +274,7 @@
                         <li><b>Booleanos</b>. Para operaciones l&oacute;gicas.
                         <code>true</code>, <code>false</code></li>
                         <li><b>Symbol</b>. Identificadores, nuevos. 
-                            <a href="https://latteandcode.medium.com/javascript-conoces-el-tipo-symbol-197c8338924a">Explicaci&oacute;n</a>.</li>
+                            <a href="https://latteandcode.medium.com/javascript-conoces-el-tipo-symbol-197c8338924a" target="_blank">Explicaci&oacute;n</a>.</li>
                         <li><b>BigInt</b>. Nuevos, n&uacute;meros grandes.</li>
                         <li><b><code>undefined</code></b>. para variables sin valores.</li>
                     </ul>
@@ -291,9 +291,9 @@
                         <li><b>Objetos</b>. Agrupan datos y c&oacute;digo. <code>{}</code></li>
                     </ul>
                     <p> Todo lo dem&aacute;s son objetos. Checamos los tipos de datos con <code>tipeof</code>
-                    <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_datatypes_typeof_primitive">
+                    <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_datatypes_typeof_primitive" target="_blank">
                     Elemplo 1</a> - 
-                    <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_datatypes_typeof_complex">
+                    <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_datatypes_typeof_complex" target="_blank">
                         Elemplo 2</a></p>
                 </section>
                 <section>
@@ -494,19 +494,116 @@
                         let z = x * y;       // 1000 
                     </code></pre> 
                 </section>
+                <section>
+                    <p>Hay que tener cuidado con la precisi&oacute;n</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let x = 0.2 + 0.1; //  0.30000000000000004 
+                        let x = (0.2 * 10 + 0.1 * 10) / 10; // 0.3 
+                    </code></pre> 
+                    <p>Hay algunos valores especiales, como</p>
+                    <ul>
+                        <li><code>NaN</code>: Not a number.</li>
+                        <li><code>Infinity</code>:N&uacute;meros fuera del rango.</li>
+                    </ul>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let x = 890/"casa"; // NaN
+                        isNaN(x); // true
+                        typeof NaN; //number
+                        let z = 2/0; // Infinity
+                        typeof Infinity; //number
+                    </code></pre> 
+                </section>
                 <section class="muchotexto">
                     <p class="left">Tambi&eacute;n tienen m&eacute;todos que nos ayudan
                         a manejarlos.</p>
                     <ul>
-                        <li><code>toString()</code></li>
-                        <li><code>toExponential()</code></li>
-                        <li><code>toFixed()</code> - <code>toPrecision()</code></li>
-                        <li>Conversiones: <code>Number()</code> - <code>parseInt()</code>
-                            - <code>parseFloat()</code>. Son m&eacute;todos globales.</li>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_number_tostring" target="_blank">
+                        <code>toString()</code></a></li>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_number_toexponential" target="_blank">
+                        <code>toExponential()</code></a></li>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_number_tofixed" target="_blank">
+                        <code>toFixed()</code></a> - 
+                        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_number_toprecision" target="_blank">
+                        <code>toPrecision()</code></a></li>
+                        <li>Conversiones: <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_global_number" target="_blank">
+                        <code>Number()</code></a> - 
+                        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_global_parseint" target="_blank">
+                            <code>parseInt()</code></a>
+                            - <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_global_parsefloat" target="_blank">
+                            <code>parseFloat()</code></a>. Son m&eacute;todos globales.</li>
                     </ul>
                     <p>Las propiedades de los n&uacute;meros pertecen al objeto 
-                        <code>Number</code></p>
-                    <p>Infinity</p>
+                        <code>Number</code>. Son: <code>MAX_VALUE</code>, <code>MIN_VALUE</code>,
+                        <code>POSITIVE_INFINITY</code>, <code>NEGATIVE_INFINITY</code>, 
+                        <code>NaN</code>
+                    </p>
+                </section>
+                <section>
+                    <p><b>Dates</b></p>
+                    <p>Para las fechas se utiliza el objeto <code>Date</code>. Hay varias 
+                    formas de crear fechas</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let d = new Date(); // ahora
+                        let d1 = new Date(2021, 1, 18, 9, 50, 30, 0); // año, mes, día, hora, minuto, segundo y milisegundo 
+                        let d2 = new Date(100000000000); // milisegundos desde el 1 de enero de 1970
+                        let d3 =  new Date("January 21, 2021 10:13:00"); // Formato en string
+                    </code></pre> 
+                </section>
+                <section>
+                    <p>Hay tres formatos principales:</p>
+                    <ul>
+                        <li>ISO. International Standard.</li>
+                        <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                            let d = new Date("2021-02-21");
+                            let d1 = new Date("2021-02");
+                            let d2 = new Date("2021-02-21T12:00:00Z");
+                        </code></pre> 
+                        <li>Formato corto.</li>
+                        <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                            let d = new Date( "02/21/2021"); // Mes primero
+                            //let d = new Date("2021-2-21"); NO!
+                            //let d = new Date("21-02-2021"); NO!
+                        </code></pre> 
+                        <li>Formato largo. </li>
+                        <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                            let d = new Date("Feb 21 2021"); 
+                            let d1 = new Date("21 Feb 2021"); 
+                        </code></pre> 
+                    </ul>
+                </section>
+                <section class="muchotexto">
+                    <p><b>M&eacute;todos</b></p>
+                    <p class="left">Mostrar fecha</p>
+                    <ul  class="left">
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_tostring" target="_blank">
+                            <code>toString()</code></a> - 
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_todatestring" target="_blank">
+                                <code>toDateString()</code></a></li>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_toutcstring" target="_blank">
+                                    <code>toUTCString()</code></a>- 
+                                    <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_toisostring" target="_blank">
+                                        <code>toISOString()</code></a> </li>
+                    </ul>
+                    <p class="left">Obtener/establecer valores</p>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_gettime" target="_blank">
+                            <code>getTime()</code></a>. Milisegundos desde 1 de enero de 1970</li>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_getHours" target="_blank">
+                                <code>getHours()</code></a>- <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_getMinutes" target="_blank">
+                                    <code>getMinutes()</code></a> - <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_getSeconds" target="_blank">
+                                        <code>getSeconds()</code></a></li>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_getdate" target="_blank">
+                                            <code>getDate()</code></a>. D&iacute;a del mes (1-31)</li>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_getday" target="_blank">
+                                <code>getDay()</code></a>. D&iacute;a de la semana (0-6)</li>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_getmonth" target="_blank">
+                            <code>getMonth()</code></a>.</li>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_date_getfullyear" target="_blank">
+                                    <code>getFullYear()</code></a>.</li>
+                        <li>Todos tienen su contraparte de <a href="https://www.w3schools.com/js/js_date_methods_set.asp" target="_blank">
+                            <code>set</code></a></li>
+                    </ul>
+                    
                 </section>
                 <section>
                     <p><b>Arreglos</b></p>
