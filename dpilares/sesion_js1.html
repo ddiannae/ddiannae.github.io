@@ -633,34 +633,62 @@
                     <p><code>typeof</code> de un arreglo regresa <code>object</code>. Podemos utilizar
                     la funci&oacute;n <code>Array.isArray()</code> en nuevos navegadores.</p>
                 </section>
-                <section>
+                <section class="muchotexto">
+                    <ul>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_change_add" target="_blank">
+                        <code>length</code></a>. Propiedad que guarda el tamaño del arreglo.</li>
+                    </ul>
                     <p class="left">Algunos de sus m&eacute;todos:</p>
                     <ul>
-                        <li>Imprimir: <code>toString()</code> - <code>join()</code></li>
-                        <li>Quitar/añadir 1 elemento: <code>pop()</code> - <code>push()</code>
-                        - <code>shift()</code> - <code>unshift(item)</code></li>
-                        <li>Quitar/añadir varios elementos: 
-                            <code>splice(donde, cuantos, [items])</code></li>
-                        <li>Uni&oacute;n: <code>merge(arr1, arr2, ..)</code></li>
-                        <li>Obtener varios elementos: <code>slice(index, [index2])</code></li>
+                        <li>Imprimir: <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_tostring" target="_blank">
+                        <code>toString()</code></a> - 
+                        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_join" target="_blank">
+                            <code>join()</code></a></li>
+                        <li>Quitar/añadir 1 elemento: <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_pop" target="_blank">
+                        <code>pop()</code></a> - 
+                        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_push" target="_blank">
+                            <code>push()</code></a>
+                        - 
+                        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_shift" target="_blank">
+                            <code>shift()</code></a> - 
+                        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_unshift" target="_blank">
+                            <code>unshift(item)</code></a></li>
+                        <li>Añadir/Quitar varios elementos: 
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_splice_return" target="_blank">
+                            <code>splice(donde, cuantos, items)</code></a> - 
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_remove" target="_blank">
+                            <code>splice(donde, cuantos)</code></a></li>
+                        <li>Uni&oacute;n:
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_concat" target="_blank">
+                        <code>concat(arr1, arr2, ..)</code> </a></li>
+                        <li>Obtener varios elementos: 
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_slice1" target="_blank">
+                            <code>slice(index)</code></a> - 
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_slice" target="_blank">
+                                <code>slice(index, index1)</code></a>
+                        </li>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_delete" target="_blank">
+                        delete array[index]</a>. Deja huecos en los arreglos.</li>
                     </ul>
                 </section>
                 <section>
                     <ul>
-                        <li>Ordernar alfab&eacute;ticamente: <code>sort()</code> - <code>
+                        <li>Ordernar alfab&eacute;ticamente: <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort" target="_blank">
+                        <code>sort()</code></a> - 
+                        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_sort_reverse" target="_blank"><code>
                             reverse()
-                        </code></li>
+                        </code></a></li>
                         <li>Ordernar num&eacute;rico: utilizamos una funci&oacute;n de 
                             comparaci&oacute;n</li>
                             <pre><code class="language-javascript hljs" data-trim data-line-numbers>
-                                sort(function(a, b){return a - b})
+                                .sort(function(a, b){return a - b})
                             </code></pre> 
                         <li>No hay un m&eacute;todo para obtener min y max. ¿C&oacute;mo 
                             podemos hacerlo?
                         </li>
                         <li>Para ordenar arreglos de objetos de acuerdo a una propiedad:</li>
                         <pre><code class="language-javascript hljs" data-trim data-line-numbers>
-                            sort(function(a, b){return a.propiedad - b.propiedad})
+                            .sort(function(a, b){return a.propiedad - b.propiedad})
                         </code></pre> 
                     </ul>
                 </section>
@@ -669,28 +697,135 @@
                         elementos de un arreglo.
                     </p>
                     <ul>
-                        <li> <code>forEach()</code>. Llama a una funci&oacute;n por cada elemento
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_foreach" target="_blank">
+                         <code>forEach()</code></a>. Llama a una funci&oacute;n por cada elemento
                     del arreglo. Recibe el valor, el &iacute;ndice y el arreglo.</li>
-                    <li><code>map()</code>. Crea un nuevo arreglo al llamar la funci&oacute;n en 
+                    <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_map" target="_blank">
+                    <code>map()</code></a>. Crea un nuevo arreglo al llamar la funci&oacute;n en 
                     cada elemento. Recibe: valor, &iacute;ndice y arreglo.</li>
-                    <li><code>filter()</code>. Crea un nuevo arreglo con los elementos que 
+                    <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_filter" target="_blank">
+                    <code>filter()</a></code>. Crea un nuevo arreglo con los elementos que 
                         pasan una comparaci&oacute;n. Recibe: valor, &iacute;ndice y arreglo.</li>
-                    <li><code>reduce()</code>. Ejecuta una funci&oacute;n para reducir los 
+                    <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_reduce" target="_blank">
+                    <code>reduce()</code></a>. Ejecuta una funci&oacute;n para reducir los 
                         elementos a un solo valor, izq a der. Recibe: total (valor anterior o inicial),
-                        valor, &iacute;ndice y arreglo. <code>reduceRight()</code> der a izq</li>
+                        valor, &iacute;ndice y arreglo. 
+                        <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_reduce_right" target="_blank">
+                        <code>reduceRight()</code></a> der a izq</li>
                     </ul>
                 </section>
                 <section class="muchotexto">
                     <ul>
-                        <li> <code>every()</code> Regresa un <code>boolean</code> que indica si todos los elementos
+                        <li> <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_every_2" target="_blank">
+                        <code>every()</code></a> Regresa un <code>boolean</code> que indica si todos los elementos
                     pasan una comparaci&oacute;n.</li>
-                        <li> <code>some()</code> Regresa un <code>boolean</code> que indica si algunos de los elementos
+                        <li>  <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_some" target="_blank">
+                        <code>some()</code></a> Regresa un <code>boolean</code> que indica si algunos de los elementos
                     pasan una comparaci&oacute;n</li>
-                        <li> <code>indexOf()</code> - <code>lastindexOf()</code>. La primera y &uacute;ltima 
+                        <li> <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_indexof" target="_blank">
+                         <code>indexOf()</code></a> - 
+                         <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_lastindexof" target="_blank">
+                        <code>lastindexOf()</code></a>. La primera y &uacute;ltima 
                         ocurrencia de un valor en un arreglo. </li>
-                        <li> <code>find()</code> - <code>findIndex()</code>. El primer valor y el primer 
+                        <li> <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_find" target="_blank">
+                        <code>find()</code></a> - <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_array_find_index" target="_blank">
+                        <code>findIndex()</code></a>. El primer valor y el primer 
                             &iacute;ndice que pasan una comparaci&oacute;n. </li>
                     </ul>
+                </section>
+                <section>
+                    <p><b>Booleans</b></p>
+                    <p>Dos valores: <code>true</code> y <code>false</code></p>
+                    <p>Cualquier cosa que tenga un valor es <code>true</code></p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let b1 = Boolean(100);
+                        let b2 = Boolean(3.14);
+                        let b3 = Boolean(-15);
+                        let b4 = Boolean("Hello");
+                        let b5 = Boolean('false');
+                        let b6 = Boolean(1 + 7 + 3.14);
+                    </code></pre> 
+                    <p>Cualquier cosa que no tenga un valor es <code>false</code></p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let b7 = Boolean(0);
+                        let b8 = Boolean("");
+                        let b9 = Boolean(undefined);
+                        let b10 = Boolean(null);
+                        let b11 = Boolean(NaN);
+                    </code></pre> 
+                </section>
+                <section>
+                    <p><b>Condicionales</b></p>
+                    <ul>
+                        <li><code>if</code>. Se ejecuta si la condici&oacute;n se cumple.</li>
+                        <li><code>else</code>. Se ejecuta si la misma confici&oacute;n no se cumple.</li>
+                        <li><code>else if</code>. Se especifica una nueva condici&oacute;n, si la primera 
+                        no se cumple.</li>
+                    </ul>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        if (condition1) {
+                            //  bloque que se ejecuta si condition1 es true
+                        } else if (condition2) {
+                            //  bloque que se ejecuta si condition2 es true
+                        } else {
+                            //  bloque que se ejecuta si condition1 y condition2 son false
+                        }
+                    </code></pre>
+                </section>
+                <section>
+                    <p><code>switch</code>. Se selecciona un bloque de c&oacute;digo para ser ejecutado, 
+                        si es que la expresi&oacute;n es igual al valor de uno de los casos. </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        switch (expression) {
+                            case x:
+                                // se ejecuta si expression es igual a x
+                                break;
+                            case y:
+                                // se ejecuta si expression es igual a y
+                                break;
+                            default:
+                                // se ejecuta si no se cumple ninguna expresión
+                        }
+                    </code></pre>
+                    <p>Ejemplo con <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_switch" target="_blank">
+                    <code>new Date.getDate()</code></a></p>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Ciclos</b></p>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_loop_for_ex" target="_blank">
+                        <code>for</code></a>. Ciclo sobre un bloque de c&oacute;digo por un determinado n&uacute;mero de veces.</li>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_object_for_in" target="_blank">
+                        <code>for/in</code></a>. Ciclo sobre las propiedades de un objeto. </li>
+                        <li> <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_object_for_of" target="_blank">
+                        <code>for/of</code></a>. Ciclo sobre los valores de un objeto iterable. </li>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_while" target="_blank">
+                        <code>while</code></a>. Ciclo sobre un bloque de c&oacute;digo mientras una 
+                        condici&oacute;n sea verdadera. </li>
+                        <li><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_dowhile" target="_blank">
+                        <code>do/while</code></a>. Ciclo que se ejecuta al menos una vez, sobre un 
+                            bloque de c&oacute;digo mientras una 
+                            condici&oacute;n sea verdadera. </li>        
+                    </ul>
+                </section>
+                <section>
+                    <p><code>break</code> permite salirse de un ciclo. Si estamos esperando 
+                    que alguna condici&oacute;n se cumpla, podemos terminar el ciclo en ese momento. </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        for (i = 0; i < 10; i++) {
+                            if (i === 3) { break; }
+                            text += "The number is " + i + "<br>";
+                        } 
+                    </code></pre> 
+                    <p><code>continue</code> rompe una iteraci&oacute;n 
+                        de un ciclo, si alguna condici&oacute;n se cumple. Brinca la iteraci&oacute;n. </p>
+                        <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                            
+                        for (i = 0; i < 10; i++) {
+                            if (i === 3) { continue; }
+                            text += "The number is " + i + "<br>";
+                        }
+                        </code></pre> 
                 </section>
             </div>
 		</div>
