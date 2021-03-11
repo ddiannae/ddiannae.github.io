@@ -1,0 +1,232 @@
+label {
+    color: white;
+    font-size: 30px;
+}
+
+form.bg {
+    background-color:  #73b3c1;
+    padding: 15px 30px;
+    text-align: left;
+    font-size: 18px;
+}
+
+form.bg label,
+form.bg input {
+    display: inline-block;
+    width: 100%;
+}
+
+form.bg label {
+    font-weight: bold;
+}
+
+form.bg input[type="text"],
+form.bg input[type="password"] {
+    padding: 5px;
+    font-size: 18px;
+    box-sizing: border-box;
+    color: #165e6e;
+    border-radius: 0cm;
+    margin: 10px 0px;
+    border: 5px solid mediumpurple;
+    background-color: MistyRose;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+form.bg input[type="text"]:focus, 
+form.bg input[type="password"]:focus {
+    border: 5px solid palevioletred;
+}
+
+form.rb {
+    text-align: left;
+    width: 50%;
+    float: left;
+    color: lightcyan;
+}
+
+form.rb legend {
+    color: lightgrey;
+    font-size: 25px;
+    font-weight: lighter;
+    padding: 0px 15px;
+}
+
+form.rb fieldset {
+    border: 1px solid salmon;
+    padding: 5px 20px;
+    border-radius: 0.2cm;
+} 
+
+form.rb input[type=submit] {
+    background-color: salmon;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+form.rb textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: lightcyan;
+    font-size: 16px;
+    resize: none;
+}
+
+pre.der {
+    float: right;
+    width: 48%;
+    font-size: 18px;
+}
+
+div.flex-container {
+    display: flex;
+    background-color: salmon;
+    flex-direction: row;
+    justify-content: center;
+    height: 200px;
+}
+
+div.flex-container > div {
+    padding: 10px;
+    width: 100px;
+    box-sizing: border-box;
+    margin: 20px;
+    background-color: darkcyan;
+    color: white;
+}
+
+
+div.flex-container2 {
+    display: flex;
+    background-color: salmon;
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 300px;
+}
+
+div.flex-container2 > div {
+    flex-basis: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    background-color: darkcyan;
+    color: white;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 50px auto auto;
+    background-color: darkcyan;
+    padding: 10px;
+    grid-column-gap: 80px;
+    grid-row-gap: 20px;
+  }
+  
+  .grid-container > div {
+    background-color: salmon;
+    border: 1px solid grey;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    color: white
+  }
+  
+.grid-container2 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: darkcyan;
+    padding: 10px;
+    grid-gap: 20px;
+  }
+  
+.grid-container2 > div {
+    background-color: salmon;
+    border: 1px solid grey;
+    padding: 15px;
+    font-size: 30px;
+    text-align: center;
+    color: white
+}
+
+.grid-container2 > .item1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .grid-container3 {
+    display: grid;
+    grid-template-columns: 80px 80px 80px;
+    grid-template-rows: 30px 80px;
+    height: 250px;
+    grid-gap: 10px;
+    background-color:darkcyan;
+    padding: 10px;
+    justify-content: space-around;
+    align-content: space-evenly;
+  }
+  
+.grid-container3 > div {
+    background-color: salmon;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+ 
+.grid-container4 {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 10px;
+    background-color: darkcyan ;
+    padding: 10px;
+}
+  
+  .grid-container4 > div {
+    background-color: salmon;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    color: white;
+  }
+  
+.grid-container4 > .item1 {
+    grid-area: 2 / 1 / span 2 / span 3;
+}
+
+.grid-container4 >  .item10 {
+      grid-row: 1/4;
+}
+
+.grid-container5 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    background-color: darkcyan;
+    padding: 10px;
+}
+  
+.grid-container5 > div {
+    background-color: salmon;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    color: white;
+}
+  
+  @media only screen and (max-width: 700px) {
+    .grid-container5 > .item1 { grid-area: 1 / span 3 / 2 / 4; }
+    .grid-container5 > .item2 { grid-area: 3 / 3 / 4 / 4; }
+    .grid-container5 > .item3 { grid-area: 2 / 1 / 3 / 2; }
+    .grid-container5 > .item4 { grid-area: 2 / 2 / span 2 / 3; }
+    .grid-container5 > .item5 { grid-area: 3 / 1 / 4 / 2; }
+    .grid-container5 > .item6 { grid-area: 2 / 3 / 3 / 4; }
+  }
+  

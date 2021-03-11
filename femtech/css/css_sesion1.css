@@ -1,0 +1,238 @@
+div.earth{
+    background-image: url("../img/web/earth.jpg");
+}
+
+div.repeat{
+    background-image: url("../img/web/gradient.jpeg");
+    background-repeat: repeat-x;
+    background-size: 2px 800px;
+}
+
+p.margen {
+    margin: 80px 50px 10px 20px ;
+    border: 2px solid yellow;
+    font-size: 20px;
+}
+
+p.centrado {
+    margin: 20px auto;
+    width: 200px;
+    border: 2px solid yellow;
+    font-size: 20px;
+}
+
+div.borde {
+    width:500px;
+    border: 2px solid yellow;
+    margin-left: 300px;
+}
+
+p.inherit {
+    margin-left: inherit;
+    width: 200px;
+    border: 2px solid yellow;
+    font-size: 20px;
+}
+
+p.p1 {
+    margin: 0px 0px 30px 0px;
+}
+
+p.p2 {
+    margin: 50px 0px 0px 0px;
+}
+
+div.padding {
+    padding: 50px 30px 50px 80px;
+    border: 2px solid yellow;
+    color: white;
+}
+
+div.pad-no-box {
+    padding: 40px 30px 50px 60px;
+    border: 2px solid yellow;
+    color: white;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+div.pad-box {
+    box-sizing: border-box;
+}
+
+div.hw{
+    height: 200px;
+    width: 50%;
+    background-color: powderblue;
+    font-size: 25px;
+    text-align: left;
+    padding: 20px 20px;
+}
+
+div.hw li {
+    color: black;
+}
+
+div.maxw {
+    max-width: 500px;
+    height: 100px;
+    background-color: powderblue;
+}
+
+div.boxmodel {
+    width: 420px;
+    padding: 20px;
+    border: 5px solid gray;
+    margin: 0;
+    height: 100px;
+}
+
+p.decor1 {
+    height: 200px;
+    background-color: salmon;
+    color: maroon;
+    text-decoration: line-through;
+    vertical-align: middle;
+    text-align: justify;
+    display: table-cell;
+}
+
+p.decor2 {
+    letter-spacing: 5px;
+    line-height: 80px;
+    text-shadow: 3px 3px salmon;
+    background-color: darkcyan;
+    text-transform: uppercase;
+}
+
+ul.sqlist {
+    list-style-type: square;
+}
+
+ol.alphalist {
+    list-style-type: lower-alpha;
+}
+
+ol.romlist{
+    list-style-type: upper-roman;
+}
+
+ul.cleanlist {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+table.paises {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.paises th {
+    background-color: darkcyan;
+}
+
+table.paises td, table.paises th{
+    border: 2px solid coral;
+    padding: 8px;
+}
+
+.reveal table.paises tr:last-child td {
+    border: 2px solid coral;
+}
+
+.reveal table.paises tr:nth-child(odd){
+    background-color: #f2f2f2;
+    color: salmon;
+}
+
+tatr:last-child td {
+    border-bottom: none;
+}
+
+.salmonback {
+    background-color: salmon;
+}
+
+div.st {
+    position: static;
+    border: 2px solid salmon;
+}
+
+div.rl {
+    position: relative;
+    left: 250px;
+    border: 2px solid salmon;
+}
+
+div.fx {
+    position: fixed;
+    left: 400px;
+    top: -30px;
+    border: 2px solid salmon;
+}
+
+div.abs {
+    position: absolute;
+    right: 100px;
+    bottom: -30px;
+    border: 2px solid salmon;
+}
+
+div.ov {
+    width: 250px;
+    height: 100px;
+    background-color: darkcyan;
+    overflow: visible;
+}
+
+div.oh {
+    width: 250px;
+    height: 100px;
+    background-color: darkcyan;
+    overflow: hidden;
+}
+
+div.os {
+    width: 250px;
+    height: 100px;
+    background-color: darkcyan;
+    overflow: scroll;
+}
+
+div.izq {
+    width:20%;
+    float:left;
+    background-color: darkcyan;
+}
+
+div.der {
+    width: 40%;
+    float: right;;
+    background-color: coral;
+}
+
+div.izq2 {
+    height: 30px;
+    width:20%;
+    float:left;
+    background-color: darkcyan;
+    margin: 20px 20px;
+}
+
+div.der2 {
+    height: 30px;
+    width:40%;
+    float: right;
+    background-color: coral;
+    margin: 20px 20px;
+}
+
+div.mid {
+   border: 2px solid gold;
+}
+
+div.clear {
+    border: 2px solid gold;
+    clear:left;
+}
