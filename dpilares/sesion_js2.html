@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Escuela de Código - San Andrés Tetepilco</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="css/basic.css">
+		<link rel="stylesheet" href="css/js_sesion2.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="img/logoPilares.png" />
+					<p>San Andrés Tetepilco</p>
+					<h2 class="edcodigo">Escuela de código</h2>
+					<p>JS DOM</p>
+				</section>
+                <section>
+                    <p><b>HTML DOM</b></p>
+                    <p>Cuando se carga una p&aacute;gina, el navegador crea un 
+                        <b>Document Object Model</b>, que funciona como un &aacute;rbol de Objetos.
+                    </p>
+                    <img src="img/web/htmltree.gif">
+                </section>
+                <section class="muchotexto">
+                    <p>El DOM es una interfaz neutral en cuanto a plataforma y lenguaje 
+                        que permite que los programas y scripts puedan acceder de forma din&aacute;mica, 
+                        y actualizar el contenido, la estructura y el estilo de un documento.
+                    </p>
+                    <p class="left">El HTML DOM define:</p>
+                    <ul class="left">
+                        <li>A los elementos de HTML como objetos.</li>
+                        <li>Las propiedades.</li>
+                        <li>Los m&eacute;todos.</li>
+                        <li>Los eventos.</li>
+                    </ul>
+                </section>
+                <section class="muchotexto">
+                    <ul>
+                        <li>Los m&eacute;todos del HTML DOM son <b>acciones</b> que podemos ejecutar.</li>
+                        <li>Las propiedades del HTML DOM son <b>valores</b> que podemos obtener o modificar.</li>
+                    </ul>
+                    <p>Las propiedades y m&eacute;todos son la interface de programaci&oacute;n para acceder
+                        al HTML DOM usando  JavaScript.
+                    </p>
+                    <pre><code class="language-xml hljs" data-trim data-line-numbers>
+                        &#60;html&#62;
+                          &#60;body&#62;
+                            &#60;p id="demo"&#62;&#60;/p&#62;
+                            &#60;script&#62;
+                            document.getElementById("demo").innerHTML = "Hola Mundo!";
+                            &#60;/script&#62;
+                          &#60;/body&#62;
+                        &#60;/html&#62;
+                    </code></pre>
+                </section>
+                <section class="muchotexto">
+                    <p>El objeto <code>document</code> es dueño de todos los dem&aacute;s objetos. </p>
+               
+                    <p class="left">Encontrar elementos en el DOM.</p>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/jsref/met_document_getelementbyid.asp" target="_blank">
+                            <code>document.getElementById(id)</code></a></li>
+                        <li><a href="https://www.w3schools.com/jsref/met_document_getelementsbytagname.asp" target="_blank">
+                                <code>document.getElementsByTagName(name)</code></a></li>
+                        <li><a href="https://www.w3schools.com/jsref/met_document_getelementsbyclassname.asp" target="_blank">
+                            <code>document.getElementsByClassName(name)</code></a></li>
+                        <li><a href="https://www.w3schools.com/jsref/met_document_queryselectorall.asp" target="_blank">
+                                <code>document.querySelectorAll(selector)</code></a></li>
+                    </ul>
+                    <p class="left">Cambiar elementos de HTML</p>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp" target="_blank">
+                            <code>element.innerHTML =</code> contenido de html</a></li>
+                        <li><a href="https://www.w3schools.com/jsref/prop_attr_value.asp" target="_blank">
+                            <code>element.</code>attribute = nuevo valor</a></li>
+                        <li><a href="https://www.w3schools.com/jsref/prop_html_style.asp" target="_blank">
+                            <code>element.style.</code>property = nuevo estilo</a></li>    
+                        <li><a href="https://www.w3schools.com/jsref/met_element_setattribute.asp" target="_blank">
+                            <code>element.setAttribute(attribute, value)</code></a></li>    
+                    </ul>
+                </section>
+                <section class="muchotexto">
+                    <p class="left">Añadir o quitar elementos</p>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/jsref/met_document_createelement.asp" target="_blank">
+                            <code>document.createElement(element)</code></a></li>
+                        <li><a href="https://www.w3schools.com/jsref/met_node_removechild.asp" target="_blank">
+                            <code>document.removeChild(element)</code></a></li>
+                        <li><a href="https://www.w3schools.com/jsref/met_node_appendchild.asp" target="_blank">
+                            <code>document.appendChild(element)</code></a></li>
+                        <li><a href="https://www.w3schools.com/jsref/met_node_replacechild.asp" target="_blank">
+                            <code>document.replaceChild(new, old)</code></a></li>
+                        <li><a href="https://www.w3schools.com/jsref/met_doc_write.asp" target="_blank">
+                            <code>document.write(text)</code></a></li>
+                        
+                    </ul>
+                    <p class="left">Agregar manejadores de eventos</p>
+                    <ul>
+                        <li><a href="https://www.w3schools.com/jsref/event_onclick.asp" target="_blank">
+                            <code>document.getElementById(id).onclick = function(){code}</code></a></li>
+                    </ul>
+                </section>
+                <section>
+                    <p><b>Animaciones sencillas</b></p>
+                    <p class="left"><button onclick="moverCuadrito()">Mueve el cuadrito</button></p>
+                    <div id ="contenedor">
+                        <div id ="cuadrito"></div>
+                    </div>
+                    <pre class="jscuadro"><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let idIntervalo = null;
+                        function moverCuadrito() {
+                            var elem = document.getElementById("cuadrito");   
+                            var pos = 0;
+                            clearInterval(idIntervalo);
+                            idIntervalo = setInterval(frame, 5);
+                            function frame() {
+                                if (pos == 350) {
+                                clearInterval(idIntervalo);
+                                } else {
+                                pos++; 
+                                elem.style.top = pos + "px"; 
+                                elem.style.left = pos + "px"; 
+                                }
+                            }
+                        }
+                        </code></pre>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Eventos</b></p>
+                    <p>Podemos ejecutar c&oacute;digo de JavaScript cuando un evento ocurre.</p>
+                    <h1 onclick="cambiarTexto(this)">Haz click en este texto.</h1>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let cambio = true;
+                        function cambiarTexto(id) {
+                            if(cambio) {
+                                id.innerHTML = "Hola!";
+                                cambio = false;
+                            } else {
+                                id.innerHTML = "Haz click en este texto.";
+                                cambio = true;
+                            } 
+                        }
+                    </code></pre>
+                    <p>Tambi&eacute;n podemos asignar la fucni&oacute;n con JS.</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        document.getElementById("encabezado").onclick = cambiarTexto;
+                    </code></pre>
+                </section>
+                <section class="muchotexto">
+                    <p>Los eventos de <code>onload</code> o <code>onunload</code> se 
+                    disparan cuanod el usuario entra o sale de la p&aacute;gina. Usualmente
+                se utilizan para obtener informaci&oacute;n de la versi&oacute;n del navegador o las cookies. </p>
+                <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                    &#60;body onload="checkNavegador()" &#62;
+                    &#60;script&#62;
+                        function checkNavegador() {
+                            console.log("El nombre del navegador es: " + navigator.appName;)
+                        }
+                    &#60;/script&#62;
+                </code></pre>
+                <p>Otros eventos: <code>onchange</code>, <code>onmouseover</code>, 
+                    <code>onmouseout</code>. La lista completa de eventos: 
+                <a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blank">Eventos del DOM</a></p>
+                </section>
+                <section>
+                    <p>Tambi&eacute;n pueden añadirse manejadores de eventos utilizando JS. </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        element.addEventListener(event, function, useCapture);
+                    </code></pre>
+                    <p>No se sobreescriben y se pueden añadir
+                         m&aacute;s manejadores 
+                         <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_addeventlistener_add_many" target="_blank">a los mismos</a> 
+                         o a <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_addeventlistener_add_many2" target="_blank">diferentes eventos.</a></p>
+                    <p>El primer par&aacute;metro es el evento, sin <code>on</code>, 
+                    el segundo es la funci&oacute;n manejadora del evento, el tercero indica 
+                    c&oacute;mo se va a propagar el evento.</p>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Propagaci&oacute;n de eventos</b></p>
+                    <p>Hay dos formas para definir el orden en que los eventos en m&uacute;ltiples
+                        elementos ocurren:
+                    </p>
+                    <ul>
+                        <li>Bubbling: del elemento de m&aacute;s adentro al de afuera. Default: <code>false</code></li>
+                        <li>Capturing: del elemento de afuera hacia adentro.</li>
+                    </ul>
+                </section>
+                <section>
+                    <p><b>Bubbling</b></p>
+                    <form class="evt" onclick="formFn()">FORM
+                        <div class="evt" onclick="divFn()">DIV
+                          <p  class="evt" onclick="pFn(event)">P</p>
+                        </div>
+                      </form>
+                      <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        function formFn() {
+                            alert('form');
+                        }
+
+                        function divFn() {
+                            alert('div');
+                        }  
+
+                        function pFn(e) {
+                            alert('p');
+                            e.stopPropagation();
+                        }   
+                    </code></pre>
+                </section>
+                <section>
+                    <p><b>Capturing</b></p>
+                    <form class="evt" id="formcap">FORM
+                        <div class="evt">DIV
+                          <p class="evt" id="pcap">P</p>
+                        </div>
+                    </form>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        document.getElementById("formcap").addEventListener("click", function(e){
+                             alert("click sobre form");
+                        }, true);
+                          
+                        document.getElementById("pcap").addEventListener("click", function(e){
+                             alert("click sobre p");
+                        }, false);
+                    </code></pre>
+                </section>
+			</div>
+		</div>
+        <script src="js/js_sesion2.js"></script>
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>

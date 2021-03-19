@@ -25,6 +25,12 @@
     font-size: 50px;
 }
 
+.muchotexto h1,
+.muchotexto h2,
+.muchotexto h3{
+    font-size: 40px;
+}
+
 .reveal p b,
 .reveal li b{
     font-size: 46px;
