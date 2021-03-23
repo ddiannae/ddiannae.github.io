@@ -235,6 +235,102 @@
                         }, false);
                     </code></pre>
                 </section>
+                <section class="muchotexto">
+                    <p><b>Nodos del DOM</b></p>
+                    <p>De acuerdo al est&aacute;ndard de W3C HTML DOM, todo en un 
+                        documento de HTML es un nodo del DOM:
+                    </p>
+                    <ul>
+                        <li>El documento entero.</li>
+                        <li>Los elementos de HTML.</li>
+                        <li>El texto dentro de los documentos <code>createTextNode</code>.</li>
+                        <li>Los comentarios de HTML.</li>
+                    </ul>
+                    <p>Podemos acceder a esos nodos utilizando JavaScript y podemos 
+                        crear nuevos o modificar o eliminar todos los existentes.
+                    </p>
+                </section>
+                <section>
+                    <p><b>Relaciones entre nodos</b></p>
+                    <p>Los nodos en la estructura de &aacute;rbol generan relaciones
+                         jer&aacute;quicas. </p>
+                        <img width="500px" src="img/web/pic_navigate.gif">
+                </section>
+                <section>
+                    <p class="left">¿Qu&eacute; estructura se forma con el siguiente c&oacute;digo?</p>
+                    <pre><code class="language-xml hljs" data-trim data-line-numbers>          
+                        &#60;html&#62;
+                            &#60;head&#62;
+                                &#60;title id="demo">Escuela de c&oacute;digo&#60;/title&#62;
+                            &#60;/head&#62;
+                            &#60;body&#62;
+                                &#60;h1&#62;HTML DOM&#60;/h1&#62;
+                                &#60;p&#62;Hola mundo!&#60;/p&#62;
+                            &#60;/body&#62;
+                        &#60;/html&#62;
+                    </code></pre>
+                </section>
+                <section>
+                    <p>Podemos utilizar las siguientes propiedades de los nodos para navegar
+                        entre los nodos del &aacute;rbol:
+                    </p>
+                    <ul>
+                        <li><code>parentNode</code></li>
+                        <li><code>childNodes[nodenumber]</code></li>
+                        <li><code>firstChild</code></li>
+                        <li><code>lastChild</code></li>
+                        <li><code>nextSibling</code></li>
+                        <li><code>previousSibling</code></li>
+                    </ul>
+                </section>
+                <section class="muchotexto">
+                    <p>El nodo de <code>title</code> no contiene texto adentro, sino que tiene un 
+                    nodo hijo con el valor: <i>Escuela de c&oacute;digo</i></p>
+                    <p>Podemos obtener ese valor de diferentes maneras: </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>          
+                        let titulo1 = document.getElementById("demo").innerHTML;
+                        let titulo2 = document.getElementById("demo").firstChild.nodeValue;
+                        let titulo2 = document.getElementById("demo").childNodes[0].nodeValue;
+                    </code></pre>
+                </section>
+                <section class="muchotexto">
+                    <p class="left"><b>Elemento ra&iacute;z:</b> Dos maneras de acceder al elemento ra&iacute;z</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>          
+                        document.body
+                        document.documentElement
+                    </code></pre>
+                    <p class="left"><b>nodeName.</b> Solo lectura, es la misma que la etiqueta, #text si es texto 
+                    y #document si es el document y el nombre del atributo si es de atributo.</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>          
+                        document.getElementById("demo").nodeName;
+                    </code></pre>
+                    <p class="left"><b>nodeValue.</b> Para las etiquetas de HTML es <code>null</code>,
+                        para las de texto es el valor del texto en s&iacute; y en atributos, el valor de los atributos .</p>
+                        <pre><code class="language-javascript hljs" data-trim data-line-numbers>          
+                            document.getElementById("demo").nodeName;
+                    </code></pre>
+                </section>
+                <section>
+                    <p><b>HTMLCollection</b></p>
+                    <p>M&eacute;todos como <code>getElementsByTagName()</code> regresan un objeto 
+                    de tipo <code>HTMLCollection</code>, que es similar a un arreglo de JavaScript.</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>          
+                        let parrafos = document.getElementsByTagName("p");
+                        let segundo_parrafo = parrafos[1];
+                        for (let i = 0; i < parrafos.length; i++) {
+                            parrafos[i].style.color = "red";
+                        }
+                    </code></pre>
+                    <p>Sin embargo no podemos utilizar m&eacute;todos de arreglos de JS como <code>pop()</code>, 
+                        <code>push()</code>, <code>join()</code>, etc.</p>
+                </section>
+                <section>
+                    <p><b>HTML DOM Node Lists</b></p>
+                    <p>Es una colecci&oacute;n similar a <code>HTMLCollection</code>, que se obtiene 
+                    cuando llamamos a element.<code>childNodes</code> o a <code>querySelectorAll()</code></p>
+                    <p>Sin embargo, solo podemos acceder a los elementos utilizando el index y no los nombresquerySelectorAll
+                         de los elementos.</p>
+                </section>
 			</div>
 		</div>
         <script src="js/js_sesion2.js"></script>
