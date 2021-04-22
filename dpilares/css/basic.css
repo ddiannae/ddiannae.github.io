@@ -85,3 +85,7 @@ p.center {
 p.large {
     font-size: 250%;
 }
+
+.centro {
+    text-align: center;
+  }

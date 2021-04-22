@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Escuela de Código - San Andrés Tetepilco</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="css/basic.css">
+		<link rel="stylesheet" href="css/js_sesion2.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="img/logoPilares.png" />
+					<p>San Andrés Tetepilco</p>
+					<h2 class="edcodigo">Escuela de código</h2>
+					<p>JS sesi&oacute;n 3</p>
+				</section>
+                <section>
+                    <p><b>Scope o alcance</b></p>
+                    <p>El scope determina a accesibilidad o visibilidad de las variables. Hay dos tipos:
+                    </p>
+                    <ul>
+                        <li>Scope <b>global</b></li>
+                        <li>Scope <b>local</b></li>
+                    </ul>
+                    <p>En JS cada funci&oacute;n crea su propio scope. Las variables que declaramos dentro de 
+                        una funci&oacute;n solo pueden accederse dentro de ella.
+                    </p>
+                </section>
+               <section>
+                   <p><b>Scope local</b></p>
+                   <p>Las variables dentro de una funci&oacute;n son locales a ella. Incluyendo los par&aacute;metros. </p>
+                   <pre><code class="language-javascript hljs" data-trim data-line-numbers>          
+                    //Aqu&iacute; no podemos utilizar la variable parrafo
+                    function leerParrafo() {
+                        let parrafo = "";
+                        //Aqu&iacute; podemos utilizar la variable parrafo
+                    }
+                    </code></pre>
+                   <p> Podemos  declarar variables con el mismo nombre en diferentes funciones 
+                       porque se crean cuando la funci&oacute;n inicia y se borran cuando se completa.</p>
+               </section>
+               <section>
+                   <p><b>Scope global</b></p>
+                   <p>Si una variable se crea fuera de una funci&oacute;n, se vuelve <b>global</b>
+                y todas las funciones pueden acceder a ella. </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>          
+                    let parrafo = "";
+                    //Aqu&iacute; podemos utilizar la variable parrafo
+                    function leerParrafo() {
+                        //Aqu&iacute; tambi&eacute;n podemos utilizar la variable parrafo
+                    }
+                    </code></pre>
+                    <p>Si asignamos valor a una variable sin declararla, tambi&eacute; se vuelve global 
+                        <i class="fa fa-meh fa-lg"></i></p>
+               </section>
+               <section>
+                   <ul>
+                       <li>Los objetos y las funciones tambi&eacute;n son variables.</li>
+                       <li>El scope global de JS es todo el ambiente.</li>
+                       <li>La vida de las variables inicia cuando se declaran.</li>
+                       <li>Las variables locales se borran cuando la funci&oacute;n se completa.</li>
+                       <li>Las variables globales las limpia nuestro navegador cuando cerramos la pestaña o la ventana.</li>
+                   </ul>
+               </section>
+               <section>
+                   <p><b>Hoisting</b></p>
+                   <p>Las declaraci&oacute;n de variables con <code>var</code> se mueve por default al inicio del scope. Se pueden usar variables
+                       antes de declararlas pero la iniciaci&oacute;n no se mueve.
+                   </p>
+                   <p>Son lo mismo:</p>
+                   <pre><code class="language-javascript hljs" data-trim data-line-numbers>          
+                    x = 3;
+                    console.log(x);
+                    var x;
+                    </code></pre>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>          
+                        var x;
+                        x = 3;
+                        console.log(x);
+                    </code></pre>
+               </section>
+               <section>
+                <p>Con <code>let</code> y <code>const</code> el scope sabe que va a usar las 
+                    variables pero no lo permite. Con <code>let</code> causa un <code>ReferenceError</code>
+                    y con <code>const</code> un error de sintaxis.</p>
+                <p>Las declaraciones de funciones s&iacute; se hacen hoist.</p>
+                <p class="centro"><b>Para evitar confusiones declara las variables locales al inicio de la funci&oacute;n y
+                    las globales al inicio del script.</b>
+                </p>
+               </section>
+               <section>
+                   <p><b>Arrow functions (¿funciones flecha?)</b></p>
+                   <p>Se crearon para simplificar el c&oacute;digo.</p>
+                   <pre><code class="language-javascript hljs" data-trim data-line-numbers>          
+                    // Funci&oacute;n original. De hecho es una funci&oacute;n an&oacute;nima
+                    function (a){
+                      return a + 100;
+                    }
+                    // 1. Quitamos la palabra "function" y ponemos una flecha entre los argumentos y
+                    // la llave de unicio
+                    (a) => {
+                      return a + 100;
+                    }
+                    
+                    // 2. Quitamos las llaves y el "return". Solo para c&oacute;digo con una sola l&iacute;nea.
+                    (a) => a + 100;
+                    
+                    // 3. Quitamos los par&eacute;ntesis del argumento
+                    a => a + 100;
+                    </code></pre>
+               </section>
+               <section>
+                   <p>Con m&aacute;s l&iacute;neas y nombre</p>
+                   <pre><code class="language-javascript hljs" data-trim data-line-numbers>          
+                    // Funci&oacute;n tradicional
+                    function (a, b){
+                        let chuck = 42;
+                        return a + b + chuck;
+                    }
+
+                    // Funci&oacute;n flecha
+                    (a, b) => {
+                        let chuck = 42;
+                        return a + b + chuck;
+                    }
+
+                    // Funci&oacute;n tradicional
+                    function bob (a){
+                        return a + 100;
+                    }
+
+                    // Funci&oacute;n flecha
+                    let bob = a => a + 100;
+                    </code></pre>
+               </section>
+			</div>
+		</div>
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
