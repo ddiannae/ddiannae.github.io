@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        [class*="col"] {
+           padding: 1rem;
+           background-color:lightcoral;
+           border: 2px solid #fff;
+           color: #fff;
+           text-align: center;
+       }
+       body {
+           text-align: center;
+       }
+       </style>
+   
+    <title>Ejemplo Grid Bootstrap</title>
+</head>
+<body>
+    <h3 id="mismo">Mismo tamaño</h3>
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            1 of 2
+          </div>
+          <div class="col">
+            2 of 2
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            1 of 3
+          </div>
+          <div class="col">
+            2 of 3
+          </div>
+          <div class="col">
+            3 of 3
+          </div>
+        </div>
+      </div>
+    <br>
+    <h3 id="ajuste">Ajuste automático</h3>
+    <div class="container">
+        <div class="row">
+          <div class="col">
+            1 of 3
+          </div>
+          <div class="col-6">
+            2 of 3 (wider)
+          </div>
+          <div class="col">
+            3 of 3
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            1 of 3
+          </div>
+          <div class="col-5">
+            2 of 3 (wider)
+          </div>
+          <div class="col">
+            3 of 3
+          </div>
+        </div>
+    </div>
+    <h3 id="contenido">Ajuste al contenido</h3>
+    <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col col-lg-2">
+            1 of 3
+          </div>
+          <div class="col-md-auto">
+            Variable width content
+          </div>
+          <div class="col col-lg-2">
+            3 of 3
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            1 of 3
+          </div>
+          <div class="col-md-auto">
+            Variable width content
+          </div>
+          <div class="col col-lg-2">
+            3 of 3
+          </div>
+        </div>
+    </div>
+    <br>
+    <h3 id="nocambio">Grid sin cambios</h3>
+    <div class="container">
+        <div class="row">
+          <div class="col">col</div>
+          <div class="col">col</div>
+          <div class="col">col</div>
+          <div class="col">col</div>
+        </div>
+        <div class="row">
+          <div class="col-8">col-8</div>
+          <div class="col-4">col-4</div>
+        </div>
+      </div>
+      <br>
+      <h3 id="vertahoriz">De vertical a horizontal</h3>
+        <div class="row">
+          <div class="col-sm-8">col-sm-8</div>
+          <div class="col-sm-4">col-sm-4</div>
+        </div>
+        <div class="row">
+          <div class="col-sm">col-sm</div>
+          <div class="col-sm">col-sm</div>
+          <div class="col-sm">col-sm</div>
+        </div>
+      </div>
+    <br>
+    <h3 id="variosd">Varios dispositivos</h3>
+      <div class="container">
+        <!-- En móviles una 100%, otra 50% -->
+        <div class="row">
+          <div class="col-md-8">.col-md-8</div>
+          <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+        </div>
+      
+        <!-- 50% en móviles y 33.3% en dekstop -->
+        <div class="row">
+          <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+          <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+          <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+        </div>
+      
+        <!-- Siempre 50% -->
+        <div class="row">
+          <div class="col-6">.col-6</div>
+          <div class="col-6">.col-6</div>
+        </div>
+      </div>
+
+    <br>
+    <h3 id="rowcols1">Row columns 1</h3>
+      <div class="container">
+        <div class="row row-cols-2">
+          <div class="col">Column</div>
+          <div class="col">Column</div>
+          <div class="col">Column</div>
+          <div class="col">Column</div>
+        </div>
+      </div>
+    <br>
+    <h3 id="rowcols2">Row columns 2</h3>
+      <div class="container">
+        <div class="row row-cols-auto">
+          <div class="col">Column</div>
+          <div class="col">Column</div>
+          <div class="col">Column</div>
+          <div class="col">Column</div>
+        </div>
+      </div>
+    <br>
+      <h3 id="rowcols3">Row columns 3</h3>
+      <div class="container">
+        <div class="row row-cols-4">
+          <div class="col">Column</div>
+          <div class="col">Column</div>
+          <div class="col-6">Column</div>
+          <div class="col">Column</div>
+        </div>
+      </div>
+    <br>
+    <h3 id="rowcols4">Row columns 4</h3>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+          <div class="col">Column</div>
+          <div class="col">Column</div>
+          <div class="col">Column</div>
+          <div class="col">Column</div>
+        </div>
+      </div>
+    <script src="js/bootstrap.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+</body>
+</html>

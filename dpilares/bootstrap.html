@@ -1,0 +1,390 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Escuela de Código - San Andrés Tetepilco</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="css/basic.css">
+		<link rel="stylesheet" href="css/bootstrap_presentacion.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="img/logoPilares.png" />
+					<p>San Andrés Tetepilco</p>
+					<h2 class="edcodigo">Escuela de código</h2>
+					<p>Bootstrap</p>
+				</section>
+                <section >
+                    <p><b>¿Qué es Bootstrap?</b></p>
+                    <ul>
+                       <li>Es el framework de front-end más popular</li> 
+                       <li>Se utiliza para construir sitios web y aplicaciones <b>mobile first</b></li>
+                        <ul class="fragment">
+                            <li>Las reglas de CSS por default aplican a los dispositivos móviles.</li>
+                        </ul>
+                       <li>Utiliza HTML, CSS y JavaScript</li>
+                    </ul>
+                </section>
+                <section>
+                    <p><b>¿Por qué se utiliza?</b></p>
+                    <ul>
+                        <li>Reduce el tiempo de desarrollo.</li>
+                        <li>Asegura que el diseño sea responsivo.</li>
+                        <li>No tienes que repetir muchas veces lo mismo en diferentes proyectos.</li>
+                        <li>Es compatible en todos los navegadores.</li>
+                        <li>Se puede modificar.</li>
+                    </ul>
+                </section>
+                <section data-background-iframe="https://getbootstrap.com/docs/5.0/getting-started/download/" data-background-interactive></section>
+                 </section>
+                 <section>
+                     <p><b>Tiene muchísimos componentes</b></p>
+                     <ul class="tercio">
+                         <li>Alertas</li>
+                         <li>Botones</li>
+                         <li>Cards</li>
+                         <li>Carrusel (slideshow)</li>
+                         <li>Dropdowns</li>
+                         <li>Spinners</li>
+                         <li>Tooltips</li>
+                     </ul>
+                     <ul  class="tercio">
+                         <li>Ventanas modales</li>
+                         <li>Barras de navegación</li>
+                         <li>Páneles</li>
+                         <li>Barras de progreso</li>
+                         <li>Scrollspy</li>
+                         <li>Íconos</li>
+                         <li>Tablas</li>
+                     </ul>
+                 </section>
+                 <section>
+                     <p><b>Breakpoints y media queries</b></p>
+                     <p>Nos sirven para especificar reglas de css que van a aplicarse
+                         solamente a tamaños específicos del viewport. En Bootstrap:
+                     </p>
+                     <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Breakpoint</th>
+                            <th>Class infix</th>
+                            <th>Dimensions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>X-Small</td>
+                            <td><em>None</em></td>
+                            <td>&lt;576px</td>
+                          </tr>
+                          <tr>
+                            <td>Small</td>
+                            <td><code>sm</code></td>
+                            <td>≥576px</td>
+                          </tr>
+                          <tr>
+                            <td>Medium</td>
+                            <td><code>md</code></td>
+                            <td>≥768px</td>
+                          </tr>
+                          <tr>
+                            <td>Large</td>
+                            <td><code>lg</code></td>
+                            <td>≥992px</td>
+                          </tr>
+                          <tr>
+                            <td>Extra large</td>
+                            <td><code>xl</code></td>
+                            <td>≥1200px</td>
+                          </tr>
+                          <tr>
+                            <td>Extra extra large</td>
+                            <td><code>xxl</code></td>
+                            <td>≥1400px</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                 </section>
+                 <section class="muchomuchotexto">
+                     <p><b>Contenedores</b></p>
+                     <p>Los contenedores son los bloques fundamentales para alinear, contenido en 
+                         Bootstrap y se necesitan para que funcione su <strong>grid system</strong>. 
+                        Hay tres tipos de clases para manejar contenedores: </p>
+                        <ul>
+                            <li><code>.container</code>: tiene ancho fijo y cambia su <code>max-width</code>
+                                 en cada breakpoint.</li>
+                            <li><code>.container-{breakpoint}</code>: su ancho es 100% hasta que se llega
+                            al breakpoint específico. </li>
+                                <ul><li><code>.container-sm</code>: tiene 100% en pantallas de menos de 576px
+                                y después escala</li></ul>
+                            <li><code>.container-fluid</code>: es 100% siempre.</li>
+                        </ul>
+                        <p>Ejemplo: <a href="https://getbootstrap.com/docs/5.0/examples/grid/#containers" target="_blank">Contenedores</a></p>
+                 </section>
+                 <section class="muchotexto">
+                     <p><b>Sistema de grid</b></p>
+                     <p>Usa contenedores, filas y columnas para crear el layout y alinear contenido. Está construido
+                         utilizando flex. 
+                     </p>
+                     <ul>
+                         <li>Tiene 6 breakpoints reponsivos basados en media queries de min-width.</li>
+                        <li>Los contenedores centran y ajustan el contenido.</li>
+                        <li>Las filas permiten separar el contenido sobre la vertical y encerrar columnas. </li>
+                        <li>El espacio entre las columnas también puede ajustarse cambiando el gutter.</li>
+                    </ul>
+                   
+                </section>
+                <section>
+                    <p><b>Columnas del mismo tamaño</b></p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        <div class="container">
+                            <div class="row">
+                              <div class="col">
+                                1 of 2
+                              </div>
+                              <div class="col">
+                                2 of 2
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                1 of 3
+                              </div>
+                              <div class="col">
+                                2 of 3
+                              </div>
+                              <div class="col">
+                                3 of 3
+                              </div>
+                            </div>
+                          </div>
+                    </code></pre>
+                    <p>Ejemplo: <a href="ejemplo_bootstrap.html#mismo" target="_blank">Mismo tamaño</a></p>
+                </section>
+                <section>
+                    <p><b>Ajuste automático</b></p>
+                    
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        <div class="container">
+                            <div class="row">
+                              <div class="col">
+                                1 of 3
+                              </div>
+                              <div class="col-6">
+                                2 of 3 (wider)
+                              </div>
+                              <div class="col">
+                                3 of 3
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                1 of 3
+                              </div>
+                              <div class="col-5">
+                                2 of 3 (wider)
+                              </div>
+                              <div class="col">
+                                3 of 3
+                              </div>
+                            </div>
+                          </div>
+                    </code></pre>
+                    <p>Ejemplo: <a href="ejemplo_bootstrap.html#ajuste" target="_blank">Ajuste automático</a></p>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Ajuste al contenido</b></p>
+                    <p>Utilizando <code>col-{breakpoint}-auto</code></p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        <div class="container">
+                            <div class="row justify-content-md-center">
+                              <div class="col col-lg-2">
+                                1 of 3
+                              </div>
+                              <div class="col-md-auto">
+                                Variable width content
+                              </div>
+                              <div class="col col-lg-2">
+                                3 of 3
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                1 of 3
+                              </div>
+                              <div class="col-md-auto">
+                                Variable width content
+                              </div>
+                              <div class="col col-lg-2">
+                                3 of 3
+                              </div>
+                            </div>
+                          </div>
+                    </code></pre>
+                    <p>Ejemplo: <a href="ejemplo_bootstrap.html#contenido" target="_blank">Ajuste al conenido</a></p>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Grid sin cambios</b></p>
+                    <p>Si el grid tiene que ser el mismo en todos los dispositivos, utilizar 
+                        <code> .col </code> y <code>.col-*</code></p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        <div class="container">
+                            <div class="row">
+                              <div class="col">col</div>
+                              <div class="col">col</div>
+                              <div class="col">col</div>
+                              <div class="col">col</div>
+                            </div>
+                            <div class="row">
+                              <div class="col-8">col-8</div>
+                              <div class="col-4">col-4</div>
+                            </div>
+                          </div>
+                    </code></pre>
+                    <p>Ejemplo: <a href="ejemplo_bootstrap.html#nocambio" target="_blank">Grid sin cambios</a></p>
+                </section>
+                <section class="muchotexto">
+                    <p><b>De vertical a horizontal</b></p>
+                    <p>Un grid básico con todas las columnas encimadas que se despliegan en horizontal
+                        según el breakpoint <code>sm</code>
+                    </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        <div class="container">
+                            <div class="row">
+                              <div class="col-sm-8">col-sm-8</div>
+                              <div class="col-sm-4">col-sm-4</div>
+                            </div>
+                            <div class="row">
+                              <div class="col-sm">col-sm</div>
+                              <div class="col-sm">col-sm</div>
+                              <div class="col-sm">col-sm</div>
+                            </div>
+                          </div>
+                    </code></pre>
+                    <p>Ejemplo: <a href="ejemplo_bootstrap.html#vertahoriz" target="_blank">De vertical a horizontal</a></p>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Varios dispositivos</b></p>
+                    <p>Si queremos que el grid cambie según el dispositivo, tenemos que combinar 
+                        las clases.
+                    </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        <div class="container">
+                            <!-- En móviles una 100%, otra 50% -->
+                            <div class="row">
+                              <div class="col-md-8">.col-md-8</div>
+                              <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+                            </div>
+                          
+                            <!-- 50% en móviles y 33.3% en dekstop -->
+                            <div class="row">
+                              <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+                              <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+                              <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+                            </div>
+                          
+                            <!-- Siempre 50% -->
+                            <div class="row">
+                              <div class="col-6">.col-6</div>
+                              <div class="col-6">.col-6</div>
+                            </div>
+                          </div>
+                    </code></pre>
+                    <p>Ejemplo: <a href="ejemplo_bootstrap.html#variosd" target="_blank">Varios dispositivos</a></p>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Row columns</b></p>
+                    <p>Con la clase <code>row-cols-*</code> le decimos cuántas columnas queremos
+                    </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        <div class="container">
+                            <div class="row row-cols-2">
+                              <div class="col">Column</div>
+                              <div class="col">Column</div>
+                              <div class="col">Column</div>
+                              <div class="col">Column</div>
+                            </div>
+                          </div>
+                    </code></pre>
+                    <p>Ejemplo: <a href="ejemplo_bootstrap.html#rowcols1" target="_blank">Row columns 1</a></p>
+                </section>
+
+                <section class="muchotexto">
+                    <p><b>Row columns</b></p>
+                    <p> Que se ajusten al contenido </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        <div class="container">
+                            <div class="row row-cols-auto">
+                              <div class="col">Column</div>
+                              <div class="col">Column</div>
+                              <div class="col">Column</div>
+                              <div class="col">Column</div>
+                            </div>
+                          </div>
+                    </code></pre>
+                    <p>Ejemplo: <a href="ejemplo_bootstrap.html#rowcols2" target="_blank">Row columns 2</a></p>
+                </section>
+
+                <section class="muchotexto">
+                    <p><b>Row columns</b></p>
+                    <p> Que tengan un ancho diferente
+                    </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        <div class="container">
+                            <div class="row row-cols-4">
+                              <div class="col">Column</div>
+                              <div class="col">Column</div>
+                              <div class="col-6">Column</div>
+                              <div class="col">Column</div>
+                            </div>
+                          </div>
+                    </code></pre>
+                    <p>Ejemplo: <a href="ejemplo_bootstrap.html#rowcols3" target="_blank">Row columns 3</a></p>
+                </section>
+
+                <section class="muchotexto">
+                    <p><b>Row columns</b></p>
+                    <p> Que cambien según el dispositivo
+                    </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        <div class="container">
+                            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                              <div class="col">Column</div>
+                              <div class="col">Column</div>
+                              <div class="col">Column</div>
+                              <div class="col">Column</div>
+                            </div>
+                          </div>
+                    </code></pre>
+                    <p>Ejemplo: <a href="ejemplo_bootstrap.html#rowcols4" target="_blank">Row columns 4</a></p>
+                </section>
+			</div>
+
+		</div>
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
