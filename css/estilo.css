@@ -80,11 +80,27 @@ p {
     padding: 5px;
 }
 
-.grid-container {
+.publications-grid {
     display: grid;
     grid-template-columns: 75% 25%;
     align-items: center;
     row-gap: 10px;
+}
+
+#videos {
+    background-color: #B1BED5;
+    color: #1c3550;
+}
+
+.videos-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.videos-flex p {
+    margin: 0px 15px;
+    text-align: center;
 }
 
 
