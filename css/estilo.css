@@ -64,21 +64,8 @@ p {
     background-color: #bee5d3;
 }
 
-#publications.row  > div {
-    display: table-cell; width:50%; 
-} 
-
-#publications .ftexts > p{
-        text-align: center;
-        position: relative;
-        top: 50%;
-        -ms-transform: translateY(-50%);
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-}
-
 #publications {
-    background-color: #ffe3de;
+    background-color: #FFF5EA;
 }
 
 #publications p {
@@ -91,6 +78,13 @@ p {
     color: #df7861;
     border: #df7861 solid 1px;
     padding: 5px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    align-items: center;
+    row-gap: 10px;
 }
 
 
