@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #8E2657;
+    margin: 0px;
+    font-size: 18px;
+}
+
+.container {
+    background-color: #fff;
+    width: 70%;
+    margin: 0px auto;
+    padding: 20px 50px;
+}
+
+#instrucciones {
+    margin: 45px 0px 0px 0px;
+}
+
+.disclaimer {
+    color: #D2042D;
+}
+
+.btn-group button {
+    border: 1px solid #5F939A;
+    background-color: #E1E5EA;
+    color: #194350; 
+    padding: 10px 24px; 
+    cursor: pointer; 
+    float: left; 
+    margin: 0px 5px;
+    border-radius: 5px;
+  }
+
+.btn-group:after, .btn-resultados::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.btn-group button:hover,
+.btn-group button.no-selected:hover {
+    background-color: #EEC4C4;
+}
+
+.btn-group button.no-selected {
+    background-color: #f7f9fc;
+    border: 1px solid #8ab2b8;
+}
+
+.btn-group button:active, 
+.btn-group button.selected,
+.btn-group button.selected:hover {
+    background-color: #DF7861;
+    border: 1px solid #DF7861;
+    color: #ffffff;
+}
+
+.btn-resultados {
+    margin: 35px 0px;
+}
+
+.btn-resultados button {
+    border: 3px solid #f3e8e2;
+    background-color: #0E918C;
+    color: #f3e8e2; 
+    padding: 10px 24px; 
+    cursor: pointer; 
+    float: left; 
+    margin: 0px 5px;
+    width: 200px;
+    font-size: 20px;
+    border-radius: 5px;
+  }
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: fixed;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #0E918C;
+    color: white;
+  }
+  
+  .modal-body {
+      padding: 2px 16px;
+    }
+  
+  .modal-footer {
+    padding: 2px 16px;
+    background-color: #ffffff;
+    color: #0E918C;
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test S&iacute;ndome de Impostora</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/test.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Reconociendo el S&iacute;ndrome de impostora</h1>
+        <p id="instrucciones">Contesta las siguientes preguntas. No tomes mucho tiempo en pensar tus 
+            respuestas, usualmente la respuesta m&aacute;s sincera es la primera que te 
+            llega a la cabeza. 
+        </p>
+        <p class="disclaimer">Te recordamos que ste test es un ejercicio reflexivo, no es un instrumento 
+            diagn&oacute;stico. Si crees que necesitas ayuda psicol&oacute;gica, consulta 
+        a un profesional.</p>
+        <p>1. Usualmente recuerdo los incidentes en los que no hice mi mejor esfuerzo 
+            más que aquellos en los que sí lo hice. </p>
+            <div class="btn-group">
+                <button data-val="1">Nunca</button>
+                <button data-val="2">Raramente</button>
+                <button data-val="3">Algunas veces</button>
+                <button data-val="4">A menudo</button>
+                <button data-val="5">Siempre</button>
+            </div>
+        <p>2. Doy la impresión de que soy más competente de lo que en realidad soy. </p>
+        <div class="btn-group">
+            <button data-val="1">Nunca</button>
+            <button data-val="2">Raramente</button>
+            <button data-val="3">Algunas veces</button>
+            <button data-val="4">A menudo</button>
+            <button data-val="5">Siempre</button>
+        </div>
+        <p>3. Cuando las personas me felicitan por algo que he logrado, siento temor de
+             que en el futuro no pueda cumplir con las expectativas que tienen de mi. </p>
+             <div class="btn-group">
+                <button data-val="1">Nunca</button>
+                <button data-val="2">Raramente</button>
+                <button data-val="3">Algunas veces</button>
+                <button data-val="4">A menudo</button>
+                <button data-val="5">Siempre</button>
+            </div>
+        <p>4. Me da miedo que personas importantes para mi se den cuenta de que no 
+            soy tan capaz como ellas piensan que soy. </p>
+            <div class="btn-group">
+                <button data-val="1">Nunca</button>
+                <button data-val="2">Raramente</button>
+                <button data-val="3">Algunas veces</button>
+                <button data-val="4">A menudo</button>
+                <button data-val="5">Siempre</button>
+            </div>
+        <p>5. Muchas veces me da miedo fallar en un nuevo proyecto o actividad, aunque 
+            en general las cosas que intento salen bien. </p>
+            <div class="btn-group">
+                <button data-val="1">Nunca</button>
+                <button data-val="2">Raramente</button>
+                <button data-val="3">Algunas veces</button>
+                <button data-val="4">A menudo</button>
+                <button data-val="5">Siempre</button>
+            </div>
+        <p>6. Usualmente comparo mi habilidad a la de otros alrededor de mi y creo que 
+            los demás son más inteligentes que yo.</p>
+            <div class="btn-group">
+                <button data-val="1">Nunca</button>
+                <button data-val="2">Raramente</button>
+                <button data-val="3">Algunas veces</button>
+                <button data-val="4">A menudo</button>
+                <button data-val="5">Siempre</button>
+            </div>
+        <p>7. Cuando recibo felicitaciones o reconocimiento por algo que he logrado, 
+            tiendo a restarle importancia a lo que hice. </p>
+            <div class="btn-group">
+                <button data-val="1">Nunca</button>
+                <button data-val="2">Raramente</button>
+                <button data-val="3">Algunas veces</button>
+                <button data-val="4">A menudo</button>
+                <button data-val="5">Siempre</button>
+            </div>
+    
+        <div class="btn-resultados">
+            <button id="enviarResultados">Ver resultados</button>
+        </div>
+    </div>
+    <div id="modalResultados" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Tus resultados</h2>
+          </div>
+          <div class="modal-body">
+            <p>De acuerdo a tus respuestas, tu puntaje es 12.</p>
+            <p><strong>Moderado</strong> No sufres de síndrome del impostor en este preciso momento.</p>
+          </div>
+          <div class="modal-footer">
+            <h3>¡Gracias por tu participaci&oacute;n!</h3>
+            <p class="disclaimer">Te recordamos que ste test es un ejercicio reflexivo, no es un instrumento 
+                diagn&oacute;stico. Si crees que necesitas ayuda psicol&oacute;gica, consulta 
+            a un profesional.</p>
+          </div>
+        </div>
+      </div>
+    <script src="js/test.js"></script>
+</body>
+</html>
