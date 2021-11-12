@@ -1,0 +1,316 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>JS entre nosotras - Sesión 1</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="css/basic.css">
+		<link rel="stylesheet" href="css/css_sesion2.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="img/logo1.png" width="50%"/>
+					<h2 class="edcodigo">JS entre nosotras</h2>
+					<p>JS sesi&oacute;n 1</p>
+				</section>
+				<section>
+                    <p><b>¿Por qu&eacute; JavaScript?</b></p>
+                    <ul>
+                        <li><b>HTML:</b> define el contenido de las p&aacute;ginas.</li>
+                        <li><b>CSS:</b> especifica el diseño.</li>
+                        <li><b>JavaScript:</b> para programar el comportamiento de las p&aacute;ginas</li>
+                    </ul>
+                </section>
+                <section>
+                    <p><b>¿Y qu&eacute; podemos programar sobre el comportamiento de las
+                        p&aacute;ginas?
+                    </b></p>
+                    <ul class="fragment">
+                        <li>Cambiar el contenido de HTML.
+                             <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_inner_html" target="_blank">Ejemplo</a></li>
+                        <li>Cambiar valores de atributos de HTML.
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb" target="_blank">Ejemplo</a>
+                        </li>
+                        <li>Cambiar estilos de CSS. 
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_style" target="_blank">Ejemplo</a>
+                        </li>
+                        <li>Esconder/mostrar elementos. 
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_hide" target="_blank">Ejemplo1</a> y
+                            <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_show" target="_blank">Ejemplo2</a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="muchotexto"> 
+                    <p class="left">Igual que con CSS, hay diferentes maneras de agregar scripts.</p>
+                    <ul>
+                        <li>En l&iacute;nea. En atributos como <code>onclick</code> en los
+                        botones.</li>
+                        
+                        <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                            &#60;button type="button" onclick='alert("Hola chicas!")'>
+                                Haz click&#60;/button>
+                        </code></pre>
+
+                        <button type="button" onclick='alert("Hola chicas!")' style="width: 150px; height: 30px;">
+                            Haz click</button>
+
+                        <li>C&oacute;digo dentro de las etiquetas 
+                            <code>	&#60;script&#62; &#60;script&#62; </code></li>
+                        <li>Importando un archivo <code>.js</code> en la etiqueta 
+                            <code>	&#60;script&#62; &#60;script&#62; </code></li>
+                    </ul>
+                    <p>Puede ponerse en el <code>&#60;head&#62;</code> o en el 
+                        <code>&#60;body&#62;</code></p>
+                </section>
+                <section class="muchotexto"> 
+                    <p class="left">Igual que con CSS, hay diferentes maneras de agregar scripts.</p>
+                    <ul>
+                        <li>En l&iacute;nea. En atributos como <code>onclick</code> en los
+                        botones.</li>
+                        <li>C&oacute;digo dentro de las etiquetas 
+                            <code>	&#60;script&#62; &#60;script&#62; </code></li>
+                            <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                                &#60;html>
+                                    &#60;body>
+                                        &#60;script> alert("Hola chicas!") &#60;/script>
+                                    &#60;body>
+                                &#60;/html>
+                            </code></pre>
+
+                        <li>Importando un archivo <code>.js</code> en la etiqueta 
+                            <code>	&#60;script&#62; &#60;script&#62; </code></li>
+                    </ul>
+                    <p>Puede ponerse en el <code>&#60;head&#62;</code> o en el 
+                        <code>&#60;body&#62;</code></p>
+                </section>
+                <section class="muchotexto"> 
+                    <p class="left">Igual que con CSS, hay diferentes maneras de agregar scripts.</p>
+                    <ul>
+                        <li>En l&iacute;nea. En atributos como <code>onclick</code> en los
+                        botones.</li>
+                        <li>C&oacute;digo dentro de las etiquetas 
+                            <code>	&#60;script&#62; &#60;script&#62; </code></li>
+                            <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                                &#60;html>
+                                    &#60;body>
+                                        &#60;script src="js/hola.js"> &#60;/script>
+                                    &#60;body>
+                                &#60;/html>
+                            </code></pre>
+
+                        <li>Importando un archivo <code>.js</code> en la etiqueta 
+                            <code>	&#60;script&#62; &#60;script&#62; </code></li>
+                    </ul>
+                    <p>Puede ponerse en el <code>&#60;head&#62;</code> o en el 
+                        <code>&#60;body&#62;</code></p>
+                </section>
+                <section class="muchotexto">
+                    <p>En general, un programa es una lista de <b>instrucciones</b>
+                         ejecutadas por la computadora. En un lenguaje de programaci&oacute;n, las instrucciones se llaman 
+                        <b>declaraciones.</b>
+                    </p>
+                    <p>Las declaraciones en JS se componen de: valores, operadores, expresiones, palabras reservadas
+                        y comentarios.
+                    </p>
+                    <p><b>Sintaxis:</b> Las reglas que componen un lenguaje. Describen 
+                        las declaraciones v&aacute;lidas.</p>
+                </section>
+                <section class="muchotexto">
+                    
+                    <p><b>Valores</b></p>
+                    <p class="left">Hay dos tipos:</p>
+                    <ul class="left">
+                        <li><b>Literales</b>. Valores fijos</li>
+                    </ul>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        /* Números*/
+                        /* Por cierto, esto es un comentario multi-línea 
+                        en JavaScript */
+                        10
+                        8.340
+                        /* Strings */
+                        /* Los comentarios no ejecutan nada. Sirven para que, 
+                        como desarrolladoras,  ayudemos a nuestra yo del 
+                        futuro o a alguien más. */
+                        "Hola, con comillas dobles"
+                        'Hola, con comillas simples'
+                    </code></pre>
+                </section>
+                <section>
+                    <ul class="left">
+                        <li><b>Literales</b>. Valores fijos</li>
+                        <li><b>Variables</b>. Guardan datos que pueden cambiar</li>
+                    </ul>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let a, b; // Declaración
+                        a = 10; // Asignación
+                        b = 35;
+                        let multiplicacionDeDosVariables = a * b; //esto es camelCase:
+                        // utilizar mayúsculas en las primeras letras de nombres
+                        // compuestos de variables y funciones. Primera minúscula.
+                        // Esto es un comentario de una sola línea.
+                    </code></pre>
+                    <p>¿Qu&eacute; <b>identificadores</b> de variables son v&aacute;lidos?</p>
+                </section>
+                <section>
+                    <p>Antes de 2015, para declarar variables s&oacute;lamente se usaba 
+                        <code>var</code>, ahora se utiliza <code>let</code> y
+                        <code>const</code>
+                    </p>
+                    <p>Una de las diferencias entre <code>var</code> y <code>let</code> es su <b>scope</b>,
+                        es decir, hasta d&oacute;nde est&aacute;n disponibles las variables para ser usadas.
+                    </p>
+                    <p>Por ahora: utilizar <code>const</code> si es una variable que no va a 
+                        modificarse, y <code>let</code> en otros casos.</p>
+                    <p>Explicaci&oacute;n: 
+                        <a href="https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/" target="_blank">Ingl&eacute;s</a>
+                        y <a href="https://platzi.com/blog/la-diferencia-entre-let-y-var/" target="_blank">Español</a>
+                    </p>
+                </section>
+                <section>
+                    <p><b>Declarando variables con <code>var</code></b></p>
+                    <p>Cosa que no debemos hacer</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        var unaVariable; 
+                        console.log(unaVariable); // ¡Un mensaje en la consola!
+                        unaVariable = "Hola, soy una variable";
+                        console.log(unaVariable);
+                        unaVariable = "Ahora tengo un nuevo valor";
+                        console.log(unaVariable);
+                        /* Mucho código que no tiene nada
+                        que ver con la variable unaVariable y 
+                        ya se nos olvidó que la habíamos declarado */
+                        var unaVariable; // Redeclaración
+                        console.log(unaVariable); // ¿Qué valor tiene?
+                    </code></pre>
+                    <button type="button" onclick='declararVariableVar()' style="width: 150px; height: 30px;">
+                       Ejecutemos el código</button>
+
+                    <script>
+                        function declararVariableVar() {
+                            var unaVariable; 
+                            console.log(unaVariable); //  Mensaje en la consola!
+                            unaVariable = "Hola, soy una variable";
+                            console.log(unaVariable);
+                            unaVariable = "Ahora tengo un nuevo valor";
+                            console.log(unaVariable);
+                            var unaVariable; // Redeclaración
+                            console.log(unaVariable); // ¿Qué valor tiene?
+                        }
+                    </script>
+                    <p class="fragment">¡Guarda su valor después de ser redeclarada!</p>
+                </section>
+                <section>
+                    <p><b>Declarando variables con <code>let</code></b></p>
+                    <p>¿Podemos hacer lo mismo?</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let unaVariable; 
+                        console.log(unaVariable); //  Mensaje en la consola!
+                        unaVariable = "Hola, soy una variable";
+                        console.log(unaVariable);
+                        unaVariable = "Ahora tengo un nuevo valor";
+                        console.log(unaVariable);
+                        /* Mucho código que no tiene nada
+                        que ver con la variable unaVariable y 
+                        ya se nos olvidó que la habíamos declarado */
+                        let unaVariable; // Redeclaración
+                    </code></pre>
+                    <p class="fragment"><code>Uncaught SyntaxError: Identifier 'unaVariable' has already been declared</code></p>
+                </section>
+                <section>
+                    <p><b>¿Y qué pasa con <code>const</code>?</b></p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        console.log("Intentemos declarar y luego asignar una variable");
+                        const unaVariableConValorFijo; // Declaramos
+                        unaVariableConValorFijo = "No cambiaré mi valor"; // Asignamos
+                    </code></pre>
+                    <p class="fragment"><code>Uncaught SyntaxError: Missing initializer in const declaration</code></p>
+                    <p class="fragment">Si utilizamos <code>const</code>, tenemos que inicializar la variable</p>
+                </section>
+                <section>
+                    <p><b>¿Y qué pasa con <code>const</code>?</b></p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        console.log("¿Y si le tratamos de cambiar el valor después?");
+                        const unaVariableConValorFijo = "No cambiaré mi valor"; 
+                        unaVariableConValorFijo = "Bueno, mejor sí"; 
+                    </code></pre>
+                    <p class="fragment"><code>Uncaught TypeError: Assignment to constant variable.</code></p>
+                    <p class="fragment">Por eso es para valores constantes.</p>
+                </section>
+                <section>
+                    <p>¿Observaron alguna diferencia en los mensajes en la consola?</p>
+                    <ul class="fragment">
+                        <li>
+                            <code>SyntaxError</code>: Nada del código se ejecuta.
+                        </li>
+                        <li> Otros errores como 
+                            <code>TypeError</code>: Termina la ejecución al momento de encontrar el error.
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <p><b>Última cosa</b></p>
+                    <p>¿Y si uso la variable sin declarar?</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        console.log(unaVariable); //  Mensaje en la consola!
+                        unaVariable = "Una variable sin declarar";
+                        console.log(unaVariable);
+                    </code></pre>
+                    <p class="fragment"><code>Uncaught ReferenceError: unaVariable is not defined</code></p>
+                   
+                </section>
+                <section>
+                    <p>¿Y si la declaro después con <code>let</code>?</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        console.log(unaVariable); //  Mensaje en la consola!
+                        unaVariable = "Una variable sin declarar";
+                        console.log(unaVariable);
+                        let unaVariable;
+                    </code></pre>
+                    <p class="fragment"><code>Uncaught ReferenceError: Cannot access 'unaVariable' before initialization</code></p>  
+                </section>
+                <section>
+                    <p>¿Y si la declaro después con <code>var</code>?</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        console.log(unaVariable); //  Mensaje en la consola!
+                        unaVariable = "Una variable sin declarar";
+                        console.log(unaVariable);
+                        var unaVariable;
+                    </code></pre>
+                    <p class="fragment"><b>...</b></p>
+                    <p class="fragment">A esto se llama hoisting: se reserva memoria para la variable.</p>  
+                </section>
+                <section>
+                    <p><b>Solo recuerden nunca utilizar <code>var</code></b></p>
+                </section>
+            </div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight ]
+			});
+		</script>
+	</body>
+</html>

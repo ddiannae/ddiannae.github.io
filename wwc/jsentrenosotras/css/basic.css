@@ -1,0 +1,106 @@
+.reveal-viewport  {
+    background-color: #008080;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal p,
+.reveal li,
+.reveal small,
+.reveal tr{
+    color: #fff;
+}
+
+.reveal h2.edcodigo,
+.reveal p b,
+.reveal li b,
+.reveal thead tr {
+    color: 	#f3e733;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3{
+    font-size: 50px;
+}
+
+.muchotexto h1,
+.muchotexto h2,
+.muchotexto h3{
+    font-size: 40px;
+}
+
+.reveal p b,
+.reveal li b{
+    font-size: 46px;
+}
+
+.muchotexto p,
+.muchotexto li,
+.muchotexto code,
+.muchomuchotexto p b,
+.muchomuchotexto li b {
+    font-size: 36px;
+}
+
+.muchomuchotexto p,
+.muchomuchotexto li,
+.reveal tr {
+    font-size: 30px;
+}
+
+.muchotexto td,
+.muchotexto th {
+    font-size: 22px;
+    color: #fff;
+}
+.muchotexto th {
+    color: 	#f3e733;
+}
+
+.scrollable-slide {
+    height: 800px;
+    overflow-y: auto !important;
+}
+
+.hljs-ln-code, .hljs-ln-numbers {
+    font-size: 22px;
+}
+
+.reveal img {
+    margin-top: 5px;
+}
+
+.reveal ul {
+    list-style: none; 
+}
+.reveal p.left,
+.reveal ul.left {
+    text-align: left;
+}
+.reveal ul li::before {
+    content: "\2022";  
+    color: #f3e733;
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+	
+p.center {
+    text-align: center;
+    color: red;
+}
+ 
+p.large {
+    font-size: 250%;
+}
+
+.centro {
+    text-align: center;
+  }
+
+code {
+    color:darkblue;
+}

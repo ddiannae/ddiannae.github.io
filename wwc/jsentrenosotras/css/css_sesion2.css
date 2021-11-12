@@ -1,0 +1,158 @@
+div.bck {
+    display: block;
+    height: 100px;
+    background-color: darkcyan;
+}
+
+div.inlblk {
+    display: inline-block;
+    height: 100px;
+    background-color: darkorange;
+}
+
+a.inl {
+    display: inline;
+    background-color: salmon;
+    color:darkcyan;
+    height: 3000px;
+    width: 5000px;
+}
+
+a.inlblk {
+    color:darkcyan;
+    display: inline-block;
+    background-color: salmon;
+    height: 150px;
+    width: 700px;
+}
+
+.nav {
+    background-color: darkcyan;
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+.nav li, 
+.nav li a {
+    display: inline-block;
+  }
+
+.nav li a {
+    color: yellow;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 20px;
+    font-size: 20px;
+}
+.nav li a:hover {
+    background-color: salmon;
+    color: teal;
+}
+
+.nav li a:active {
+    background-color: palevioletred;
+}
+
+.ali {
+    width: 300px;
+    height: 80px;
+    border: 5px solid darkcyan;
+    position: fixed;
+}
+
+.sd {
+    top: 0px;
+    right: 0px;
+}
+
+.si {
+    top: 0px;
+    left: 0px;
+}
+
+.id {
+    bottom: 0px;
+    right: 0px;
+}
+
+.ii {
+    bottom: 0px;
+    left: 0px;
+}
+
+div.morado {
+    background-color: lightpink;
+    padding: 20px;
+}
+
+
+div.morado li {
+    color:darkmagenta;
+    border: 5px solid lightsalmon;
+}
+
+div.morado > p {
+    color:darkmagenta;
+    border: 5px solid lightsalmon;
+}
+
+div.hm  {
+    color:darkmagenta;
+    border: 5px solid lightsalmon;
+    background-color: darkcyan;
+}
+div.hm:hover {
+    background-color: lightcyan;
+}
+
+ul.fc li:first-child {
+    color: lightsalmon;
+}
+
+ul.fsc li strong:first-child {
+    color: lightsalmon;
+}
+
+ul.sfc li:first-child strong {
+    color: lightsalmon;
+}
+
+div.par {
+    background-color: darkcyan;
+}
+
+div.par + p {
+    color:darkmagenta;
+    background-color: darksalmon;
+}
+
+div.par ~ p {
+    border: 5px solid black;
+}
+
+p.fl::first-letter {
+    font-size:70px;
+    font-weight: bolder;
+    color:darksalmon;
+}
+
+ul.aft li span::after {
+    content: " <- Falta";
+    color: yellow;
+}
+
+ul.aft li span::before {
+    color: yellow;
+}
+
+a.linkw3 {
+    color: darkcyan;
+    font-weight: bold;
+}
+
+a.linkw3::before {
+    content: " (" attr(href) ")";
+    font-weight: normal;
+}
