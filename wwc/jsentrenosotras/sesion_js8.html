@@ -1,0 +1,261 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>JS entre nosotras - Sesión 1</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="css/basic.css">
+		<link rel="stylesheet" href="css/css_sesion2.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="img/logo1.png" width="50%"/>
+					<h2 class="edcodigo">JS entre nosotras</h2>
+					<p>Funciones</p>
+				</section>
+				<section>
+                    <p>Las <b>funciones</b> son como los ladrillos en programación.</p>
+                    <p>Nos permiten definir código una vez y 
+                        ejecutarlo muchas veces. Reutilizar código.
+                    </p>
+                    <p>Pueden tomar valores, hacer cálculos y generar el resultado 
+                        correspondiente.
+                    </p>
+                </section>
+                <section>
+
+                </section>
+                <section>
+                    <p class="left">Definici&oacute;n</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        function productoDosNumeros(num1, num2) {
+                            return num1*num2;
+                        }
+                    </code></pre>
+                    <ul>
+                        <li>Palabra reservada <code>function</code>.</li>
+                        <li>Un nombre + par&eacute;ntesis.</li>
+                        <li>Par&aacute;metros opcionales separados por comas.</li>
+                        <li>C&oacute;digo a ejecutarse entre <code>{}</code>.</li>
+                        <li>La expresi&oacute; de <code>return</code> concluye la ejecuci&oacute;n.</li>
+                    </ul>
+                </section>
+                <section>
+                    <p class="left">Invocaci&oacute;n</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        let x = 8;
+                        let z = productoDosNumeros(x, 3);
+                    </code></pre>
+                    <ul>
+                        <li>El c&oacute;digo se ejecuta hasta que se la funci&oacute;n se 
+                            invoca.
+                        </li>
+                        <li>Al invocar se pasan los <b>valores</b> de las variables.</li>
+                        <li>Las variables dentro de la funci&oacute;n, son 
+                            <b>locales</b>.
+                        </li>
+                    </ul>
+                    <p>Ejercicio</p>
+                </section>
+                <section>
+                    <p><b>Expresión de función (function expression)</b></p>
+                    <p>Declarar una variable como función.</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                       const saludar = function() {
+                           console.log("buen día!");
+                       };
+                    </code></pre>
+                    <p>Diferencia: no hay <b>hoisting</b> en estas declaraciones. </p>
+                </section>
+                <section>
+                    <p><b>Parámetros y argumentos</b></p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        const saludar = function(nombre) {
+                            /* nombre es un parámetro, una variable
+                            que solo va a existir dentro de esta función, 
+                            una variable local*/
+                            console.log(`buen día, ${nombre}!`);
+                        };
+
+                        saludar("chicas");
+                        /* "chicas" es un argumento, es el valor que va a 
+                        tomar el parámetro nombre en la función */
+                     </code></pre>
+                </section>
+                <section>
+                    <p>El orden de los parámetros importa</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        const saludar = function(dia, nombre) {
+                            console.log(`buen ${dia}, ${nombre}!`);
+                        };
+                        /*No son lo mismo*/
+                        saludar("jueves","chicas");
+                        saludar("chicas", "jueves");
+                     </code></pre>
+                </section>
+                <section>
+                    <p>¿Qué pasa si mandamos llamar la función sin ningún argumento? </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        saludar();
+                     </code></pre>
+                     <p>Para evitar eso podemos declarar valores default para los parámetros</p>
+                     <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        const saludar = function(dia = "día", nombre = "tú") {
+                            console.log(`buen ${dia}, ${nombre}!`);
+                        };
+                        saludar();
+                        saludar("jueves","chicas");
+                     </code></pre>
+                </section>
+                <section>
+                    <p>Valores de retorno, <code>return</code></p>
+                    <p>Las funciones pueden regresar valores, que almacenamos en otras variables.</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        const celsiusAFahrenheit = function (grados) {
+                            return (grados-32)*(5/9)
+                        };
+
+                        const gradosF = celsiusAFahrenheit(90);
+                     </code></pre>
+                </section>
+                <section>
+                    <p><b>Funciones flecha</b></p>
+                   <p>Se crearon para simplificar el c&oacute;digo.</p>
+                   <pre><code class="language-javascript hljs" data-trim data-line-numbers>          
+                    // Funci&oacute;n original.
+                    const sumacien = function (a) {
+                      return a + 100;
+                    }
+                    // 1. Quitamos la palabra "function" y ponemos una flecha
+                    //  entre los argumentos y la llave de unicio
+                    const sumacien = (a) => {
+                      return a + 100;
+                    }
+                    
+                    // 2. Quitamos las llaves y el "return". Solo para 
+                    // c&oacute;digo con una sola l&iacute;nea.
+                    const sumacien = (a) => a + 100;
+                    
+                    // 3. Quitamos los par&eacute;ntesis del parámetro si 
+                    // solo es uno
+                    const sumacien = a => a + 100;
+                    </code></pre>
+                </section>
+                <section>
+                    <p><b>Ejercicios</b></p>
+                    <p>Escribe funciones flecha:</p>
+                    <ul>
+                        <li>Una función que regrese un saludo</li>
+                        <li>Una función que tome un arreglo de números que representan precios de productos y un valor 
+                            del porcentaje de impuestos, que regrese la suma del valor de los precios más su impuesto. 
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <p><b>Funciones y métodos</b></p>
+                    <p>Los métodos son también funciones, pero están asociadas a los objetos y los llamamos con la 
+                    notación de punto. </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        const texto = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Donec ut pretium libero, sit amet mollis."
+                        texto.indexOf("adipiscing");
+                        
+                        const arr = [1, 5, 6, 2];
+                        arr.pop();
+                     </code></pre>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Funciones callback</b></p>
+                    <p>Son funciones que se mandan llamar dentro de otras.</p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        const carritoCompra = ["leche", "queso", "pan", "jamón"];
+                        carritoCompra.forEach(function (producto) {
+                            console.log(producto)
+                        })
+                     </code></pre>
+                     <p>Podemos también declararlas a parte y pasar su declaración.</p>
+                     <pre><code class="language-javascript hljs" data-trim data-line-numbers>
+                        const carritoCompra = ["leche", "queso", "pan", "jamón"];
+                        const muestraProducto = producto => console.log(producto);
+                        carritoCompra.forEach(muestraProducto);
+                     </code></pre>
+                </section>
+                <section class="muchotexto">
+                    <p><b>Scope o alcance</b></p>
+                    <p>El scope determina a accesibilidad o visibilidad de las variables. Hay dos tipos:
+                    </p>
+                    <ul>
+                        <li>Scope <b>global</b></li>
+                        <li>Scope <b>local</b></li>
+                    </ul>
+                    <p>En JS cada funci&oacute;n crea su propio scope. Las variables que declaramos dentro de 
+                        una funci&oacute;n solo pueden accederse dentro de ella.
+                    </p>
+                </section>
+               <section>
+                   <p><b>Scope local</b></p>
+                   <p>Las variables dentro de una funci&oacute;n son locales a ella. Incluyendo los par&aacute;metros. </p>
+                   <pre><code class="language-javascript hljs" data-trim data-line-numbers>          
+                    //Aqu&iacute; no podemos utilizar la variable parrafo
+                    function leerParrafo() {
+                        let parrafo = "";
+                        //Aqu&iacute; podemos utilizar la variable parrafo
+                    }
+                    </code></pre>
+                   <p> Podemos  declarar variables con el mismo nombre en diferentes funciones 
+                       porque se crean cuando la funci&oacute;n inicia y se borran cuando se completa.</p>
+               </section>
+               <section>
+                   <p><b>Scope global</b></p>
+                   <p>Si una variable se crea fuera de una funci&oacute;n, se vuelve <b>global</b>
+                y todas las funciones pueden acceder a ella. </p>
+                    <pre><code class="language-javascript hljs" data-trim data-line-numbers>          
+                    let parrafo = "";
+                    //Aqu&iacute; podemos utilizar la variable parrafo
+                    function leerParrafo() {
+                        //Aqu&iacute; tambi&eacute;n podemos utilizar la variable parrafo
+                    }
+                    </code></pre>
+                    <p>Si asignamos valor a una variable sin declararla, tambi&eacute; se vuelve global 
+                        <i class="fa fa-meh fa-lg"></i></p>
+               </section>
+               <section>
+                   <ul>
+                       <li>Los objetos y las funciones tambi&eacute;n son variables.</li>
+                       <li>El scope global de JS es todo el ambiente.</li>
+                       <li>La vida de las variables inicia cuando se declaran.</li>
+                       <li>Las variables locales se borran cuando la funci&oacute;n se completa.</li>
+                       <li>Las variables globales las limpia nuestro navegador cuando cerramos la pestaña o la ventana.</li>
+                   </ul>
+               </section>
+            </div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight ]
+			});
+		</script>
+	</body>
+</html>
