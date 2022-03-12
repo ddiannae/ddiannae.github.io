@@ -1,0 +1,604 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Women Who Code CDMX - Taller de Linux</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="css/basic.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="img/logo1.png" width="50%"/>
+					<h2 class="edcodigo">Intro a la Terminal de <br/>Comandos de Linux</h2>
+					
+					<p>Diana García Cortés</p>
+				</section>
+				<section class="muchotexto">
+                    <p><b>Sistema Operativo</b></p>
+                    <p class="fragment">Software principal, que gestiona los recursos de hardware,
+                         se ejecuta en modo privilegiado y provee servicios a las aplicaciones. </p>
+                </section>
+				<section class="muchotexto">
+					<p><b>Software Libre</b></p>
+					<p>Respeta la libertad de los usuarios y la comunidad. <br/>
+						Los usuarios tienen la libertad de ejecutar, copiar, distribuir, estudiar, modificar y mejorar el software.</p>
+					<ol start="0" data-fragment-index="2" class="fragment">
+						<li>Libertad de ejecutar el programa como se desee, con cualquier propósito</li>
+						<li>Libertad de acceso al código fuente: posibilidad de estudiar y modificar el programa.</li>
+						<li>Libertad de redistribuir copias para ayudar a otros.</li>
+						<li>Libertad de distribuir copias de sus versiones modificadas a terceros. </li>
+					</ol>
+					<small><i>Free Software Fundation</i></small>
+				</section>
+				<section>
+					<p><b>Proyecto GNU/Linux</b></p>
+					<div style="float:left;width:60%;">
+					<ul>
+						<li>Sistema Operativo completamente de software libre.</li>
+						<li>Las herramientas son GNU, el kernel es Linux.</li>
+						<li>Proyecto que inició desde 1984.</li>
+						<li>Un sistema basado en Unix.</li>
+					</ul>
+					</div>
+					<div style="float:left;width:40%;">
+						<figure>
+							<img src="img/gnulinux.png"/>
+						</figure>
+					</div>
+                </section>
+				<section>
+					<p><b>Algunos conceptos importantes</b></p>
+					<ul>
+						<li>Distribuciones</li>
+						<li>Sistemas de archivos</li>
+						<li>Manejadores de paquetes</li>
+					</ul>
+				</section>
+                <section class="muchotexto">
+                    <p><b>Distribuci&oacute;n GNU/Linux </b></p>
+                    <p>Sistema Operativo con el kernel de Linux, herramientas y librer&iacute;as de GNU,
+                        software adicional, sistema y manejador de ventanas y un entorno de escritorio. 
+                    </p>
+                    <p><b>Diferencias:</b> Instalador utilizado, manejador de paquetes, aplicaciones incluidas,
+                    entorno de escritorio.</p>
+					<p>¿Qué distros conocen?</p>
+                </section>
+                <section class="muchotexto">
+					<p><b>Sistema de archivos</b></p>
+                    <p>Conjunto de normas y procedimientos para almacenar la información. </p>
+					<p>
+						Sistema de almacenamiento de 
+                        un dispositivo de memoria, que estructura y organiza la escritura, 
+                        búsqueda, lectura, almacenamiento, edición y eliminación de archivos 
+						de una manera concreta.</p>
+                    
+                </section>
+                <section class="muchomuchotexto">
+                    <ul>
+                        <li><b>FAT (File Allocation Table o tabla de asignación de archivos)</b> <br/>
+                        (4GB - 8TB). Volumen de datos pequeño. USB y dispositivos m&oacute;viles.</li>
+						<li><b>NTFS (New Technology File System)</b><br/>
+							Estándar para Windows desde Windows Vista.  </li>
+						<li><b>APFS (Apple File System)</b><br/>
+						Apple en 2017 con High Sierra para unidades de estado sólido modernas. 
+						Siguiente generaci&oacute;n de HFS+. </li>
+						<li><b>ext4</b> <br/>
+							Estándar para sistemas Linux. Optimiza la gestión de archivos grandes 
+							y evita la fragmentación de manera más eficaz. Las particiones se pueden ampliar y reducir 
+							según sea necesario, e incluso durante el procesamiento. Volumen de 1 exabyte 
+							(aproximadamente 1 millón de terabytes).
+						</li>
+                    </ul>
+				</section>
+				<section>
+					<p><b>¿Por qué nos importan los sistemas de archivos?</b></p>
+					 <ul>
+						 <li>Todos los sistemas operativos pueden leer y escribir en USBs (FAT)</li>
+						 <li>¿Han instalado Linux en en una partición? ¿Windows puede ver los 
+							 archivos de Linux?
+							 <ul class="fragment">
+								 <li>NTFS no puede leer y/o escribir ext4</li>
+							 </ul>
+						</li>
+					 </ul>
+				</section>
+				<section class="muchotexto">
+					<p><b>Filesystem Hierarchy Standard o FHS </b></p>
+					<small>Nació en 1994, mantenido por la Linux Foundation.</small>
+					<img src="https://computernewagedotcom.files.wordpress.com/2018/08/linux-jerarquia-directorios.png" />
+					<small>https://computernewagedotcom.files.wordpress.com/2018/08/linux-jerarquia-directorios.png</small>
+				</section>
+				<section class="muchotexto">
+					<p><b>Manejador de paquetes</b></p>
+					<p>Colecci&oacute;n de herramientas de software que automatizan el proceso de 
+						instalaci&oacute;n, actualizaci&oacute;n, configuraci&oacute;n y eliminaci&oacute;n
+						de programas para un SO.
+						<table>
+							<tr>
+								<th>
+									Distribuci&oacute;n
+								</th>
+								<th>
+									Manejador de paquetes
+								</th>
+								<th>
+									Herramientas
+								</th>
+							</tr>
+							<tr>
+								<td>
+									Debian, Ubuntu
+								</td>
+								<td>
+									dpkg
+								</td>
+								<td>
+									apt, aptitude
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Ret Hat, open Suse, Fedora	
+								</td>
+								<td>
+									RPM
+								</td>
+								<td>
+									apt4rm, zypp, yum, dnf
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Arch Linux, Frugalware	
+								</td>
+								<td>
+									Pacman
+								</td>
+								<td>
+									Makepkg
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Knoppix, Mint, Gentoo, <br> OpenSUSE, Red Hat and Slackware
+								</td>
+								<td>
+									Zero Install
+								</td>
+								<td>
+									0install
+								</td>
+							</tr>
+						</table>
+				</section>
+				<section>
+					<p><b>Conozcamos la terminal</b></p>
+					<img src="img/prompt.png" width="70%"/>
+					<p>Este es el prompt, listo para ejecutar instrucciones.</p>
+				</section>
+				<section>
+					<p><b>Conozcamos la terminal</b></p>
+					<p>Este es el prompt</p>
+					<ul>
+						<li><code>diana</code>: <span class="fragment">usuario</span></li>
+						<li><code>lotus</code>:  <span class="fragment">hostname</span></li>
+						<li><code>~</code>:  <span class="fragment">la ruta (directorio) donde estamos</span></li>
+						<li><code>$</code>:  <span class="fragment">significa que nuestro intérprete de comandos o shell, 
+							es bash o GNU Bourne-Again shell</span></li>
+					</ul>
+				</section>
+				<section> 
+					<p><b>Estructura de los comandos</b></p>
+					<code>commando [opciones] [arg1] [arg2] ... [argn]</code>
+					<p>Las opciones y los argumentos dependen del comando que estemos ejecutando</p>
+				</section>
+				<section class="muchotexto">
+					<p><b>Calentando</b></p>
+					<p>Comandos que no necesitan argumentos</p>
+					<ul>
+						<li> <span class="fragment">Print working directory. Dónde estamos</span>
+							<pre><code class="bash" data-trim data-line-numbers>
+							pwd
+						 </code></pre>
+						</li>
+						<li> <span class="fragment"> Nombre de usuario loggeado en la consola</span>
+							<pre><code class="bash" data-trim data-line-numbers>
+								whoami
+							 </code></pre>
+						</li>
+						<li> <span class="fragment">El nombre del equipo</span>
+							<pre><code class="bash" data-trim data-line-numbers>
+								hostname
+							 </code></pre>
+						</li>
+						<li> <span class="fragment">Fecha  y hora en formato largo</span>
+							<pre><code class="bash" data-trim data-line-numbers>
+								date
+							 </code></pre>
+						</li>
+					</ul>
+				</section>
+				<section class="muchotexto">
+					<p><b>Calentando</b></p>
+					<p>Comandos que no necesitan argumentos</p>
+					<ul>
+						<li> <span class="fragment">Muestra las variables de entorno</span>
+							<pre><code class="bash" data-trim data-line-numbers>
+								env
+							 </code></pre>
+						</li>
+						<li> <span class="fragment">Info sobre nuestra sesión</span>
+							<pre><code class="bash" data-trim data-line-numbers>
+								who
+							 </code></pre>
+						</li>
+						<li><span class="fragment">Info sobre nuestro sistema</span>
+							<pre><code class="bash"  data-trim data-line-numbers>
+							uname -a
+							 </code></pre>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<p>Por default, nuestra shell imprime el resultado en la consola, se le 
+						llama <code>stdout</code> o standard output stream. Para cambiarlo:
+					</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						uname -a > sesion.txt
+					 </code></pre>
+					<p> Esto se llama redirigir la salida. 
+					</p>
+				</section>
+				<section>
+					<p><b>Archivos texto plano</b></p>
+					<p>Solamente contienen texto. No Word.</p>
+					<p>Extensiones: .txt, .tsv, .csv, etc</p>
+					<p class="fragment">Para verlos:</p>
+					<pre class="fragment"><code class="bash" data-trim data-line-numbers>
+						cat data_rentas.tsv
+						more data_rentas.tsv
+						less -S data_rentas.tsv
+					</code></pre>
+				</section>
+				<section>
+					<p><b>Comandos para manejar directorios y archivos</b></p>
+					<p>Listar los contenidos de un directorio</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						ls
+						ls -a
+						ls -al
+						ls -alh
+						ls -alht
+						ls -alht /bin
+					 </code></pre>
+					 <p> ¿Cómo vemos todas las opciones? </p>
+					 <pre><code class="bash" data-trim data-line-numbers>
+						man ls
+						ls --help
+					 </code></pre>
+				</section>
+				<section>
+					<p>Hay carpetas que siempre existen:</p>
+					<ul>
+						<li><code>.</code><br/>
+							<span class="fragment">El directorio actual</span>
+						</li>
+						<li><code>..</code><br/>
+							<span class="fragment">Un directorio atrás</span>
+						</li>
+						<li><code>~</code><br/>
+							<span class="fragment">Nuestra carpeta <code>$HOME</code></span>
+						</li>
+					</ul>
+					<p class="fragment">En realidad no existen, son referencias a esas 
+						carpetas.
+					</p>
+				</section>
+				<section>
+					<p><b>Un poco sobre rutas</b></p>
+					<p>Hay dos tipos</p>
+					<ul>
+						<li>Rutas relativa: define un archivo o directorio a partir del directorio
+							donde nos encontramos.
+						</li>
+						<li>Rutas absoluta: define de forma única un archivo o directorio. 
+							Siempre inician con <code>/</code>, desde la raíz.</li>
+					</ul>
+				</section>
+				<section>
+					<p><b>Comandos para manejar directorios y archivos</b></p>
+					<p>Cambiarnos de directorio</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						cd /home/[tu_username]/Desktop
+						cd ../Documents
+						cd ../../../tmp
+					</code></pre>
+					<p>Utilicen siempre el <code>TAB</code> y practiquen mucho</p>
+				</section>
+
+				<section>
+					<p><b>Comandos para manejar directorios y archivos</b></p>
+					<p>Crear directorios o carpetas</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						cd ~/Desktop
+						mkdir carpeta1
+						mkdir carpeta1 carpeta2
+					</code></pre>
+					<p>También se vale adentro de otras</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						cd ~/Desktop
+						mkdir ../Documents/padre
+						mkdir ../Documents/padre/hijo
+						mkdir -p ../Documents/madre/hija
+					</code></pre>
+				</section>
+				<section>
+					<p><b>Comandos para manejar directorios y archivos</b></p>
+					<p>Copiar y mover archivos y carpetas</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						cd ~/Desktop
+						touch nada.txt
+						cp nada.txt ../Documents/
+						mv nada.txt ../Documents/algo.txt
+					</code></pre>
+					<p>Para carpetas tiene que ser recursivo</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						cd ~/Desktop
+						mkdir carpeta3
+						touch carpeta3/archivo.txt
+						cp -r carpeta3 ../Documents/carpeta_copia
+						mv -r ../Documents/carpeta_copia carpeta_nueva
+					</code></pre>
+				</section>
+				
+				<section>
+					<p><b>Comandos para manejar directorios y archivos</b></p>
+					<p>Borrar archivos y carpetas</p>
+					<p><code>OJO! No hay papelera de reciclaje</code></p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						rm carpeta_nueva/archivo.txt
+						rmdir carpeta_nueva
+					</code></pre>
+					<p class="fragment">Modo salvaje</p>
+					<pre class="fragment"><code class="bash" data-trim data-line-numbers>
+						rm -rf carpeta3
+					</code></pre>
+				</section>
+				<section class="muchomuchotexto">
+					<p><b>Ejercicio</b></p>
+					<ol>
+						<li>Ve a tu <code>$HOME</code></li>
+						<li>Crea un directorio con tu mes favorito del año. </li>
+						<li>Sin moverte de directorio, guarda la salida del comando 
+							<code>date</code> en unarchivo llamado <code>hoy.txt</code>
+							dentro de la carpeta que acabas de crear. </li>
+						<li>Sin moverte de directorio, copia la carpeta a tu escritorio con
+							el nombre de tu animal favorito. </li>
+						<li>Verifica que la carpeta haya sido creada.</li>
+						<li>Sin moverte de directorio, mueve el archivo en 
+							~/Desktop/[animal favorito]/hoy.txt a la carpeta de tu mes
+						favorito con el nombre ejercicio.txt</li>
+						<li>Borra las carpetas y los archivos que creamos.</li>
+					</ol>
+				</section>
+				<section>
+					<p>Descarguen el siguiente archivo comprimido en zip: 
+						<a href="https://www.dropbox.com/s/dg5mqgj69of8fwq/WWC.zip?dl=0" target="_blank">
+							WWC.zip</a></p>
+					<p>O pueden descargar el .tar.xz desde la terminal</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						wget https://www.dropbox.com/s/in4885g2nmh6dbd/WWC.tar.xz?dl=0 -O WWC.tar.xz
+						tar -xvf WWC.tar.xz
+					</code></pre>
+				</section>
+				<section>
+					<p><b>grep</b></p>
+					<p>Nos permite buscar texto en archivos de <b>texto plano</b>. </p>
+					<p>Buscar una palabra en un archivo</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						grep arroz arroz_leche.txt
+					</code></pre>
+					<p>Buscar una palabra sin importar mayúsculas</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						grep -i Manzana tarta_manzana.txt
+					</code></pre>
+				</section>
+				<section>
+					<p>Con el número de línea y colores</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						grep -in --color calabaza mousse_calabaza.txt
+					</code></pre>
+					<p>Buscar la palabra completa</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						grep -inw Manzana --color tarta_manzana.txt
+					</code></pre>
+					<p>Si solo queremos contar cuántas veces aparece la palabra.</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						grep -c calabaza bund_cake_calabaza.txt
+					</code></pre>
+				</section>
+				<section>
+					<p>Si queremos contar en todos los archivos del directorio</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						grep -Rc canela .
+					</code></pre>
+					<p>O ver las líneas completas</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						grep -Rni --color canela .
+					</code></pre>
+				</section>
+				<section>
+					<p><b>Ejercicio</b></p>
+					<ul>
+						<li>¿Cuántas películas del archivo <code>data_rentas.tsv</code> fueron
+						rentadas por mujeres?</li>
+						<li>¿Por cuántos días rentaron la película Coyote Ugly?</li>
+						<li>¿Cuántas veces rentaron Iron Man?</li>
+						<li>¿Cuántas películas tienen "The" en su título?</li>
+					</ul>
+				</section>
+				<section>
+					<p><b>Un poco más sobre archivos de texto tabulares</b></p>
+					<p>Para saber cuántas líneas y cuántas palabras tiene un archivo</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						wc data_rentas.tsv
+						wc -l data_rentas.tsv
+					</code></pre>
+					<p>Linux es muy bueno para trabajar con archivos tabulares</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						cut -f 5 data_rentas.tsv
+						cut -f 5 data_rentas.tsv | less
+					</code></pre>
+				</section>
+				<section>
+					<p>Regresando al ejercicio: ¿Cuántas películas tienen "The" en su título? </p>
+					<pre class="fragment"><code class="bash" data-trim data-line-numbers>
+						grep -w The data_rentas.tsv
+					</code></pre>
+					<pre class="fragment"><code class="bash" data-trim data-line-numbers>
+						cut -f 5 data_rentas.tsv | grep -w The
+					</code></pre>
+				</section>
+				<section>
+					<p><b>find</b></p>
+					<p>Sirve para encontrar archivos en nuestra computadora</p>
+					<p>Por nombre</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						find . -name iris.txt
+					</code></pre>
+					<p>El <code>.</code> representa el directorio en el cual queremos buscar el archivo</p>
+				</section>
+				<section>
+					<p>Todas las imágenes <code>.jpg</code> en nuestro <code>$HOME</code></p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						find /home/diana -name *.jpg
+					</code></pre>
+					<p>Las que fueron modificadas en los últimos 3 días</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						find /home/diana -name "*jpg" -mtime 3
+					</code></pre>
+					<p>También podemos buscar directorios</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						find /home/diana -name WWC -type d
+					</code></pre>
+				
+				</section>
+				<section>
+					<h2 class="edcodigo">Extras</h2>
+				</section>
+				<section>
+					<p><b>Aliases</b></p>
+					<p>Sobrenombres para comandos que son largos, a veces se nos olvidan 
+						o los utilizamos mucho.
+					</p>
+					<p>
+						Creamos un archivo llamado <code>.bash_aliases</code> en nuestro 
+						directorio <code>$HOME</code>
+					</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						alias ll="ls -lhta"
+						alias cl-out="ssh -p 5263 -X dgarcia@cluster.inmegen.gob.mx"
+					</code></pre>
+					<p>Cerramos y abrimos la consola o escribimos:</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						source ~/.bash_aliases
+					</code></pre>
+				</section>
+				<section>
+					<p><b>Procesos</b></p>
+					<p>El linux cada tarea que se esté ejecutando es un proceso, que puede
+						distinguirse por su process ID o PID. 
+					</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						ps aux
+						ps aux | grep chrome
+						htop
+					</code></pre>
+				</section>
+				<section>
+					<p>Si un proceso deja de responder, tiene que morir</p>
+					<pre><code class="bash" data-trim data-line-numbers>
+						kill PID
+					</code></pre>
+					<p class="fragment">Y si se rehúsa, lo forzamos</p>
+					<pre class="fragment"><code class="bash" data-trim data-line-numbers>
+						kill -9 PID
+					</code></pre>
+				</section>
+				<section class="muchotexto">
+					<p><b>Usuarios en Linux</b></p>
+					<p>Todos tienen UserID (UID) y pertenecen, al menos, a un grupo de usuario, con GroupID (GID) &uacute;nico.</p>
+					<ul class="fragment">
+						<li><b>Usuario root, superusuario, administrador</b>: UID=0. Privilegios sobre todo el sistema,
+							acceso a todos los archivos y directorios.
+						</li>
+						<li><b>Usuarios especiales:</b> Asociados a cuentas o servicios del sistema, 
+						no tienen inicio de sesi&oacute;n, se general al instalar Linux o su aplicaci&oacute;n 
+					asociada. UID entre 1 y 100.</li>
+						<li><b>Usuarios normales:</b> Normalmente tienen directorio de trabajo, privilegios solo en su directorio 
+						de trabajo o HOME, UID superior a 500.</li>
+					</ul>					
+				</section>
+				<section>
+					<p><b>xkcd</b></p>
+					<img src="https://imgs.xkcd.com/comics/sandwich.png" >
+				</section>
+				<section>
+					<p><b>Permisos</b></p>
+					<p>Tres tipos de permisos</p>
+					<ul>
+						<li><b>Lectura (read):</b> Ver contenido de un archivo o directorio.</li>
+						<li><b>Escritura (write):</b> Modificar el archivo. Agregar, sobreescribir
+							 o borrar en archivo o directorio</li>
+						<li><b>Execuci&oacute;n (execute):</b> Ejecutar un archivo. 
+							En directorios, acceder a &eacute;l y permitir que otros programas puedan
+						acceder a &eacute;l</li>
+					</ul>
+					<p>Tres tipos de acceso: user (u), group (g), others(o) </p>
+				</section>
+				 <section>
+					 <p>Cambiamos los permisos con el comando <code>chmod</code></p>
+					 <p>Damos permisos de ejecución al usuario</p>
+					 <pre ><code class="bash" data-trim data-line-numbers>
+						chmod u+x hello.sh
+					</code></pre>
+					<p>Quitamos permisos de lectura al grupo </p>
+					 <pre ><code class="bash" data-trim data-line-numbers>
+						chmod g-r hello.sh
+					</code></pre>
+				 </section>
+				<section>
+					<p><b>Gracias!</b></p>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
