@@ -1,0 +1,440 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=800, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Candidatura - Diana García</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+		<link rel="stylesheet" href="css/diana.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="center">
+					<h3>Loss of inter-chromosomal co-expression is a common feature in cancer</h3>
+					<p>MS Diana Garc&iacute;a Cort&eacute;s</p>
+					<p>Advisor: Dr. Jes&uacute;s Espinal Enriquez</p>
+				</section>
+				<!--<section>
+					<blockquote cite="https://www.nature.com/articles/s41586-020-1969-6">
+						&ldquo;The promise of precision medicine is to match patients to targeted therapies using genomics. 
+					A major barrier to its evidence-based implementation is the daunting heterogeneity of 
+					cancer chronicled in these papers, from tumour type to tumour type, 
+					from patient to patient, from clone to clone and from cell to cell.&rdquo;
+					</blockquote>
+					<small class="cita">Campbell, P.J., Getz, G., Korbel, J.O. et al. 
+					    <b>Pan-cancer analysis of whole genomes</b>. Nature 578, 82–93 (2020). </small>
+				</section>
+				<section>
+					<img src="img/intro/pan_cancer.png"/>
+					<small class="cita">Campbell, P.J., Getz, G., Korbel, J.O. et al. 
+					    <b>Pan-cancer analysis of whole genomes</b>. Nature 578, 82–93 (2020). </small>
+				</section>
+				<section class="smaller center">
+					<h4>El transcriptoma</h4>
+					<p>Salida medible de las alteraciones en los mecanismos de regulaci&oacute;n transcripcional
+						 en c&aacute;ncer.</p>
+					<img src="img/intro/alteraciones-transcripcion.png" width="65%"/>
+					<small class="cita">Bradner, J. E., Hnisz, D., & Young, R. A. (2017). 
+						<b>Transcriptional Addiction in Cancer</b>. Cell, 168(4), 629–643. https://doi.org/10.1016/j.cell.2016.12.013</small>
+					
+				</section> -->
+				<section class="center"> <!--data-background="#ffffff"> -->
+					<img src="img/intro/circo-plot-mama-ingles.png"/>
+					<small class="cita">Espinal-Enr&iacute;quez, J., Fresno, C., Anda-J&aacute;uregui, G., & Hern&aacute;ndez-Lemus, E. (2017).
+						 <b>RNA-Seq based genome-wide analysis reveals loss of inter-chromosomal regulation in breast cancer</b>.
+						  Scientific Reports, 7(1), 1–19. </small>
+				</section>
+
+				<section class="center"> <!--data-background="#ffffff"> -->
+					<img src="img/intro/network-plot-mama-ingles.png"/>
+					<small class="cita">Espinal-Enr&iacute;quez, J., Fresno, C., Anda-J&aacute;uregui, G., & Hern&aacute;ndez-Lemus, E. (2017).
+						 <b>RNA-Seq based genome-wide analysis reveals loss of inter-chromosomal regulation in breast cancer</b>.
+						  Scientific Reports, 7(1), 1–19. </small>
+				</section>
+
+				<section class="center">
+					<ul>
+						<li>Co-expression networks, infered from RNA-seq data allow us to study significant transcriptome interactions.
+						<li class="fragment slide-in">In breast cancer, there is a loss of inter-chromosomal co-expression.
+							<ul>
+								<li>
+									Normal tissue: Interactions from genes in different chromosomes.
+								</li>
+								<li>
+									Cancer tissue: Interactions from neighbor genes in the same chromosome.
+								</li>
+							</ul>
+						</li>
+						<li class="fragment slide-in"> This is the first time that this differences are reported. 
+
+						</li>
+					</ul>
+				</section>
+				<section data-background="#002b36" data-background-transition="zoom" class="center">
+						<h3 class="fragment fade-up">If there is a loss of inter-chromosomal co-expression in breast cancer, can we observe this 
+							phenomenon in other cancer types?</h3>
+				</section>
+				<section  data-transition="slide-in" >
+					<h4>Methodology</h4>
+						<div style="float:left;width:35%;text-align:left">
+							<img src="img/metod/data-base.png" style="border:none; box-shadow:none;"/>
+							
+							<table class="muestras">
+								<thead>
+									<tr>
+										<th>Tejido</th>
+										<th colspan="2">Muestras</th>
+										<th></th>
+									</tr>
+									<tr>
+										<th></th>
+										<th>Normal</th>
+										<th>Cancer</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Bladder</td>
+										<td>19</td>
+										<td>414</td>
+									</tr>
+									<tr>
+										<td>Brain</td>
+										<td>105</td>
+										<td>509</td>
+									</tr>
+									<tr>
+										<td>Breast</td>
+										<td>113</td>
+										<td>1102</td>
+									</tr>
+									<tr>
+										<td>Colorectal</td>
+										<td>51</td>
+										<td>644</td>
+									</tr>
+									<tr>
+										<td>Esophagus</td>
+										<td>271</td>
+										<td>181</td>
+									</tr>
+									<tr>
+										<td>Kidney</td>
+										<td>128</td>
+										<td>891</td>
+									</tr>
+									<tr>
+										<td>Liver</td>
+										<td>50</td>
+										<td>371</td>
+									</tr>
+									<tr>
+										<td>Lung</td>
+										<td>108</td>
+										<td>1035</td>
+									</tr>
+									<tr>
+										<td>Ovary</td>
+										<td>88</td>
+										<td>419</td>
+									</tr>
+									<tr>
+										<td>Pancreas</td>
+										<td>167</td>
+										<td>178</td>
+									</tr>
+									<tr>
+										<td>Prostate</td>
+										<td>100</td>
+										<td>494</td>
+									</tr>
+									<tr>
+										<td>Skin</td>
+										<td>232</td>
+										<td>102</td>
+									</tr>
+									<tr>
+										<td>Testis</td>
+										<td>165</td>
+										<td>148</td>
+									</tr>
+									<tr>
+										<td>Thyroid</td>
+										<td>58</td>
+										<td>502</td>
+									</tr>
+									<tr>
+										<td>Uterus</td>
+										<td>35</td>
+										<td>607</td>
+									</tr>
+									
+								</tbody>
+							</table>
+						</div>
+						<div style="float:right;width:65%;text-align:right">
+							<table class="metod" >
+								<thead></thead>
+								<tbody>
+									<tr>
+										<td>
+											<img class="metod" src="img/metod/data-adquisition.png" data-fragment-index="1" />
+										</td>
+										<td>
+											<img class="metod" data-fragment-index="2" src="img/metod/normalizacion.png"/>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<img class="metod" data-fragment-index="3" src="img/metod/mi.png" />
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img data-fragment-index="4" src="img/metod/redes.png" class="metod" />
+										</td>
+										<td>
+											<img data-fragment-index="4" src="img/metod/distancia.png" class="metod"/>
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2">
+											<img data-fragment-index="5" src="img/metod/integracion.png" class="metod" />
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+				<section>
+					<p><b>In cancer, strongest interactions are intra-chromosomal</b></p>
+					<img src="img/pan-loss/figure1a.png">
+				</section>
+				<section>
+					<p><b>In cancer, strongest interactions are intra-chromosomal</b></p>
+					<img src="img/pan-loss/intra-inter-log.png">
+				</section>
+				<section>
+					<p><b>There is a loss of long-range co-expression in cancer</b></p>
+					<img src="img/pan-loss/figure_intra_distance.png" width="70%">
+				</section>
+				<section>
+					<p><b>Cancer and normal co-expression networks have different topologies</b></p>
+					<img src="img/pan-loss/networks_normal_cancer.png" width="60%">
+				</section>
+				<section>
+					<p><b>Links are mostly unique in normal co-expression networks, but not in cancer</b></p>
+					<img src="img/pan-loss/interactions_intersectionsA.png" width="80%">
+				</section>
+				<section>
+					<p><b>Links are mostly unique in normal co-expression networks, but not in cancer</b></p>
+					<img src="img/pan-loss/interactions_intersectionsB.png" width="70%">
+				</section>
+				<section>
+					<p><b>Riboprotein genes constitute a cluster shared by cancer and normal co-expression networks
+					</b></p>
+					<img src="img/pan-loss/shared-10.png" width="60%">
+				</section>
+				<section>
+					<p><b>Distribution of chromosomal assortativity 
+					</b></p>
+					<img src="img/pan-loss/chr_assortativity.png" >
+				</section>
+				<section>
+					<p><b>Shared communities in cancer
+					</b></p>
+					<img src="img/pan-loss/jaccard_idxs.png"  width="60%" >
+				</section>
+				 <section>
+					<p><b>Shared communities in cancer
+					</b></p>
+					<img src="img/pan-loss/hlas.png"  width="60%" >
+				 </section>
+				<section>
+					<p><b>Unique biological processes in cancer
+					</b></p>
+					<img src="img/pan-loss/ClueGO_soloCancer.png" width="65%">
+				</section>
+				<section class="center">
+					<h3></h3>
+
+					<ul>
+						<li>The loss of inter-chromosomal co-expression and the loss of long-range co-expression are 
+							consistent, measurable and reproducible features present in all of the studied profiles.
+						</li>
+						<li class="fragment fade-up">
+							There is a global alteration of the interactions in the transcriptome.
+							<ul>
+								<li class="greenish">
+									Shorter distances are proferred.
+								</li>
+							</ul>
+						</li>
+						<li class="fragment fade-up">
+							There is a contribution of multiple altered regulatory mechanisms. 
+						</li>
+						<li class="fragment fade-up">
+							Its prevalence suggests an enabling feature of the transcriptomal program.
+						</li>
+					</ul>
+				</section>
+				<section class="center">
+					<h3 class="pinkish">Thank you!</h3>
+				</section>
+				<section>
+					<section class="center">
+						<h3>Informaci&oacute;n Mutua</h3>
+						<ul>
+							<li>Es una medida de dependencia estad&iacute;stica entre dos variables aleatorias.</li>
+							<li>Expresa qu&eacute; tanta informaci&oacute;n nos dice una variable sobre otra. </li>
+							
+						</ul>
+						<p class="greenish" style="text-align:center;">¿Qu&eacute; tanto el conocer los valores de expresi&oacute;n
+							del gen A en el conjunto de mis muestras me ayuda para conocer los valores de expresi&oacute;n
+							del gen B?
+						</p>
+						<ul>
+							<li>Reducci&oacute;n de <b>incertidumbre</b> de una variable aleatoria debido al conocimiento
+								debido al conocimiento del valor de otra variable.
+							</li>
+						</ul>
+					</section>
+					<section data-transition="slide-in">
+						<h3>Entrop&iacute;a</h3>
+						<ul>
+							<li>En forma cualitativa, es una medida de incertidumbre.</li>
+							<li>Caracteriza qu&eacute; tan dif&iacute;cil de predecir es una variable aleatoria.
+								<ul>
+									<li class="greenish">La variable X es el n&uacute;mero ganador en una ruleta. </li>
+									<li class="greenish">La variable Y es el n&uacute;mero ganador en una dado. </li>
+									<p class="greenish">La entrop&iacute;a de X es mayor que la entrop&iacute;a de Y </p>
+								</ul>
+							</li>
+							<li class="fragment fade-up">
+								Aunque no solo se toman en cuenta los posibles valores, sino tambi&eacute;n su frecuencia
+								<ul>
+									<li class="greenish">
+										Un dado cargado donde 90% de las tiradas resulta en 2 tiene menor entrop&iacute;a
+										que un dado sin cargar.
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Entrop&iacute;a</h3>
+						<p>No es un concepto vago, tiene una deficini&oacute;n matem&aacute; precisa:</p>
+						<p> Si una variable aleatoria $X$ toma valores en el conjunto
+							$\chi = {x_1, x_2, x_3, \dots ,x_n }$, entonces la entrop&iacute;a de la variable 
+						aleatoria   $X$ se calcula como</p>
+						\[\begin{aligned}
+						H(X) = - \sum_{x \in \chi} P(x) \log P(x)
+						\end{aligned} \]
+						<p> Si tomamos $\log$ en base 2, la entrop&iacute;a se expresa en bits. </p>
+					</section>
+					<section>
+						<h3>Entrop&iacute;a</h3>
+						<p>Pero est&aacute;bamos hablando de dos variables.</p>
+						<p><b>Entrop&iacute;a conjunta:</b> Calcular entrop&iacute;a sobre todos los posibles
+						pares de las variables aleatorias. </p>
+						\[\begin{aligned}
+						H(X, Y) = - \sum_{x \in \chi} \sum_{y \in \psi}  P(x,y) \log P(x,y)
+						\end{aligned} \]
+						<p><b>Entrop&iacute;a condicional:</b> La entrop&iacute;a de una variable aleatoria dada otra. </p>
+							\[\begin{aligned}
+							H(X| Y) = - \sum_{x \in \chi}   P(x) H(Y|X=x)
+							\end{aligned} \]
+					</section>
+					<section>
+						<h3>Entrop&iacute;a</h3>
+						<p>Ambas est&aacute;n relacionadas por las siguientes igualdades</p>
+						
+						\[\begin{aligned}
+						H(X, Y) = H(X) + H(X|Y)
+						\end{aligned} \]
+						\[\begin{aligned}
+						H(X|Y) \neq H(Y|X)
+						\end{aligned} \]
+						\[\begin{aligned}
+						H(X) - H(X|Y) = H(Y) - H(Y|X)
+						\end{aligned} \]
+						<p> Y esto es la informaci&oacute;n mutua</p>
+						\[\begin{aligned}
+						I(X;Y) =  H(Y) - H(Y|X) = H(Y) + H(X) - H(X|Y)
+						\end{aligned} \]
+						<p>Reducci&oacute;n en la entrop&iacute;a</p>
+					</section>
+					<section>
+						<h3>Informaci&oacute;n Mutua</h3>
+						<img src="img/mi_entropy.png" />
+					</section>
+					<section>
+						<img src="img/mi_ejercicio.png" width="1400px" />
+					</section>
+				</section>
+				<section>
+					<section class="center">
+						<h3 style="text-transform:none">RNA-seq</h3>
+						<img src="img/intro/rna-seq.png" width="80%"/>
+						<small class="cita">Griffith M, Walker JR, Spies NC, Ainscough BJ, Griffith OL (2015) 
+							<b>Informatics for RNA Sequencing: 
+						A Web Resource for Analysis on the Cloud. </b>PLoS Comput Biol 11(8):e1004393. 
+						doi: 10.1371/journal.pcbi.1004393. </small>
+					</section>
+					<section class="center">
+						<h3 style="text-transform:none">RNA-seq por Illumina</h3>
+						<img  src="img/intro/by-illumina-1.png"/>
+						<small class="cita">Illumina.
+							<b>An introduction to Next-Generation Sequencing Technology</b>
+							www.illumina.com/technology/next-generation-sequencing.html
+						</small>
+					</section>
+					<section class="center">
+						<h3 style="text-transform:none">RNA-seq por Illumina</h3>
+						<img src="img/intro/by-illumina-2.png" />
+						<small class="cita">Illumina.
+							<b>An introduction to Next-Generation Sequencing Technology</b>
+							www.illumina.com/technology/next-generation-sequencing.html
+						</small>
+					</section>
+				</section>
+				
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				width: 1400,
+				height: 1000,
+				center: false,
+				slideNumber: true,
+				transition: 'fade',
+				math: {
+      				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+      				config: 'TeX-AMS_HTML-full',
+      				// pass other options into `MathJax.Hub.Config()`
+      				TeX: { Macros: { RR: "{\\bf R}" } }
+    			},
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
+			});
+		</script>
+	</body>
+</html>
