@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>R para análisis de datos</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css">
+		
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/decaf.css" id="highlight-theme">
+		
+		<link rel="stylesheet" href="css/basic.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="img/logo_cursor.png" />
+					<p><b>Bienvenida</b></p>
+				</section>
+				<section>
+					<p><b>Recomendaciones generales</b></p>
+					<ul>
+						<li>Levanta la mano o abre tu micrófono si quieres participar</li>
+						<li>Prender la cámara es opcional</li>
+						<li>No te guardes ninguna duda o comentario</li>
+						<li>Comparte recursos que te parezcan útiles</li>
+						<li>Sobre todo, respeto y amabilidad</li>
+					</ul>
+				</section>
+				<section>
+					<p><b>Hola! Soy Diana García</b></p>
+				</section>
+				<section>
+					<p><b>¿Qué veremos en este curso?</b></p>
+					<img src="img/tidyverse2.png" width="60%"/>
+				</section>
+				<section>
+					<p><b>¿Qué veremos en este curso?</b></p>
+					<ul>
+						<li class="fragment">Herramientas generales para manejo de datos tabulares</li>
+						<li class="fragment">Código legible</li>
+						<li class="fragment">Funciones que pueden aplicarse a datos de cualquier origen</li>
+						<li class="fragment">Construcción de gráficas de utilidades múltiples</li>
+					</ul>
+				</section>
+				<section class="muchotexto">
+					<p><b>¿Qué no veremos en este curso?</b></p>
+					<ul>
+						<li class="fragment">Análisis específicos de biología
+							<ul>
+								<li>Análisis de expresión diferencial (genes)</li>
+								<li>Estimador Kaplan-Meier</li>
+								<li>Análisis filogenéticos</li>
+							</ul>
+						</li>
+						<li class="fragment">Análisis estadísticos 
+							<ul>
+								<li>Análisis de componentes principales (PCA)</li>
+								<li>Modelos de regresión o clasificación (KNN o clustering jerárquico)</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<p><b>Será más sobre análisis exploratorio de datos que sobre funciones específicas</b></p>
+				</section>
+				<section>
+					<p><b>¿Cómo vamos a trabajar?</b></p>
+					 <ul>
+						<li>Lo más importante es la práctica</li>
+						<li>Escribiremos mucho código y ejemplos</li>
+						<li>El contenido está en: <a href="https://bookdown.org/ddiannae/curso-rdata/" target="_blank">
+							https://bookdown.org/ddiannae/curso-rdata/</a></li>
+					 </ul>
+				</section>
+				<section>
+					<p><b>¿Por qué R?</b></p>
+					<p>En mi humilde opinión</p>
+					<ul>
+						<li class="fragment">Su IDE (RStudio) está muy completo</li>
+						<li class="fragment">Escribir scripts es rápido y sencillo</li>
+						<li class="fragment">Su documentación es buena</li>
+						<li class="fragment">Hay muchísimos paquetes disponibles (Bioconductor)</li>
+						<li class="fragment">La sintaxis de tidy me gusta y los gráficos de ggplot salen muy bonitos</li>
+					</ul>
+				</section>
+				<section>
+					<p><b>¿Con qué hay que tener cuidado?</b></p>
+					 <ul>
+						<li class="fragment">Orden
+						<ul>
+							<li>De ejecución</li>
+							<li>De los datos</li>
+						</ul>
+						</li>
+						<li class="fragment">Si construyen pipelines, usen un workflow management system</li>
+						<li class="fragment">Las versiones y los paquetes</li>
+						<li class="fragment">Las características específicas del lenguaje</li>
+					 </ul>
+				</section>
+				<section class="muchotexto">
+					<p><b>Características de R</b></p>
+					<ul>
+						<li class="fragment">Es open source y gratuito</li>
+						<li class="fragment">Es un lenguaje interpretado, no requiere de compilación</li>
+						<li class="fragment">Es multiplataforma</li>
+						<li class="fragment">Fue diseñado para hacer estadística, se adapta muy bien 
+							para su implementación en el entorno científico y sus posibles posibles 
+							usos siguen creciendo (shinyapps?)!
+						</li>
+						<li class="fragment">Tiene características peculiares, diferentes a otros lenguajes de programación</li>
+					</ul>
+				</section>
+				<section>
+					<p><b>Características de R</b></p>
+					<p>Paradigma de programación: 
+						<span class="fragment"> <b>Funcional </b>, porque promueve el uso de funciones sin efectos secundarios</span></p>
+					<pre class="fragment"><code class="language-r hljs" data-trim data-line-numbers style="font-size=12">
+						c <- list(A = c(56, 12, 57, 24), 
+							  B = c(89, 12, 64, 18, 65, 76))
+
+						lapply(c, quantile, probs = c(0.25, 0.5, 0.75))
+                    </code></pre>
+				</section>
+				<section>
+					<p><b>Características de R</b></p>
+					<p>Paradigma de programación: 
+						<span><b>Funcional </b></span>, porque promueve el uso de funciones sin efectos secundarios</p>
+					<pre><code class="language-r hljs" data-trim data-line-numbers style="font-size=12">
+						d <- 1:3
+
+						fun <- function(x) {
+							x ^ 2
+						}
+
+						lapply(d, fun)
+                    </code></pre>
+				</section>
+				<section>
+					<p><b>Características de R</b></p>
+					<ul>
+						<li class="fragment">Sin embargo, también tiene soporte para programación orientada a objetos</li>
+						<li class="fragment">Sus operaciones están vectorizadas, como veremos más adelante</li>
+					</ul>
+					<p class="fragment">No lo recomiendo como primer lenguaje de programación para alguien que va a dedicarse a desarrollar software</p>
+					
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
