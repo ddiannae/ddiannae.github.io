@@ -1,0 +1,113 @@
+.reveal-viewport  {
+    background-color: #d0dba6
+    ;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal p,
+.reveal li,
+.reveal small,
+.reveal tr{
+    color: #1E6370;
+}
+
+.reveal h2.edcodigo,
+.reveal p b,
+.reveal li b,
+.reveal thead tr {
+    color: 	#27548F;
+}
+
+
+.reveal p b.rosa
+{
+    color: 	#D6857C;
+}
+.reveal h1,
+.reveal h2,
+.reveal h3{
+    font-size: 50px;
+}
+
+.muchotexto h1,
+.muchotexto h2,
+.muchotexto h3{
+    font-size: 40px;
+}
+
+.reveal p b,
+.reveal li b{
+    font-size: 46px;
+}
+
+.muchotexto p,
+.muchotexto li,
+.muchotexto code,
+.muchomuchotexto p b,
+.muchomuchotexto li b {
+    font-size: 36px;
+}
+
+.muchomuchotexto p,
+.muchomuchotexto li,
+.reveal tr {
+    font-size: 30px;
+}
+
+.muchotexto td,
+.muchotexto th {
+    font-size: 22px;
+    color: #fff;
+}
+.muchotexto th {
+    color: 	#f3e733;
+}
+
+.scrollable-slide {
+    height: 800px;
+    overflow-y: auto !important;
+}
+
+.hljs-ln-code, .hljs-ln-numbers {
+    font-size: 22px;
+}
+
+.reveal img {
+    margin-top: 5px;
+}
+
+.reveal p.left,
+.reveal ul.left {
+    text-align: left;
+}
+	
+p.center {
+    text-align: center;
+    color: red;
+}
+ 
+p.large {
+    font-size: 250%;
+}
+
+p.small {
+    font-size: 75%;
+}
+
+
+.centro {
+    text-align: center;
+  }
+
+.lft {
+    float:left;
+    width: 40%;
+}
+ 
+.rght {
+    float:right;
+    width: 40%;
+}
+ 
