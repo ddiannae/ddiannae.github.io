@@ -143,10 +143,15 @@
   color:#458464;
  }
 
- .reveal p.left {
+.reveal p.left{
 	text-align: left;
-   }
+	padding-left: 0; 
+}
   
+.reveal ol.left,
+.reveal ul.left {
+	display: block;
+}
 .reveal p.no-margin {
 	margin: 0px 0px;
 }
@@ -163,4 +168,34 @@
 .reveal a {
 	text-decoration: none;
 	color:dimgray
+}
+
+.muchotexto p,
+.muchotexto li,
+.muchotexto code,
+.muchomuchotexto p b,
+.muchomuchotexto li b {
+    font-size: 40px;
+}
+
+.muchomuchotexto p,
+.muchomuchotexto li,
+.reveal tr {
+    font-size: 30px;
+}
+
+.reveal ul.lnl li {
+	list-style: none;
+}
+
+.reveal ul.sep>li {
+	padding-top: 50px;
+}
+.reveal ul.msep>li {
+	padding-top: 25px;
+}
+
+.reveal .half {
+	width: 50%;
+	float: left;
 }

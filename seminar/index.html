@@ -17,594 +17,827 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				
 				<section class="center">
 					<h2 class="title">Loss of long-range co-expression is a common feature in cancer</h2>
 					<p>Diana Garc&iacute;a Cort&eacute;s</p>
-					<p>National Institute of Genomic Medicine <br/>INMEGEN Mexico</p>
+					<footer style="margin-top:80px">
+                        <div style="float:left;width:50%;text-align:left">
+                            <img src="img/logos/unam-posgrado.png" width="50%"/>
+                        </div>
+                        <div style="float:right;width:50%;text-align:right">
+                            <img src="img/logos/inmegen.png" width="50%"/>
+                    </footer>
 				</section>
-				<section class="center"> 
-					<h4>Breast cancer</h4>
-					<img src="img/intro/circo-plot-mama-ingles.png"/>
-					<small class="cita">Espinal-Enr&iacute;quez J., Fresno C., Anda-J&aacute;uregui G., & Hern&aacute;ndez-Lemus E. (2017).
-						 <b>RNA-Seq based genome-wide analysis reveals loss of inter-chromosomal regulation in breast cancer</b>.
-						  Scientific Reports, 7(1), 1–19. doi: <a href="https://doi.org/10.1038/s41598-017-01314-1" target="_blank">10.1038/s41598-017-01314-1</a></small>
-				</section>
-				<section class="center"> 
-					<h4>Breast cancer</h4>
-					<img src="img/intro/network-plot-mama-ingles.png"/>
-					<small class="cita">Espinal-Enr&iacute;quez J., Fresno C., Anda-J&aacute;uregui G., & Hern&aacute;ndez-Lemus E. (2017).
-						 <b>RNA-Seq based genome-wide analysis reveals loss of inter-chromosomal regulation in breast cancer</b>.
-						  Scientific Reports, 7(1), 1–19. doi: <a href="https://doi.org/10.1038/s41598-017-01314-1" target="_blank">10.1038/s41598-017-01314-1</a></small>
-				</section>
-				<section class="center">
-					<h4>Key ideas for this seminar</h4>
-					<ul>
-						<li class="fragment">Co-expression networks, infered from RNA-seq data allow us to study significant transcriptome associations</li>
-						<li class="fragment slide-in">There is a loss of long range co-expression in cancer
-							<ul class="fragment ssmaller">
-								<li class="greenish">
-									Normal tissues: Interactions from genes in different chromosomes
-								</li>
-								<li class="greenish">
-									Cancer tissues: Interactions from neighbor genes in the same chromosome
-								</li>
-							</ul>
-						</li>
-						<li class="fragment">Network topology might display phenotype-associated functional features
-							<ul class="fragment ssmaller">
-								<li class="greenish">Or at least, network topology is different for two different
-									conditions: normal and cancer
-								</li>
-							 </ul>
-						</li>
-						<li class="fragment slide-in">The loss of long-range co-expression is not present in other chronic degenerative
-							 diseases
-							 <ul class="fragment ssmaller">
-								<li class="greenish">At least, not in Type-2 Diabetes or Alzheimer's disease</li>
-							 </ul>
-						</li> 
-					</ul>
-				</section>
-				<section data-background="#002b36" class="center">
-						<p class="fragment">We do not have a molecular mechanism to explain this phenomenon. For now, it 
-							is an statistical observation and it will remain as such until we have an experimental confirmation.</p>
-						<small class="fragment">García-Cortés D., Hern&aacute;ndez-Lemus E., Espinal-Enr&iacute;quez J. (2022).
-							<b>Loss of long-range co-expression is a common trait in cancer</b>. bioRxiv. doi: 
-							<a href="https://doi.org/10.1101/2022.10.27.513947" target="_blank" style="color:#FEDEFF">10.1101/2022.10.27.513947</a></small>
-				</section>
-				<section  data-transition="slide-in" >
-					<h4>Methodology</h4>
-						<div style="float:left;width:35%;text-align:left">
-							<img src="img/metod/data-base.png" style="border:none; box-shadow:none;"/>
-							<table class="muestras">
-								<caption style="caption-side:bottom;font-size:22px;padding:10px">* From UCSC Xena</caption>
-								<thead>
-									<tr>
-										<th>Tissue</th>
-										<th colspan="2">Samples</th>
-										<th></th>
-									</tr>
-									<tr>
-										<th></th>
-										<th>Normal</th>
-										<th>Cancer</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Bladder</td>
-										<td>19</td>
-										<td>398</td>
-									</tr>
-									<tr>
-										<td>Brain*</td>
-										<td>88</td>
-										<td>508</td>
-									</tr>
-									<tr>
-										<td>Breast</td>
-										<td>111</td>
-										<td>1047</td>
-									</tr>
-									<tr>
-										<td>Colon*</td>
-										<td>163</td>
-										<td>287</td>
-									</tr>
-									<tr>
-										<td>Esophagus*</td>
-										<td>269</td>
-										<td>178</td>
-									</tr>
-									<tr>
-										<td>Kidney</td>
-										<td>123</td>
-										<td>839</td>
-									</tr>
-									<tr>
-										<td>Liver*</td>
-										<td>107</td>
-										<td>358</td>
-									</tr>
-									<tr>
-										<td>Lung</td>
-										<td>101</td>
-										<td>995</td>
-									</tr>
-									<tr>
-										<td>Ovary*</td>
-										<td>88</td>
-										<td>413</td>
-									</tr>
-									<tr>
-										<td>Pancreas*</td>
-										<td>165</td>
-										<td>177</td>
-									</tr>
-									<tr>
-										<td>Prostate*</td>
-										<td>93</td>
-										<td>473</td>
-									</tr>
-									<tr>
-										<td>Skin*</td>
-										<td>231</td>
-										<td>88</td>
-									</tr>
-									<tr>
-										<td>Testis*</td>
-										<td>162</td>
-										<td>138</td>
-									</tr>
-									<tr>
-										<td>Thyroid</td>
-										<td>56</td>
-										<td>471</td>
-									</tr>
-									<tr>
-										<td>Uterus</td>
-										<td>35</td>
-										<td>591</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<div style="float:right;width:65%;text-align:right">
-							<table class="metod" >
-								<thead></thead>
-								<tbody>
-									<tr>
-										<td>
-											<img class="metod" src="img/metod/data-adquisition-ingles.png" data-fragment-index="1" />
-										</td>
-										<td>
-											<img class="metod" data-fragment-index="2" src="img/metod/normalizacion-ingles.png"/>
-										</td>
-									</tr>
-									<tr>
-										<td colspan="2">
-											<img class="metod" data-fragment-index="3" src="img/metod/mi-ingles.png" />
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<img data-fragment-index="4" src="img/metod/redes-ingles.png" class="metod" />
-										</td>
-										<td>
-											<img data-fragment-index="4" src="img/metod/distancia-ingles.png" class="metod"/>
-										</td>
-									</tr>
-									<tr>
-										<td colspan="2">
-											<img data-fragment-index="5" src="img/metod/integracion-ingles.png" class="metod" />
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
+				<section>
+					<section class="muchotexto">
+						<p>Cancer phenotypes are strongly regulated by the dysregulated versions 
+							of transcriptional programs operating within cancer cells</p>
+						<img src="img/intro/alteraciones-transcripcion.png" width="70%"/>
+						<small class="cita">Bradner JE, et al. <b>Transcriptional addiction in cancer</b>. 
+							Cell, 2017.</small>
 					</section>
-				<section class="center">
-					<h4>Pipeline specifications</h4>
-					<ul>
-						<li class="fragment">Implemented using Snakemake
-							<ul>
-								<li class="greenish">Workflow management system to allow reproducibility</li>
-							</ul>
-						</li>
-						<li class="fragment">
-							First workflow: RNA-seq seq pipeline and MI computation
-							<ul>
-								<li class="greenish">
-									Normalization accounts for length, GC content and library composition bias
-								</li>
-								<li class="greenish">Mutual information is calculated using the ARACNE algorithm</li>
-							</ul>
-						</li>
-						<li class="fragment">
-							Second workflow: Co-expression analysis and networks
-							<ul>
-								<li class="greenish">
-									Using R scripts and igraph
-								</li>
-							</ul>
-						</li>
-						
-					</ul>
-					<p style="height:50px"></p>
-					<small class="cita fragment" >Adam A Margolin, Ilya Nemenman, Katia Basso, Chris Wiggins, Gustavo Stolovitzky, Ric-
-						cardo Dalla Favera, and Andrea Califano. Aracne: an algorithm for the reconstruction of
-						gene regulatory networks in a mammalian cellular context. In BMC bioinformatics, vol-
-						ume 7, pages 1–15. BioMed Central, 2006.</small>
-				</section>
-				<section>
-					<h4>In cancer, highly co-expressed gene pairs are <br/> intra-chromosomal</h4>
-					<img src="img/pan-loss/intra-inter-log.png">
-					<small> At different tresholds of top MI interactions, 
-						the fraction of intra-chromosomal pairs remains stable in normal tissues, but not in cancer.
-						Kolmogorov-Smirnov tests indicate that the distribution of intra- fractions, up to 1e+6 pairs,
-						are significantly different
-					</small>
-				</section>
-				<section>
-					<h4>In cancer, highly co-expressed gene pairs are <br/> intra-chromosomal</h4>
-					<img src="img/pan-loss/figure1a.png">
-					<small> At different tresholds of top MI interactions, 
-						the fraction of intra-chromosomal pairs remains stable in normal tissues, but not in cancer.
-						Kolmogorov-Smirnov tests indicate that the distribution of intra- fractions, up to 1e+6 pairs,
-						are significantly different
-					</small>
-				</section>
-				<section>
-					<h4>In cancer, there is a distance dependent MI decay</h4>
-					<img src="img/pan-loss/figure_intra_distance.png" width="65%">
-					<small>
-						Gene pairs are sorted in terms of base pairs distance and average
-						MI values for 1K-interactions bins are presented. Wilcoxon rank sum tests were used 
-						to compare the distribution for each bin against the others.
-					</small>
-				</section>
-				<section>
-					<h4>Cancer and normal networks have different topologies</h4>
-					<img src="img/pan-loss/networks_normal_cancer.png" width="60%">
-					<small>Co-expression networks built from the top 100K MI interactions. <br/>
-						Genes are colored according to the chromosome where they are located
-					</small>
+					<section class="muchotexto">
+						<p>Cancer phenotypes are strongly regulated by the dysregulated versions 
+							of transcriptional programs operating within cancer cells</p>
+						<img src="img/intro/alteraciones-transcripcion-cuadro.png" width="70%"/>
+						<small class="cita">Bradner JE, et al. <b>Transcriptional addiction in cancer</b>. 
+							Cell, 2017.</small>
+					</section>
+					<section class="center">
+						<p class="left greenish">We focused on the transcriptome because:</p>
+						<ul class="msep">
+							<li>
+								It is a measurable outcome of many regulatory mechanisms
+							</li>
+							<li>
+								It is associated with cell structure and function
+							</li>
+							<li> 
+								It can be easily compared among different phenotypes
+							</li>
+							<li>
+								There is many publicly available data
+							</li>
+						</ul>
+					</section>
+					<section class="muchotexto">
+						<h4>Our approach: network science</h4>
+						<p>Networks provide a conceptual and intuitive framework to model different components of multiple omics data</p>
+						<img src="img/intro/many-networks.png" width="50%">
+						<small class="cita"> Sonawane AR, et al. <b>Network medicine in the age of biomedical big data</b>.
+							Frontiers in Genetics, 2019</small>
+					</section>
+					<section class="muchotexto">
+						<h4>Our approach: network science</h4>
+						<p>Networks provide a conceptual and intuitive framework to model different components of multiple omics data</p>
+						<img src="img/intro/many-networks-2.png" width="50%">
+						<small class="cita"> Sonawane AR, et al. <b>Network medicine in the age of biomedical big data</b>.
+							Frontiers in Genetics, 2019</small>
+					</section>
+					<section class="center">
+						<h4>From an expression matrix to a co-expression network</h4>
+						<img src="img/intro/network-construction-1.png" width="80%"/>
+					</section>
+					<section  class="center">
+						<h4>From an expression matrix to a co-expression network</h4>
+						<img src="img/intro/network-construction-2.png"  width="80%"/>
+					</section>
+					<section  class="center">
+						<h4>From an expression matrix to a co-expression network</h4>
+						<img src="img/intro/network-construction-3.png" width="80%"/>
+					</section>
+					<section  class="center">
+						<h4>From an expression matrix to a co-expression network</h4>
+						<img src="img/intro/network-construction-4.png" width="80%"/>
+					</section>
+					
+					<section class="center">
+						<p class="left smaller">High gene-gene co-expression interactions because:</p>
+						<ul>
+							<li class="greenish">
+								Genes might share some upstream regulatory mechanisms
+							</li>
+							<li class="greenish">
+								Genes might share some functional features
+							</li>
+							<li class="greenish fragment" data-fragment-index="2">
+								However, they don't represent neither physical nor regulatory interactions
+							</li>
+						</ul>
+						<p class="left smaller fragment"  data-fragment-index="3">With networks because:</p>
+						<ul class="fragment left half" data-fragment-index="3">
+							<li class="greenish">We can study sets of connected genes</li>
+							<li class="greenish">We can focus on the interactions</li>
+							<li class="greenish">We can look at global patterns</li>
+						</ul>
+						<img src="img/intro/network-analyze.png" class="fragment" data-fragment-index="3"
+						width="20%" style="position:relative;top:-40px"/>
+							
+					</section>
+					<section>
+						<h4 style="margin-bottom:100px">Look at global patterns</h4>
+					
+							<p class="left greenish">Identify network communities: sets of nodes that are densely connected among them</p>
+							<img src="img/intro/network-communities.png"   width="1200px" />
+					</section>
+					<section>
+						<h4 style="margin-bottom:100px">Look at global patterns</h4>
+					
+						<p class="left greenish">Identify network communities: sets of nodes that are densely connected among them</p>
+						<img src="img/intro/network-communities-2.png" width="1200px" />
+					</section>
+					<section>
+						<h4 style="margin-bottom:100px">Look at global patterns</h4>
+					
+						<p class="left greenish">Identify network communities: sets of nodes that are densely connected among them</p>
+						<img src="img/intro/network-communities-3.png" width="1200px" />
+					</section>
+					<section>
+						<h4 style="margin-bottom:100px">Look at global patterns</h4>
 
-				</section>
-				<section>
-					<h4>Links are mostly unique in normal co-expression networks</h4>
-					<img src="img/pan-loss/interactions_intersections.png" width="75%">
-					<small>
-						Twenty sets with the highest number of shared links
-					</small>
+						<p class="left greenish">Associate network communities with biological processes</p>
+						<img src="img/intro/network-analyze-n.png" />
+					</section>
 
+					<section> 
+						<h4>Breast cancer</h4>
+						<img src="img/intro/circo-plot-mama-ingles.png" width="90%"/>
+						<small>11,675 links (top 0.01% MI). Samples: 110 normal, 780 cancer. </small>
+						<small class="cita">Espinal-Enr&iacute;quez J, et al.
+							<b>RNA-Seq based genome-wide analysis reveals loss of inter-chromosomal regulation in breast cancer</b>.						  Scientific Reports, 2017</small>
+					</section>
+					<section > 
+						<h4>Breast cancer</h4>
+						<img src="img/intro/network-plot-mama-ingles.png" width="100%"/>
+					<small>11,675 links (top 0.01% MI). Samples: 110 normal, 780 cancer. </small>
+						<small class="cita">Espinal-Enr&iacute;quez J, et al.
+							<b>RNA-Seq based genome-wide analysis reveals loss of inter-chromosomal regulation in breast cancer</b>.
+							Scientific Reports, 2017</small>
+					</section>
+					<section class="center">
+						<ul class="lnl">
+							<li class="slide-in">There is a loss of inter-chromosomal co-expression in 
+								breast cancer
+								<ul>
+									<li class="greenish">
+										Normal tissue: Interactions from genes in different chromosomes
+									</li>
+									<li class="greenish">
+										Cancer tissue: Interactions from neighbor genes in the same chromosome
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<p>We do not have a molecular mechanism to explain this phenomenon. For now, it is an statistical observation and it will remain as such
+							 until we have an experimental confirmation.</p>	
+					</section>
+					<section class="center">
+						<h4>The loss of long range co-expression in:</h4>
+						<ul class="sep">
+							<li>
+								Breast cancer molecular subtypes
+								<ul>
+									<li class="greenish">
+										To evaluate if the phenomenon behaves differently 
+										in each subtype
+									</li>
+								</ul>
+							</li>
+							<li>
+								the Luminal A network
+								<ul>
+									<li class="greenish">
+										To evluate distinct regulatury mechanisms that might 
+										drive the phenomenon
+									</li>
+								</ul>
+							</li>
+							<li>
+								Fifteen cancer types
+								<ul>
+									<li class="greenish">
+										To evaluate if the phenomenon is a common feature in cancer
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					<section  data-transition="slide-in" >
+						<h4>Methodology</h4>
+							<div style="float:left;width:35%;text-align:left">
+								<img src="img/metod/data-base.png" style="border:none; box-shadow:none;"/>
+							</div>
+							<div style="float:right;width:65%;text-align:right">
+								<table class="metod" >
+									<thead></thead>
+									<tbody>
+										<tr>
+											<td>
+												<img class="metod" src="img/metod/data-adquisition-ingles.png"/>
+											</td>
+											<td>
+												<img class="metod"  src="img/metod/normalizacion-ingles.png" />
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<img class="metod" src="img/metod/mi-ingles.png" />
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<img  src="img/metod/redes-ingles.png" class="metod" />
+											</td>
+											<td>
+												<img  src="img/metod/distancia-ingles.png" class="metod"/>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<img  src="img/metod/integracion-ingles.png" class="metod" />
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</section>
+						<section class="center">
+							<h4>Pipeline specifications</h4>
+							<ul class="msep">
+								<li>Implemented using Snakemake
+									<ul>
+										<li class="greenish">Workflow management system to allow reproducibility</li>
+									</ul>
+								</li>
+								<li>
+									First workflow: RNA-seq seq pipeline and MI computation
+									<ul>
+										<li class="greenish">
+											Normalization accounts for length, GC content and library composition bias
+										</li>
+										<li class="greenish">Mutual information is calculated using the ARACNE algorithm</li>
+									</ul>
+								</li>
+								<li>
+									Second workflow: Co-expression analysis and networks
+									<ul>
+										<li class="greenish">
+											Using R scripts and igraph
+										</li>
+									</ul>
+								</li>
+								
+							</ul>
+							<p style="height:50px"></p>
+							<small class="cita" >Margolin, et al. <b>Aracne: an algorithm for the reconstruction of
+								gene regulatory networks in a mammalian cellular context.</b> BMC bioinformatics, 2006.</small>
+						</section>
 				</section>
 				<section>
-					<h4>Riboprotein genes are a cluster shared by <br/>normal and cancer networks</h4>
-					<img src="img/pan-loss/shared-10.png" width="65%">
-					<small>
-						Ribosomal encoding genes retain a pattren of high co-expression among them <br/>in all 
-						analyzed tissues and in both conditions
-					</small>
-				</section>
-				<section class="center">
-					<h4>Network analysis</h4>
-					<ul>
-						<li class="fragment">Identification of network communities 
-							<ul class="ssmaller">
-								<li class="greenish">Subset of nodes with denser connections between them than with the rest
-									of the network
-								</li>
-							</ul>
-						</li>
-						<li class="fragment">
-							Assortativity calculation
-							<ul class="ssmaller">
-								<li class="greenish">The tendency of nodes to connect with other similar nodes
-								</li>
-							</ul>
-							<ul class="fragment">
-								<li>Chromosomal assortativity: To quantify community bias towards a single chromosome.</li>
-								<li>Differential expression assortativity: To quantify community bias towards a single differential expression fold
-									change direction
-								</li>
-							</ul>
-						</li>
-						<li  class="fragment">
-							Gene Ontology over-representation analyses
-							<ul class="ssmaller">
-								<li class="greenish"> To identify biological processes associated with each community
-								</li>
-							</ul>
-			
-						</li>
-					</ul>
-				</section>
-				<section>
-					<h4>Distribution of chromosomal assortativity in network communities</h4>
-					<img src="img/pan-loss/chr_assortativity.png" >
-					<small>This feature summarizes the phenomenon:  
-						<br/>in normal networks communities there is a strong tendency 
-						towards inter-chromosomal interactions, while cancer communities are
-						built mostly from intra-chromosomal links
-					</small>
-				</section>
-				<section>
-					<h4>Common biological processes in cancer networks</h4>
-					<img src="img/pan-loss/compartidos_cancer_colores.png">
-					<small>
+					<section data-background="#660033" class="center">
+						<h3>Breast cancer molecular subtypes</h3>
+						<p class="smaller">García-Cortes D. et al. <b>Gene co-expression is distance <br/>dependent in breast cancer</b>. Frontiers in Oncology, 2020</p>
+					</section>
+					<!-- <section  data-transition="slide-in" >
+						<h4>Methodology</h4>
+							<div style="float:left;width:35%;text-align:left">
+								<img src="img/metod/data-base-gdc.png" style="border:none; box-shadow:none;"/>
+							</div>
+							<div style="float:right;width:65%;text-align:right">
+								<table class="metod" >
+									<thead></thead>
+									<tbody>
+										<tr>
+											<td>
+												<img class="metod" src="img/metod/data-adquisition-ingles.png" data-fragment-index="1" />
+											</td>
+											<td>
+												<img class="metod" data-fragment-index="2" src="img/metod/normalizacion-ingles.png"/>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<img class="metod" data-fragment-index="3" src="img/metod/mi-ingles.png" />
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<img data-fragment-index="4" src="img/metod/redes-ingles.png" class="metod" />
+											</td>
+											<td>
+												<img data-fragment-index="4" src="img/metod/distancia-ingles.png" class="metod"/>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<img data-fragment-index="5" src="img/metod/integracion-ingles.png" class="metod" />
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</section> -->
+					<section data-transition="slide-in">
+						<h4>Gene co-expression is distance dependent in breast cancer</h4>
 						
+						<p class="ssmaller left greenish">Features in the co-expression patterns of breast cancer molecular subtypes:</p>
+						<ol class="smaller left">
+							<li>The strength of gene-pair co-expression depends on physical distance</li>
+						</ol>
+						<img src="img/mama/Figure3.png" width="90%"/>  <br/>
+						<small>Complete set of intra-chromosomal interactions</small>
+						
+					</section>
+					<section data-transition="none">
+						<h4>Gene co-expression is distance dependent in breast cancer</h4>
+						
+						<p class="ssmaller left greenish">Features in the co-expression patterns of breast cancer molecular subtypes:</p>
+						<ol class="smaller left"  start="2">
+							<li>There is an intra-/inter- chromosomal interactions proportion imbalance in the co-expression networks </li>
+						</ol>
+						<img src="img/mama/Figure1.png" width="75%"/>
+						<br/>
+						<small>Top 13,317 interactions (p&lt;1e-8) </small>
+					</section>
+					<section data-transition="none">
+						<h4>Gene co-expression is distance dependent in breast cancer</h4>
+						
+						<p class="ssmaller left greenish">Features in the co-expression patterns of breast cancer molecular subtypes:</p>
+						<ol class="smaller left" start="2">
+							<li>There is an intra-/inter- chromosomal interactions proportion imbalance in the co-expression networks </li>
+						</ol>
+						<img src="img/mama/Figure2.png" width="60%"/><br/>
+						<small>Top 13,317 interactions (p&lt;1e-8) </small>
+						
+					</section>
+					<section data-transition="none" class="left">
+						<h4>Gene co-expression is distance dependent in breast cancer</h4>
+						
+						<p class="ssmaller left greenish">Features in the co-expression patterns of breast cancer molecular subtypes:</p>
+						<ol class="smaller left" start="3">
+							<li>There is an emergence of high density co-expression hotspots</li>
+						</ol>
+						<p class="ssmaller pinkish no-margin" >Chromosome 8</p>
+						<img src="img/mama/Figure5.png" width="100%"/>	
+						<small>Chromosome 8 intra-chromosomal links in the top 13,317 interactions</small>	
+					</section>
+					<section data-transition="none">
+						<h4>Gene co-expression is distance dependent in breast cancer</h4>
+						
+						<p class="ssmaller left greenish">Features in the co-expression patterns of breast cancer molecular subtypes:</p>
+						<ol class="smaller"start="4">
+							<li>Strongest interactions as well as hotspots are preferably intra-cytoband in breast cancer</li>
+						</ol>
+						<img src="img/mama/Figure7-1.png" width="100%"/>	<br/>
+						<small>Top 13,317 interactions (p&lt;1e-8) </small>	
+					</section>
+					<section  data-transition="none" class="center">
+						<h4>Gene co-expression is distance dependent in breast cancer</h4>
+						
+						<p class="left greenish">Features in the co-expression patterns of breast cancer molecular subtypes:</p>
+						
+						<ol class="smaller">
+							<li>There is a intra-/inter- chromosomal interactions proportion imbalance in the co-expression networks </li>
+							<li>The strength of gene-pair co-expression depends on physical distance</li>
+							<li>There is an emergence of high density co-expression hotspots</li>
+							<li>Strongest interactions as well as hotspots are preferably intra-cytoband in breast cancer</li>
+						</ol>
+						<p class="greenish fragment">Breast cancer subtypes present different patterns of loss of inter-chromosomal co-expression
+							</p>
+					</section>
+				</section>
+
+				<section>
+					<section data-background="#660033" class="center">
+						<h3>Luminal A network</h3>
+						<p class="smaller"> García-Cortes D. et al. <b>Luminal A breast cancer co-expression network: Structural 
+							and functional alterations</b>. Frontiers in Genetics, 2021</p>
+					</section>
+					<!-- Asociar las caracter&iacute;sticas topol&oacute;gicas de la red con mecanismos de 
+							regulaci&oacute;n de la transcrip&oacute;n posiblemente alterados. </p>
+						La red de co-expresi&oacute;n del subtipo Luminal A tiene m&aacute;s similitud con la red del fenotipo 
+							sano. La p&eacute;rdida de co-expresi&oacute;n inter-cromosomal es menos severa.
+					 -->	
+					<!-- <section data-transition="slide-in">
+						<h4>First observation in the Luminal A Network</h4>
+						<img src="img/luma/Supplementary_Figure_1.png" width="67%"/>
+					</section>
+					<section data-transition="slide-in">
+						<h4>Network community structure confirms the loss of<br/> inter-chromosomal co-expression</h4>
+						<p class="ssmaller greenish">Network communities: sets of nodes that are densely connected among them
+						</p>
+						<img src="img/luma/networks_n.png" /> <br/>
+						<small>Top 13,317 interactions (p&lt;1e-8) </small>	
+					</section>
+					<section>
+						<h4>Network community structure confirms the loss of<br/> inter-chromosomal co-expression</h4>
+						<p class="ssmaller greenish">Chromosomal assortativity: do genes from the same chromosome have a tendency
+							to be connected together in network communities? 
+						</p>
+						<img src="img/luma/chr-assortativity.png" />
+						<small>Distribution of chromosomal assortativity values in network communities.<br/>
+							For each community: same chromosome links minus different chromosome links divided by 
+							the total number of links.
+						</small>
+					</section>
+					<section data-transition="slide-in">
+						<h4>Are network communities associated with <br/>biological functions?</h4>
+						<p class="ssmaller greenish">Expression assortativity: do genes with the same differential expression sign have a tendency
+							to be connected together in network communities? 
+						</p>
+				
+						<img src="img/luma/alluvial-intercomms-lfc.png" width="95%"/>
+						
+					</section>
+					<section  data-transition="none">
+						<h4>Are network communities associated with <br/>biological functions?</h4>
+						<p></br></p>
+						<ul>
+							<li>Normal network:
+								<ul>
+									<li class="greenish"> Metabolism, cell cycle and mitochondrial functions.</li>
+								</ul>
+							</li>
+							<p></br></p>
+							<li>
+								Luminal A network. Inter-chromosomal communities:
+								<ul>
+									<li class="greenish"> Immune response, transcriptional regulation and cell division.</li>
+								</ul>
+							</li>
+							<p></br></p>
+							<li>
+								Luminal A network. Intra-chromosomal communities:
+								<ul>
+									<li class="greenish">Gene families located in the same region in the genome such as: 
+										HOX genes and protocadherins.
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</section> -->
+					<section class="center">
+						<img src="img/luma/network-subtypes.png"/>
+					</section>
+					<section class="center">
+						<p class="greenish smaller left">By intergrating different sets of publicly available data, we explored:</p>
+						<ul>
+							<li>Are genes in network communities differentially expressed?</li>
+							<li>Are network communities related with transcription factors activity?</li>
+							<li>Do network communities overlap deleted or amplified regions?</li>
+							<li>Are network communities bounded by CTCF binding sites?</li>
+						</ul>
+					</section>
+					<section data-transition="slide-in">
+						<h4>Are genes in network communities differentially expressed?</h4>
+						<img src="img/luma/Supplementary_Figure_1.png" width="67%"/>
+					</section>
+					<section data-transition="slide-in">
+						<h4>Are network communities related with <br/>transcription factors activity?</h4>
+						<img src="img/luma/expression_regulatory_interactions_2.png" width="1200px"/>
+					</section>
+					<section data-transition="slide-in">
+						
+						<h4>Do network communities overlap <br/>deleted or amplified regions?</h4>
+						<p class="greenish ssmaller left">We performed an over-representation analysis for 
+							genes in amp-del peaks and genes in network communities
+						</p>
+						<img src="img/luma/gistic-enrichments.png" width="1200px"/>
+					</section>
+
+					<section data-transition="slide-in" class="center muchotexto">
+						<h4>Are network communities bounded by <br/>CTCF binding sites?</h4>
+						<p class="greenish ssmaller left">We compared the number of CTCF binding sites placed in the 
+							periphery of the intra-chromosomal network clusters and the ones placed inside</p>
+					  	<img src="img/luma/ctcfs-in-luma-intra-2.png" width="80%" />
+						  <small>Intra-chromosomal links in the top 13,317 interactions</small>	
+					</section>
+					<section data-transition="slide-in" class="center">
+						<h4>Luminal A breast cancer co-expression network: <br/>structural and functional alterations</h4>
+						<ul>
+							<li class="fragment slide-in">
+								Alterations in different regulatory mechanisms are associated with the loss of inter-chromosomal 
+								co-expression.
+								<ul>
+									<li class="greenish">
+										Transcription factors, differentially expressed genes, DNA alterations
+									</li>
+									<li class="greenish">Other elements should be taken into account</li>
+								</ul>
+							</li>
+							<li class="fragment slide-in">We did not find a mechanism that could explain the phenomenon 
+								in a decisive manner</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section data-background="#660033" class="center">
+						<h3>Other cancer types</h3>
+						<small>García-Cortés D, et al.
+							<b>Loss of long-range co-expression is a common trait in cancer</b>. bioRxiv, 2022</small>
+					</section>
+					<section  data-transition="slide-in" >
+						<h4>Methodology</h4>
+							<div style="float:left;width:35%;text-align:left">
+								<img src="img/metod/data-base.png" style="border:none; box-shadow:none;"/>
+								<table class="muestras">
+									<caption style="caption-side:bottom;font-size:22px;padding:10px">* From UCSC Xena</caption>
+									<thead>
+										<tr>
+											<th>Tissue</th>
+											<th colspan="2">Samples</th>
+											<th></th>
+										</tr>
+										<tr>
+											<th></th>
+											<th>Normal</th>
+											<th>Cancer</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Bladder</td>
+											<td>19</td>
+											<td>398</td>
+										</tr>
+										<tr>
+											<td>Brain*</td>
+											<td>88</td>
+											<td>508</td>
+										</tr>
+										<tr>
+											<td>Breast</td>
+											<td>111</td>
+											<td>1047</td>
+										</tr>
+										<tr>
+											<td>Colon*</td>
+											<td>163</td>
+											<td>287</td>
+										</tr>
+										<tr>
+											<td>Esophagus*</td>
+											<td>269</td>
+											<td>178</td>
+										</tr>
+										<tr>
+											<td>Kidney</td>
+											<td>123</td>
+											<td>839</td>
+										</tr>
+										<tr>
+											<td>Liver*</td>
+											<td>107</td>
+											<td>358</td>
+										</tr>
+										<tr>
+											<td>Lung</td>
+											<td>101</td>
+											<td>995</td>
+										</tr>
+										<tr>
+											<td>Ovary*</td>
+											<td>88</td>
+											<td>413</td>
+										</tr>
+										<tr>
+											<td>Pancreas*</td>
+											<td>165</td>
+											<td>177</td>
+										</tr>
+										<tr>
+											<td>Prostate*</td>
+											<td>93</td>
+											<td>473</td>
+										</tr>
+										<tr>
+											<td>Skin*</td>
+											<td>231</td>
+											<td>88</td>
+										</tr>
+										<tr>
+											<td>Testis*</td>
+											<td>162</td>
+											<td>138</td>
+										</tr>
+										<tr>
+											<td>Thyroid</td>
+											<td>56</td>
+											<td>471</td>
+										</tr>
+										<tr>
+											<td>Uterus</td>
+											<td>35</td>
+											<td>591</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div style="float:right;width:65%;text-align:right">
+								<table class="metod" >
+									<thead></thead>
+									<tbody>
+										<tr>
+											<td>
+												<img class="metod" src="img/metod/data-adquisition-ingles.png" data-fragment-index="1" />
+											</td>
+											<td>
+												<img class="metod" data-fragment-index="2" src="img/metod/normalizacion-ingles.png"/>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<img class="metod" data-fragment-index="3" src="img/metod/mi-ingles.png" />
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<img data-fragment-index="4" src="img/metod/redes-ingles.png" class="metod" />
+											</td>
+											<td>
+												<img data-fragment-index="4" src="img/metod/distancia-ingles.png" class="metod"/>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<img data-fragment-index="5" src="img/metod/integracion-ingles.png" class="metod" />
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</section>
+					
+					<section>
+						<h4>In cancer, highly co-expressed gene pairs are <br/> intra-chromosomal</h4>
+						<img src="img/pan-loss/intra-inter-log.png">
+						<small> At different tresholds of top MI interactions, 
+							the fraction of intra-chromosomal pairs remains stable in normal tissues, but not in cancer.
+							Kolmogorov-Smirnov tests indicate that the distribution of intra- fractions, up to 1e+6 pairs,
+							are significantly different
+						</small>
+					</section>
+					<section>
+						<h4>In cancer, highly co-expressed gene pairs are <br/> intra-chromosomal</h4>
+						<img src="img/pan-loss/figure1a.png">
+						<small> At different tresholds of top MI interactions, 
+							the fraction of intra-chromosomal pairs remains stable in normal tissues, but not in cancer.
+							Kolmogorov-Smirnov tests indicate that the distribution of intra- fractions, up to 1e+6 pairs,
+							are significantly different
+						</small>
+					</section>
+					<section>
+						<h4>In cancer, there is a distance dependent MI decay</h4>
+						<img src="img/pan-loss/figure_intra_distance.png" width="65%">
+						<small>
+							Gene pairs are sorted in terms of base pairs distance and average
+							MI values for 1K-interactions bins are presented. Wilcoxon rank sum tests were used 
+							to compare the distribution for each bin against the others.
+						</small>
+					</section>
+					<section>
+						<h4>Cancer and normal networks have different topologies</h4>
+						<img src="img/pan-loss/networks_normal_cancer.png" width="60%">
+						<small>Co-expression networks built from the top 100K MI interactions. <br/>
+							Genes are colored according to the chromosome where they are located
+						</small>
+	
+					</section>
+					<section>
+						<h4>Links are mostly unique in normal co-expression networks</h4>
+						<img src="img/pan-loss/interactions_intersections.png" width="75%">
+						<small>
+							Twenty sets with the highest number of shared links
+						</small>
+	
+					</section>
+					<section>
+						<h4>Riboprotein genes are a cluster shared by <br/>normal and cancer networks</h4>
+						<img src="img/pan-loss/shared-10.png" width="65%">
+						<small>
+							Ribosomal encoding genes retain a pattren of high co-expression among them <br/>in all 
+							analyzed tissues and in both conditions
+						</small>
+					</section>
+					<section class="center">
+						<h4>Network analysis</h4>
+						<ul>
+							<li class="fragment">Identification of network communities 
+								<ul class="ssmaller">
+									<li class="greenish">Subset of nodes with denser connections between them than with the rest
+										of the network
+									</li>
+								</ul>
+							</li>
+							<li class="fragment">
+								Assortativity calculation
+								<ul class="ssmaller">
+									<li class="greenish">The tendency of nodes to connect with other similar nodes
+									</li>
+								</ul>
+								<ul class="fragment">
+									<li>Chromosomal assortativity: To quantify community bias towards a single chromosome.</li>
+									<li>Differential expression assortativity: To quantify community bias towards a single differential expression fold
+										change direction
+									</li>
+								</ul>
+							</li>
+							<li  class="fragment">
+								Gene Ontology over-representation analyses
+								<ul class="ssmaller">
+									<li class="greenish"> To identify biological processes associated with each community
+									</li>
+								</ul>
+				
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Distribution of chromosomal assortativity in network communities</h4>
+						<img src="img/pan-loss/chr_assortativity.png" >
+						<small>This feature summarizes the phenomenon:  
+							<br/>in normal networks communities there is a strong tendency 
+							towards inter-chromosomal interactions, while cancer communities are
+							built mostly from intra-chromosomal links
+						</small>
+					</section>
+					<section>
+						<h4>Common biological processes in cancer networks</h4>
+						<img src="img/pan-loss/compartidos_cancer_colores.png">
+						<small>
+							
+								<p>Bipartite network: communities - GO processes <br/>
+								Community name: Gene with highest page-rank</p>
+								<p>These sets of genes hold high co-expression in many cancer tissues (> 10). 
+									There are two connected components missing from this figure: the one 
+								associated with ribosomal genes and another one associated with adaptive immune 
+							response </p>
+					
+						</small>
+					</section>
+					
+					<section>
+						<h4>Biological processes associated with a single condition</h4>
+						<img src="img/pan-loss/unique_processes.png">
+						<small>
+							
 							<p>Bipartite network: communities - GO processes <br/>
 							Community name: Gene with highest page-rank</p>
-							<p>These sets of genes hold high co-expression in many cancer tissues (> 10). 
-								There are two connected components missing from this figure: the one 
-							associated with ribosomal genes and another one associated with adaptive immune 
-						response </p>
-				
-					</small>
-				</section>
-				
-				<section>
-					<h4>Biological processes associated with a single condition</h4>
-					<img src="img/pan-loss/unique_processes.png">
-					<small>
-						
-						<p>Bipartite network: communities - GO processes <br/>
-						Community name: Gene with highest page-rank</p>
-						<p>Processes in normal networks
-							are necessary for cell maintenance while there are some cancer 
-							related GO terms in the cancer bipartite network</p>
-						<p>Both networks have terms associated with a single tissue: 
-							testis in normal and brain in cancer</p>
-					</small>
-				</section>
-				<section>
-					<h4>No loss of long-range co-expression</h4>
-					<img src="img/pan-loss/other_networks.png" width="68%">
-					<small>Networks were derived using the same methodology</small>
-				</section>
-
-				<section class="center">
-					<h4>Key ideas for this seminar</h4>
-					<ul>
-						<li class="fragment">Co-expression networks, infered from RNA-seq data allow us to study significant transcriptome associations</li>
-						<li class="fragment slide-in">There is a loss of long range co-expression in cancer
-							<ul class="fragment ssmaller">
-								<li class="greenish">
-									Normal tissues: Interactions from genes in different chromosomes
-								</li>
-								<li class="greenish">
-									Cancer tissues: Interactions from neighbor genes in the same chromosome
-								</li>
-							</ul>
-						</li>
-						<li class="fragment">Network topology might display phenotype-associated functional features
-							<ul class="fragment ssmaller">
-								<li class="greenish">Or at least, network topology is different for two different
-									conditions: normal and cancer
-								</li>
-							 </ul>
-						</li>
-						<li class="fragment slide-in">The loss of long-range co-expression is not present in other chronic degenerative
-							 diseases
-							 <ul class="fragment ssmaller">
-								<li class="greenish">At least, not in Type-2 Diabetes or Alzheimer's disease</li>
-							 </ul>
-						</li> 
-					</ul>
-				</section>
-				<section class="center">
-					<h4>Conclusions</h4>
-					<ul>
-						<li>The loss of inter-chromosomal co-expression and the loss of long-range co-expression are 
-							consistent, measurable and reproducible features present in all of the studied profiles
-						</li>
-						<li class="fragment fade-up">
-							There is a global alteration of the interactions in the transcriptome
-							<ul>
-								<li class="greenish">
-									Shorter distances are proferred
-								</li>
-							</ul>
-						</li>
-						<li class="fragment fade-up">
-							There is a contribution of multiple altered regulatory mechanisms
-						</li>
-						<li class="fragment fade-up">
-							Its prevalence suggests an enabling feature of the transcriptomal program
-						</li>
-					</ul>
+							<p>Processes in normal networks
+								are necessary for cell maintenance while there are some cancer 
+								related GO terms in the cancer bipartite network</p>
+							<p>Both networks have terms associated with a single tissue: 
+								testis in normal and brain in cancer</p>
+						</small>
+					</section>
+					<section>
+						<h4>No loss of long-range co-expression</h4>
+						<img src="img/pan-loss/other_networks.png" width="68%">
+						<small>Networks were derived using the same methodology</small>
+					</section>
+	
+					<section class="center">
+						<h4>Conclusions</h4>
+						<ul class="msep">
+							<li class="fragment">Co-expression networks, infered from RNA-seq data allow us to study significant transcriptome associations</li>
+							<li class="fragment slide-in">There is a loss of long range co-expression in cancer
+								<ul class="ssmaller" >
+									<li class="greenish">
+										Normal tissues: Interactions from genes in different chromosomes
+									</li>
+									<li class="greenish">
+										Cancer tissues: Interactions from neighbor genes in the same chromosome
+									</li>
+								</ul>
+							</li>
+							<li class="fragment">Network topology display phenotype-associated functional features
+								<ul class="ssmaller">
+									<li class="greenish">Network topology is different for two different
+										conditions: normal and cancer
+									</li>
+								 </ul>
+							</li>
+							<li class="fragment slide-in">The loss of long-range co-expression is not present in other chronic degenerative
+								 diseases
+								 <ul class="ssmaller">
+									<li class="greenish">At least, not in Type-2 Diabetes or Alzheimer's disease</li>
+								 </ul>
+							</li> 					
+						</ul>
+					</section>
+					<section class="center">
+						<img src="img/pan-loss/evidence.png" width="100%"/>
+					</section>
+					<section class="center">
+						<h4>Conclusions</h4>
+						<ul>
+							<li>The loss of inter-chromosomal co-expression and the loss of long-range co-expression are 
+								consistent, measurable and reproducible features present in all of the studied profiles
+							</li>
+							<li class="fragment fade-up">
+								There is a global alteration of the interactions in the transcriptome
+								<ul>
+									<li class="greenish">
+										Shorter distances are proferred
+									</li>
+								</ul>
+							</li>
+							<li class="fragment fade-up">
+								There is a contribution of multiple altered regulatory mechanisms
+							</li>
+							<li class="fragment fade-up">
+								Its prevalence suggests an enabling feature of the transcriptomal program
+							</li>
+						</ul>
+					</section>
 				</section>
 				<section class="center">
 					<h3 class="pinkish">Thank you!</h3>
 				</section>
 				<section>
 					
-					<section class="mama center">
-						<img src="img/mama/gcdd.png" />
-					</section>
-					<section>
-						<h4>Metodolog&iacute;a</h4>
-						<div style="float:left;width:35%;text-align:left">
-							<img src="img/metod/data-base.png" style="border:none; box-shadow:none; "/>
-						</div>
-						<div style="float:right;width:65%;text-align:right;visibility:hidden;">
-							<table class="metod" >
-								<thead></thead>
-								<tbody>
-									<tr>
-										<td>
-											<img src="img/metod/data-adquisition-ingles.png" class="metod"/>
-										</td>
-										<td>
-											<img src="img/metod/normalizacion-ingles.png" class="metod"/>
-										</td>
-									</tr>
-									<tr>
-										<td colspan="2">
-											<img src="img/metod/mi-ingles.png"	class="metod" />
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="img/metod/redes-ingles.png" class="metod" />
-										</td>
-										<td>
-											<img src="img/metod/distancia-ingles.png" class="metod"/>
-										</td>
-									</tr>
-									<tr>
-										<td colspan="2">
-											<img src="img/metod/integracion-ingles.png" class="metod" />
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</section>
-				
-					<section data-background="img/gdc.png" data-background-transition="fade-in slide-out" data-transition="none">
-						<h4>Metodolog&iacute;a</h4>
-						<div style="float:left;width:35%;text-align:left">
-							<img src="img/metod/data-base.png" style="border:none; box-shadow:none; "/>
-						</div>
-						<div style="float:right;width:65%;text-align:right;visibility:hidden;">
-							<table class="metod" >
-								<thead></thead>
-								<tbody>
-									<tr>
-										<td>
-											<img src="img/metod/data-adquisition-ingles.png" class="metod"/>
-										</td>
-										<td>
-											<img src="img/metod/normalizacion-ingles.png" class="metod"/>
-										</td>
-									</tr>
-									<tr>
-										<td colspan="2">
-											<img src="img/metod/mi-ingles.png"	class="metod" />
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<img src="img/metod/redes-ingles.png" class="metod" />
-										</td>
-										<td>
-											<img src="img/metod/distancia-ingles.png" class="metod"/>
-										</td>
-									</tr>
-									<tr>
-										<td colspan="2">
-											<img src="img/metod/integracion-ingles.png" class="metod" />
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</section>
-					<section  data-transition="none">
-					<h4>Metodolog&iacute;a</h4>
-						<div style="float:left;width:35%;text-align:left">
-							<img src="img/metod/data-base.png" style="border:none; box-shadow:none;opacity: 0.5;"/>
-						</div>
-						<div style="float:right;width:65%;text-align:right">
-							<table class="metod" >
-								<thead></thead>
-								<tbody>
-									<tr>
-										<td>
-											<img class="metod fragment fade-in-then-semi-out visible" src="img/metod/data-adquisition-ingles.png"
-											 data-fragment-index="1"/>
-										</td>
-										<td>
-											<img class="metod fragment fade-in-then-semi-out visible" 
-											data-fragment-index="2" src="img/metod/normalizacion-ingles.png"  />
-										</td>
-									</tr>
-									<tr>
-										<td colspan="2">
-											<img class="metod fragment fade-in-then-semi-out visible" 
-											data-fragment-index="3" src="img/metod/mi-ingles.png" />
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<img class="fragment fade-in-then-semi-out visible" data-fragment-index="4"
-											src="img/metod/redes-ingles.png" class="metod" />
-										</td>
-										<td>
-											<img class="fragment fade-in-then-semi-out visible" data-fragment-index="4"
-											src="img/metod/distancia-ingles.png" class="metod" />
-										</td>
-									</tr>
-									<tr>
-										<td colspan="2">
-											<img class="fragment fade-in-then-semi-out visible" data-fragment-index="5"
-											src="img/metod/integracion-ingles.png" class="metod" />
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</section>
-					<section data-transition="slide-in">
-						<h4>Gene co-expression is distance dependent in breast cancer</h4>
-						
-						<p class="sssmaller left greenish">Features in the co-expression patterns of breast cancer molecular subtypes:</p>
-						<ol class="smaller">
-							<li>The strength of gene-pair co-expression depends on physical distance</li>
-						</ol>
-						<img src="img/mama/Figure3.png" width="90%"/>  
-						
-						
-					</section>
-
-					<section>
-						<h4>Gene co-expression is distance dependent in breast cancer</h4>
-						<p class="sssmaller left greenish">Features in the co-expression patterns of breast cancer molecular subtypes:</p>
-						<ol class="smaller" start="2">
-							<li>There is a intra-/inter- chromosomal interactions proportion imbalance in the co-expression networks </li>
-						</ol>
-						<img  src="img/mama/circos.png" width="60%"/>  
-						
-						
-					</section>
-					<section>
-						<h4>Gene co-expression is distance dependent in breast cancer</h4>
-						
-						<p class="sssmaller left greenish">Features in the co-expression patterns of breast cancer molecular subtypes:</p>
-						<ol class="smaller" start="3">
-							<li> There is an emergence of high density co-expression hotspots</li>
-						</ol>
-						<p class="ssmaller  pinkish no-margin" >Cromosoma 8</p>
-						<img   src="img/mama/Figure5.png" width="1200px"/>  
-					</section>
-
-					<section>
-						<h4>Gene co-expression is distance dependent in breast cancer</h4>
-						
-						<p class="sssmaller left greenish">Features in the co-expression patterns of breast cancer molecular subtypes:</p>
-						<ol class="smaller " start="4">
-							<li> Strongest interactions as well as hotspots are preferably intra-cytoband in breast cancer</li>
-						</ol>
-						<p><br/></p>
-						<img src="img/mama/Figure7-1.png" />  
-					</section>
-
-					<section data-transition="slide-in">
-						<h4>Gene co-expression is distance dependent in breast cancer</h4>
-						
-						<p class="sssmaller left greenish">Features in the co-expression patterns of breast cancer molecular subtypes:</p>
-						<ol class="smaller">
-							<li>There is a intra-/inter- chromosomal interactions proportion imbalance in the co-expression networks </li>
-						<li>The strength of gene-pair co-expression depends on physical distance</li>
-                        <li>There is an emergence of high density co-expression hotspots</li>
-						<li>Strongest interactions as well as hotspots are preferably intra-cytoband in breast cancer</li>
-						</ol>
-						<p class="greenish">Breast cancer molecular subtypes have different loss of inter-chromosomal 
-							co-expression patterns
-							</p>
-					</section>
+					
 					
 				</section>
 				
