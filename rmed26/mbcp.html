@@ -291,6 +291,7 @@ Diana Garcia Cortes | R/Medicine 2026
 <li>An open-source R package for analyzing de-identified data from the MBCproject
 <ul>
 <li>Includes functions for data retrieval, processing, and visualization</li>
+<li>379 whole exome sequencing (WES) samples and 200 RNA-seq samples from 301 patients</li>
 </ul></li>
 <li>Part of the <a href="https://ropensci.org/champions/"><strong>2025 rOpenSci Champions Program</strong></a></li>
 <li>We are planning to release the package in fall 2026</li>
@@ -345,9 +346,9 @@ Diana Garcia Cortes | R/Medicine 2026
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(mbcp)</span>
 <span id="cb1-2"><a href=""></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb1-3"><a href=""></a></span>
-<span id="cb1-4"><a href=""></a>data <span class="ot">&lt;-</span> mbcp<span class="sc">::</span><span class="fu">clinical_data</span>()</span>
+<span id="cb1-4"><a href=""></a>clinical_data <span class="ot">&lt;-</span> mbcp<span class="sc">::</span><span class="fu">clinical_data_rna</span>()</span>
 <span id="cb1-5"><a href=""></a></span>
-<span id="cb1-6"><a href=""></a>data <span class="sc">|&gt;</span></span>
+<span id="cb1-6"><a href=""></a>clinical_data <span class="sc">|&gt;</span></span>
 <span id="cb1-7"><a href=""></a>  <span class="fu">filter</span>(pam50_subtype <span class="sc">==</span> <span class="st">"Basal"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb1-8"><a href=""></a>  <span class="fu">count</span>(bx_location, <span class="at">sort =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -363,19 +364,50 @@ Diana Garcia Cortes | R/Medicine 2026
 </div>
 </div>
 </section>
+<section id="data-analysis-example" class="slide level2 smaller">
+<h2>Data analysis example</h2>
+<p>Comparing ER signature scores between HR+ and HR- samples</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>signature_data <span class="ot">&lt;-</span> mbcp<span class="sc">::</span><span class="fu">expr_signature_scores</span>(</span>
+<span id="cb3-2"><a href=""></a>  <span class="at">signatures =</span> <span class="st">"HALLMARK_ESTROGEN_RESPONSE_EARLY"</span>,</span>
+<span id="cb3-3"><a href=""></a>  <span class="at">samples =</span> clinical_data<span class="sc">$</span>sample_alias</span>
+<span id="cb3-4"><a href=""></a>) <span class="sc">|&gt;</span></span>
+<span id="cb3-5"><a href=""></a>  mbcp<span class="sc">::</span><span class="fu">to_longer</span>(<span class="st">"signature_id"</span>)</span>
+<span id="cb3-6"><a href=""></a></span>
+<span id="cb3-7"><a href=""></a>signature_data <span class="ot">&lt;-</span> signature_data <span class="sc">|&gt;</span></span>
+<span id="cb3-8"><a href=""></a>  <span class="fu">left_join</span>(</span>
+<span id="cb3-9"><a href=""></a>    clinical_data,</span>
+<span id="cb3-10"><a href=""></a>    <span class="at">by =</span> <span class="st">"sample_alias"</span></span>
+<span id="cb3-11"><a href=""></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-12"><a href=""></a>  <span class="fu">filter</span>(hr_status_dx_all <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"HR+"</span>, <span class="st">"HR-"</span>))</span>
+<span id="cb3-13"><a href=""></a></span>
+<span id="cb3-14"><a href=""></a><span class="fu">wilcox.test</span>(</span>
+<span id="cb3-15"><a href=""></a>  value <span class="sc">~</span> hr_status_dx_all,</span>
+<span id="cb3-16"><a href=""></a>  <span class="at">data =</span> signature_data</span>
+<span id="cb3-17"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon rank sum test with continuity correction
+
+data:  value by hr_status_dx_all
+W = 1157, p-value = 1.211e-07
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+</div>
+</section>
 <section id="visualization-example" class="slide level2">
 <h2>Visualization example</h2>
 <p>Expression of ESR1, ERBB2, and CDH1 by HR status</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">library</span>(mbcp)</span>
-<span id="cb3-2"><a href=""></a></span>
-<span id="cb3-3"><a href=""></a>mbcp<span class="sc">::</span><span class="fu">plot_expr_byhr</span>(</span>
-<span id="cb3-4"><a href=""></a>  <span class="at">genes =</span> <span class="fu">c</span>(<span class="st">"ESR1"</span>, <span class="st">"ERBB2"</span>, <span class="st">"CDH1"</span>),</span>
-<span id="cb3-5"><a href=""></a>  <span class="at">receptor =</span> mbcp<span class="sc">::</span><span class="fu">get_labels</span>(<span class="st">"receptor"</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span>
-<span id="cb3-6"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a><span class="fu">library</span>(mbcp)</span>
+<span id="cb5-2"><a href=""></a></span>
+<span id="cb5-3"><a href=""></a>mbcp<span class="sc">::</span><span class="fu">plot_expr_byhr</span>(</span>
+<span id="cb5-4"><a href=""></a>  <span class="at">genes =</span> <span class="fu">c</span>(<span class="st">"ESR1"</span>, <span class="st">"ERBB2"</span>, <span class="st">"CDH1"</span>),</span>
+<span id="cb5-5"><a href=""></a>  <span class="at">receptor =</span> mbcp<span class="sc">::</span><span class="fu">get_labels</span>(<span class="st">"receptor"</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span>
+<span id="cb5-6"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="mbcp_files/figure-revealjs/unnamed-chunk-2-1.png" width="768" class="r-stretch"></section>
+<img data-src="mbcp_files/figure-revealjs/unnamed-chunk-3-1.png" width="768" class="r-stretch"></section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
 <ul>
