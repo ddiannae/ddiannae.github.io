@@ -1,0 +1,288 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: linear-gradient(150deg, #ffe4ec 0%, #ffc2d4 60%, #ffb3c6 100%);
+  min-height: 100vh;
+}
+
+/* ── Screens ── */
+
+.screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ── Shared card ── */
+
+.card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 56px 64px;
+  text-align: center;
+  box-shadow: 0 8px 40px rgba(200, 50, 80, 0.15);
+}
+
+/* ── Intro ── */
+
+.eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e05070;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: #b5294a;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: #913060;
+  margin-bottom: 36px;
+  line-height: 1.6;
+}
+
+.btn {
+  background: #d63060;
+  color: #fff;
+  border: none;
+  padding: 13px 40px;
+  font-size: 1rem;
+  font-family: 'Georgia', serif;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn:hover {
+  background: #b5294a;
+  transform: scale(1.04);
+}
+
+/* ── Game screen ── */
+
+.game-hint {
+  color: #913060;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+#tags-container {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  min-height: 56px;
+  width: 100%;
+  max-width: 860px;
+}
+
+#month-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.month-tag {
+  background: #d63060;
+  color: #fff;
+  padding: 8px 22px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+  font-size: 0.9rem;
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s, opacity 0.3s;
+  user-select: none;
+}
+
+.month-tag:hover:not(.matched) {
+  background: #b5294a;
+  transform: scale(1.05);
+}
+
+.month-tag.selected {
+  background: #ff6090;
+  transform: scale(1.08);
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px #d63060;
+}
+
+.month-tag.matched {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* ── Photo grid ── */
+
+#photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 14px;
+  width: fit-content;
+}
+
+.photo-card {
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  border: 3px solid transparent;
+}
+
+.photo-card:hover:not(.correct) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.photo-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.photo-label {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-align: center;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.photo-description {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #666;
+  text-align: center;
+  line-height: 1.5;
+  padding: 0 10px;
+  transition: max-height 0.4s ease 0.1s, padding 0.4s ease 0.1s;
+}
+
+.photo-card.correct {
+  border-color: #4caf50;
+  cursor: default;
+}
+
+.photo-card.correct .photo-label {
+  background: rgba(76, 175, 80, 0.9);
+  color: #fff;
+  max-height: 40px;
+  padding: 7px 8px;
+}
+
+.photo-card.correct .photo-description {
+  max-height: 80px;
+  padding: 6px 10px 10px;
+}
+
+.photo-card.wrong {
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+#progress {
+  margin-top: 16px;
+  color: #913060;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* ── Photo preview overlay ── */
+
+#photo-preview {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+#photo-preview.visible {
+  opacity: 1;
+}
+
+#photo-preview img {
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Celebration ── */
+
+.celebration-card {
+  position: relative;
+  z-index: 1;
+}
+
+.big-heart {
+  font-size: 3.5rem;
+  color: #d63060;
+  margin-bottom: 12px;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* ── Confetti ── */
+
+#confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -12px;
+  animation: fall linear forwards;
+  border-radius: 2px;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(105vh) rotate(720deg);
+    opacity: 0;
+  }
+}

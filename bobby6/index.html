@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6 Months of Us</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="intro" class="screen">
+    <div class="card intro-card">
+      <p class="eyebrow">December → June</p>
+      <h1>Cumplimos 6 meses!!!</h1>
+      <p class="subtitle">Match each photo to the month it was taken.</p>
+      <p class="subtitle">Don't do this on your phone cause there was not enough budget to make this responsive</p>
+      <button id="startBtn" class="btn">Let's Play ♥</button>
+    </div>
+  </div>
+
+  <div id="game" class="screen hidden">
+    <p class="game-hint">Pick a month tag, then click the photo it belongs to.</p>
+    <div id="tags-container">
+      <div id="month-tags"></div>
+    </div>
+    <div id="photo-grid"></div>
+    <p id="progress">0 / 7 matched</p>
+  </div>
+
+  <div id="celebration" class="screen hidden">
+    <div class="card celebration-card">
+      <div class="big-heart">♥</div>
+      <h1>6 Months!</h1>
+      <p class="subtitle">Gracias por hacerme tan feliz. Te amo!</p>
+      <button id="playAgainBtn" class="btn">Play Again</button>
+    </div>
+    <div id="confetti-container"></div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
